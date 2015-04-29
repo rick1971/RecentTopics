@@ -2,7 +2,7 @@
 /**
  *
  * @package Recent Topics Extension
- * English translation by PayBas
+ * Estonian translation by phpBBeesti.com 04/2015
  *
  * @copyright (c) 2015 PayBas
  * @license GNU General Public License, version 2 (GPL-2.0)
@@ -19,10 +19,10 @@ if (empty($lang) || !is_array($lang))
 	$lang = array();
 }
 $lang = array_merge($lang, array(
-	'RT_ENABLE'              => 'Display recent topics',
-	'RT_ALT_LOCATION'        => 'Use alternative display location',
-	'RT_ALT_LOCATION_EXP'    => 'Move recent topics to a different location (usually the bottom, but depends on the style used).',
-	'RT_SORT_START_TIME'     => 'Sort recent topics by topic start time',
-	'RT_SORT_START_TIME_EXP' => 'Instead of sorting them by last post time.',
-	'RT_UNREAD_ONLY'         => 'Only display unread topics in recent topics',
+	'RT_ENABLE'              => 'Näita "Hiljutised teemad" laiendust',
+	'RT_ALT_LOCATION'        => 'Kasuta näitamiseks alternatiivset asukohta',
+	'RT_ALT_LOCATION_EXP'    => 'Liiguta "Hiljutised teemad" teise asukohta (tavaliselt alla, kuid see oleneb stiilist mida kasutad).',
+	'RT_SORT_START_TIME'     => 'Sorteeri teemad alustamis aja järgi',
+	'RT_SORT_START_TIME_EXP' => 'Selle asemel, et sorteerida viimase postituse aja järgi, sorteeritakse need teema alustamis aja järgi.',
+	'RT_UNREAD_ONLY'         => 'Kuva ainult lugemata teemad',
 ));
