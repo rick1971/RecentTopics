@@ -20,12 +20,12 @@ if (empty($lang) || !is_array($lang))
 }
 $lang = array_merge($lang, array(
 	'RECENT_TOPICS'					=> 'Hiljutised Teemad',
-	'RECENT_TOPICS_EXPLAIN'			=> 'On this page you can change the settings specific for the Recent Topics extension.<br /><br />Specific forums can be included or excluded by editing the respective forums in your ACP.<br />Also be sure to check your user permissions, which allow users to change some of the settings found below for themselves.',
+	'RECENT_TOPICS_EXPLAIN'			=> 'Sellel lehekülje kaudu saad seadistada laienduse "Hiljutised teemad" oma foorumile sobivamaks.<br /><br />Kindlaid foorumeid on võimalik lisada ja / või eemaldada laiendusest muutes antud foorumi(te) seadeid AJP-s.<br />Samuti vaata üle õigused, mis lubavad muuta mõningaid seadeid kasutajatel endil.',
 	'RECENT_TOPICS_LIST'			=> 'Foorumi teemad "hiljutised teemad" laienduses',
 	'RECENT_TOPICS_LIST_EXPLAIN'	=> 'Väärtus "Jah" näitab selle foorumi uusi postitusi laienduses "Hiljutised teemad".',
 	'RT_CONFIG'						=> 'Seadistus',
-	'RT_ALT_LOCATION'				=> 'Display in alternative location',
-	'RT_ALT_LOCATION_EXP'			=> 'Use alternative location to display recent topics.<br />Not all styles will support this, for prosilver it will be moved to the bottom of the page.',
+	'RT_ALT_LOCATION'				=> 'Näita alternatiivses asukohas',
+	'RT_ALT_LOCATION_EXP'			=> 'Kasuta alternatiivset asukohta, et näidata hiljutisi teemasi.<br />Kõik stiilid ei toeta seda, prosilver stiilis liigutatakse lehekülje alla.',
 	'RT_ANTI_TOPICS'				=> 'Välistatud teemad',
 	'RT_ANTI_TOPICS_EXP'			=> 'Eraldatud "," (Näiteks: 7, 9)<br />Kui sa aga ei soovi mingit kindlat teemat välistada, siis sisesta väärtuseks 0',
 	'RT_MIN_TOPIC_LEVEL'			=> 'Näita "Hiljutised teemad" laienduses ainult kindlat teema tüüpi',
