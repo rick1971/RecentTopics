@@ -2,7 +2,7 @@
 /**
  *
  * @package Recent Topics Extension
- * English translation by PayBas
+ * Estonian translation by www.phpbbeesti.com 04/2015
  *
  * @copyright (c) 2015 PayBas
  * @license GNU General Public License, version 2 (GPL-2.0)
@@ -19,9 +19,9 @@ if (empty($lang) || !is_array($lang))
 	$lang = array();
 }
 $lang = array_merge($lang, array(
-	'ACL_U_RT_VIEW'            => 'Recent Topics: view (master)',
-	'ACL_U_RT_ENABLE'          => 'Recent Topics: enable or disable',
-	'ACL_U_RT_ALT_LOCATION'    => 'Recent Topics: use alternative display location',
-	'ACL_U_RT_SORT_START_TIME' => 'Recent Topics: change sort order',
-	'ACL_U_RT_UNREAD_ONLY'     => 'Recent Topics: use unread-only mode',
+	'ACL_U_RT_VIEW'            => 'Hiljutised teemad: vaade (master)',
+	'ACL_U_RT_ENABLE'          => 'Hiljutised teemad: luba või keela',
+	'ACL_U_RT_ALT_LOCATION'    => 'Hiljutised teemad: kasuta alternatiivset asukohta',
+	'ACL_U_RT_SORT_START_TIME' => 'Hiljutised teemad: muuda sorteerimis järjekorda',
+	'ACL_U_RT_UNREAD_ONLY'     => 'Hiljutised teemad: kasuta ainult lugemata režiimi',
 ));
