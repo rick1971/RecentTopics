@@ -9,6 +9,8 @@
  *
  * Based on the original NV Recent Topics by Joas Schilling (nickvergessen)
  *
+ * Some characters you may want to copy&paste:
+ * ’ » “ ” …
  */
 
 if (!defined('IN_PHPBB'))
@@ -22,14 +24,14 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge($lang, array(
 	'RECENT_TOPICS'					=> 'Topic recenti',
-	'RECENT_TOPICS_EXPLAIN'			=> 'On this page you can change the settings specific for the Recent Topics extension.<br /><br />Specific forums can be included or excluded by editing the respective forums in your ACP.<br />Also be sure to check your user permissions, which allow users to change some of the settings found below for themselves.',
+	'RECENT_TOPICS_EXPLAIN'			=> 'Qui è possibile modificare le impostazioni di Topic recenti.<br /><br />Singoli forum possono essere inclusi o esclusi modificando le rispettive impostazioni nel PCA.<br />Inoltre, tramite le relative impostazioni presenti in questa pagina, è possibile permettere agli utenti di modificare da sé alcuni aspetti dell’estensione',
 
-	'RECENT_TOPICS_LIST'			=> 'Mostra in "Topic recenti"',
-	'RECENT_TOPICS_LIST_EXPLAIN'	=> 'I topic di questo forum saranno mostrati nell’elenco "Topic recenti".',
+	'RECENT_TOPICS_LIST'			=> 'Mostra in “Topic recenti”',
+	'RECENT_TOPICS_LIST_EXPLAIN'	=> 'I topic di questo forum saranno mostrati nell’elenco “Topic recenti”.',
 
 	'RT_CONFIG'						=> 'Configurazione',
-	'RT_ALT_LOCATION'				=> 'Display in alternative location',
-	'RT_ALT_LOCATION_EXP'			=> 'Use alternative location to display recent topics.<br />Not all styles will support this, for prosilver it will be moved to the bottom of the page.',
+	'RT_ALT_LOCATION'				=> 'Mostra nella posizione alternativa',
+	'RT_ALT_LOCATION_EXP'			=> 'Mostra l’elenco dei topic recenti in una posizione diversa.<br />Non funziona per tutti gli stili; nel caso di prosilver, l’elenco viene spostato in fondo alla pagina.',
 	'RT_ANTI_TOPICS'				=> 'Topic esclusi',
 	'RT_ANTI_TOPICS_EXP'			=> 'Gli ID dei topic da escludere, separati da una virgola (es.: 7, 9)<br />Per non escudere alcun topic, digitare 0.',
 	'RT_MIN_TOPIC_LEVEL'			=> 'Livello minimo topic',
