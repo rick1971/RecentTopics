@@ -2,7 +2,7 @@
 /**
  *
  * @package Recent Topics Extension
- * English translation by PayBas
+ * Italian translation by Mauron
  *
  * @copyright (c) 2015 PayBas
  * @license GNU General Public License, version 2 (GPL-2.0)
@@ -21,9 +21,9 @@ if (empty($lang) || !is_array($lang))
 }
 
 $lang = array_merge($lang, array(
-	'ACL_U_RT_VIEW'            => 'Recent Topics: view (master)',
-	'ACL_U_RT_ENABLE'          => 'Recent Topics: enable or disable',
-	'ACL_U_RT_ALT_LOCATION'    => 'Recent Topics: use alternative display location',
-	'ACL_U_RT_SORT_START_TIME' => 'Recent Topics: change sort order',
-	'ACL_U_RT_UNREAD_ONLY'     => 'Recent Topics: use unread-only mode',
+	'ACL_U_RT_VIEW'            => 'Può nascondere l’elenco dei topic recenti',
+	'ACL_U_RT_ENABLE'          => 'Può abilitare l’elenco dei topic recenti',
+	'ACL_U_RT_ALT_LOCATION'    => 'Può mostrare l’elenco dei topic recenti nella posizione alternativa',
+	'ACL_U_RT_SORT_START_TIME' => 'Può cambiare il metodo di ordinamento dei topic recenti',
+	'ACL_U_RT_UNREAD_ONLY'     => 'Può visualizzare solo i topic non letti nell’elenco dei topic recenti',
 ));
