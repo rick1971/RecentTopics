@@ -2,7 +2,7 @@
 /**
  *
  * @package Recent Topics Extension
- * English translation by PayBas
+ * Italian translation by Mauron
  *
  * @copyright (c) 2015 PayBas
  * @license GNU General Public License, version 2 (GPL-2.0)
@@ -21,10 +21,10 @@ if (empty($lang) || !is_array($lang))
 }
 
 $lang = array_merge($lang, array(
-	'RT_ENABLE'              => 'Display recent topics',
-	'RT_ALT_LOCATION'        => 'Use alternative display location',
-	'RT_ALT_LOCATION_EXP'    => 'Move recent topics to a different location (usually the bottom, but depends on the style used).',
-	'RT_SORT_START_TIME'     => 'Sort recent topics by topic start time',
-	'RT_SORT_START_TIME_EXP' => 'Instead of sorting them by last post time.',
-	'RT_UNREAD_ONLY'         => 'Only display unread topics in recent topics',
+	'RT_ENABLE'              => 'Mostra topic recenti',
+	'RT_ALT_LOCATION'        => 'Mostra topic recenti in posizione alternativa',
+	'RT_ALT_LOCATION_EXP'    => 'Sposta l’elenco dei topic recenti in una posizione differente (generalmente in fondo ma dipende dallo stile usato).',
+	'RT_SORT_START_TIME'     => 'Ordina topic recenti per data d’apertura',
+	'RT_SORT_START_TIME_EXP' => 'I topic vengono ordinati in base alla rispettiva data d’apertura e non in base a quella dell’ultimo post.',
+	'RT_UNREAD_ONLY'         => 'Mostra solo topic non letti come topic recenti',
 ));
