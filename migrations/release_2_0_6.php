@@ -87,7 +87,7 @@ class release_2_0_6 extends \phpbb\db\migration\migration
 			array('config.add', array('rt_unreadonly', 0)),
 			array('config.remove', array('rt_unread_only')),
 			array('config.remove', array('rt_alt_location')),
-			array('config.update', array('rt_version', '2.0.5')),
+			array('config.add', array('rt_version', '2.0.5')),
 
 			array('permission.remove', array('u_rt_view')),
 			array('permission.remove', array('u_rt_enable')),
