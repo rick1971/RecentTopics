@@ -84,7 +84,7 @@ class release_2_0_6 extends \phpbb\db\migration\migration
 	public function revert_data()
 	{
 		return array(
-			array('config.adde', array('rt_unreadonly', 0)),
+			array('config.add', array('rt_unreadonly', 0)),
 			array('config.remove', array('rt_unread_only')),
 			array('config.remove', array('rt_alt_location')),
 			array('config.update', array('rt_version', '2.0.5')),
