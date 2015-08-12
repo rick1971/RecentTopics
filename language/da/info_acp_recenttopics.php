@@ -24,7 +24,7 @@ $lang = array_merge($lang, array(
 	'RECENT_TOPICS'					=> 'Seneste indlæg',
 	'RECENT_TOPICS_EXPLAIN'			=> 'På denne side kan du ændre indstillinger for udvidelsen.<br /><br />Specifikke fora kan inkluderes eller exkluderes, ved at redigere dem i ACP.<br />Husk også at tjekke tilladelser, som tillader brugere at ændre nogle af indstilingerne fundet under deres profil.',
 
-	'RECENT_TOPICS_LIST'			=> 'Display on "recent topics"',
+	'RECENT_TOPICS_LIST'			=> 'Vis på "Seneste indlæg"',
 	'RECENT_TOPICS_LIST_EXPLAIN'	=> 'Enable to display topics in this forum in the "recent topics" extension.',
 
 	'RT_CONFIG'						=> 'Configuration',
