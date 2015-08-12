@@ -21,8 +21,8 @@ if (empty($lang) || !is_array($lang))
 }
 
 $lang = array_merge($lang, array(
-	'RECENT_TOPICS'					=> 'Recent Topics',
-	'RECENT_TOPICS_EXPLAIN'			=> 'On this page you can change the settings specific for the Recent Topics extension.<br /><br />Specific forums can be included or excluded by editing the respective forums in your ACP.<br />Also be sure to check your user permissions, which allow users to change some of the settings found below for themselves.',
+	'RECENT_TOPICS'					=> 'Seneste indlæg',
+	'RECENT_TOPICS_EXPLAIN'			=> 'På denne side kan du ændre indstillinger for udvidelsen.<br /><br />Specifikke fora kan inkluderes eller exkluderes, ved at redigere dem i ACP.<br />Husk også at tjekke tilladelser, som tillader brugere at ændre nogle af indstilingerne fundet under deres profil.',
 
 	'RECENT_TOPICS_LIST'			=> 'Display on "recent topics"',
 	'RECENT_TOPICS_LIST_EXPLAIN'	=> 'Enable to display topics in this forum in the "recent topics" extension.',
