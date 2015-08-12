@@ -31,7 +31,7 @@ $lang = array_merge($lang, array(
 	'RT_ALT_LOCATION'				=> 'Vis i alternativ lokation',
 	'RT_ALT_LOCATION_EXP'			=> 'Brug alternativ lokation til at vise seneste emner.<br />Ikke alle temaer understøtter dette. I prosilver, vil det blive flyttet ned i bunden.',
 	'RT_ANTI_TOPICS'				=> 'Eksluder indlæg',
-	'RT_ANTI_TOPICS_EXP'			=> 'IDet på det emner der skal udelukkes, sepereret med ", " (Eksempel: 7, 9)<br />Hvis du ikke ønsker at udelukke noget, skal du skrive 0.',
+	'RT_ANTI_TOPICS_EXP'			=> 'ID\'et på det emner der skal udelukkes, sepereret med ", " (Eksempel: 7, 9)<br />Hvis du ikke ønsker at udelukke noget, skal du skrive 0.',
 	'RT_MIN_TOPIC_LEVEL'			=> 'Minimum emne type',
 	'RT_MIN_TOPIC_LEVEL_EXP'		=> 'Bestemmer minimumsniveauet for emne-type til at vise. Det vil kun vise emner af det indstillede niveau, og højere.<br />(0 = normal, 1 = sticky, 2 = bekendtgørelsen, 3 = global bekendtgørelse)',
 	'RT_NUMBER'						=> 'Seneste emner',
