@@ -33,7 +33,7 @@ $lang = array_merge($lang, array(
 	'RT_ANTI_TOPICS'				=> 'Eksluder indlæg',
 	'RT_ANTI_TOPICS_EXP'			=> 'ID\'et på det emner der skal udelukkes, sepereret med ", " (Eksempel: 7, 9)<br />Hvis du ikke ønsker at udelukke noget, skal du skrive 0.',
 	'RT_MIN_TOPIC_LEVEL'			=> 'Minimum emne type',
-	'RT_MIN_TOPIC_LEVEL_EXP'		=> 'Bestemmer minimumsniveauet for emne-type til at vise. Det vil kun vise emner af det indstillede niveau, og højere.<br />(0 = normal, 1 = sticky, 2 = bekendtgørelsen, 3 = global bekendtgørelse)',
+	'RT_MIN_TOPIC_LEVEL_EXP'		=> 'Bestemmer minimumsniveauet for emne type til at vise. Det vil kun vise emner af det indstillede niveau, og højere.<br />(0 = normal, 1 = sticky, 2 = bekendtgørelsen, 3 = global bekendtgørelse)',
 	'RT_NUMBER'						=> 'Seneste emner',
 	'RT_NUMBER_EXP'					=> 'Antallet af emner der skal vises.',
 	'RT_PAGE_NUMBER'				=> 'Seneste emner sider',
