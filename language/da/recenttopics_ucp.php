@@ -21,10 +21,10 @@ if (empty($lang) || !is_array($lang))
 }
 
 $lang = array_merge($lang, array(
-	'RT_ENABLE'              => 'Vis seneste indlæg',
+	'RT_ENABLE'              => 'Vis seneste emner',
 	'RT_ALT_LOCATION'        => 'Brug alternativ lokation',
-	'RT_ALT_LOCATION_EXP'    => 'Flyt seneste indlæg, til en anden placering (Som regel buden, men det afhænger af temaet).',
-	'RT_SORT_START_TIME'     => 'Sorter seneste indlæg efter indlægets indsendelses tid.',
-	'RT_SORT_START_TIME_EXP' => 'I stedet for at sortere dem efter seneste sendte indlæg.',
-	'RT_UNREAD_ONLY'         => 'Vis kun ulæste indlæg i seneste indlæg',
+	'RT_ALT_LOCATION_EXP'    => 'Flyt seneste emner, til en anden placering (Som regel buden, men det afhænger af temaet).',
+	'RT_SORT_START_TIME'     => 'Sorter seneste emner efter emnets indsendelses tid.',
+	'RT_SORT_START_TIME_EXP' => 'I stedet for at sortere dem efter seneste sendte emne.',
+	'RT_UNREAD_ONLY'         => 'Vis kun ulæste emner i seneste emner',
 ));
