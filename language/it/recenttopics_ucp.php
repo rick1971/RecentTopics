@@ -21,10 +21,10 @@ if (empty($lang) || !is_array($lang))
 }
 
 $lang = array_merge($lang, array(
-	'RT_ENABLE'              => 'Mostra topic recenti',
-	'RT_ALT_LOCATION'        => 'Mostra topic recenti in posizione alternativa',
-	'RT_ALT_LOCATION_EXP'    => 'Sposta l’elenco dei topic recenti in una posizione differente (generalmente in fondo ma dipende dallo stile usato).',
-	'RT_SORT_START_TIME'     => 'Ordina topic recenti per data d’apertura',
-	'RT_SORT_START_TIME_EXP' => 'I topic vengono ordinati in base alla rispettiva data d’apertura e non in base a quella dell’ultimo post.',
-	'RT_UNREAD_ONLY'         => 'Mostra solo topic non letti come topic recenti',
+	'RT_ENABLE'              => 'Mostra argomenti recenti',
+	'RT_ALT_LOCATION'        => 'Mostra argomenti recenti in posizione alternativa',
+	'RT_ALT_LOCATION_EXP'    => 'Sposta l’elenco degli argomenti recenti in una posizione differente (generalmente in fondo ma dipende dallo stile usato).',
+	'RT_SORT_START_TIME'     => 'Ordina argomenti recenti per data d’apertura',
+	'RT_SORT_START_TIME_EXP' => 'Gli argomenti vengono ordinati in base alla rispettiva data d’apertura e non in base a quella dell’ultimo messaggio.',
+	'RT_UNREAD_ONLY'         => 'Mostra solo argomenti non letti come recenti',
 ));
