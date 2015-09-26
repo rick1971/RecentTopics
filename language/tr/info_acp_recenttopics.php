@@ -21,15 +21,15 @@ if (empty($lang) || !is_array($lang))
 }
 
 $lang = array_merge($lang, array(
-	'RECENT_TOPICS'					=> 'Son Konular',
-	'RECENT_TOPICS_EXPLAIN'			=> 'On this page you can change the settings specific for the Recent Topics extension.<br /><br />Specific forums can be included or excluded by editing the respective forums in your ACP.<br />Also be sure to check your user permissions, which allow users to change some of the settings found below for themselves.',
+	'RECENT_TOPICS'				=> 'Son Konular',
+	'RECENT_TOPICS_EXPLAIN'			=> 'Bu sayfada Recent Topics eklentisi için özel ayalrarı değiştirebilirsiniz.<br /><br />Belirli forumlar YKP\'de düzenlenerek eklenebilir veya çıkarılabilir.<br />Ayrıca, kullanıcıların bazı ayarları kendilerine bırakabilmek için, kullanıcı izinlerini düzenlmeyi unutmayın.',
 
-	'RECENT_TOPICS_LIST'			=> '"son konular" göster',
+	'RECENT_TOPICS_LIST'			=> '"Son konuları" göster',
 	'RECENT_TOPICS_LIST_EXPLAIN'	=> 'Eğer etkinleştirilmiş ise, bu forum da "son konular" eklentisi görüntülenir.',
 
 	'RT_CONFIG'						=> 'Ayarlar',
-	'RT_ALT_LOCATION'				=> 'Display in alternative location',
-	'RT_ALT_LOCATION_EXP'			=> 'Use alternative location to display recent topics.<br />Not all styles will support this, for prosilver it will be moved to the bottom of the page.',
+	'RT_ALT_LOCATION'				=> 'Farklı yerlerde göster',
+	'RT_ALT_LOCATION_EXP'			=> '"Son konuları" farklı yerlerde gösterebilmek için kullanabilirsiniz.<br />Bütün stiller bunu desteklemeyebilir, prosilver\'da sayfanın altına taşınacaktır.',
 	'RT_ANTI_TOPICS'				=> 'Dışlanan konular',
 	'RT_ANTI_TOPICS_EXP'			=> 'Ayraç ", " (Örnek: 7, 9)<br />Sıfır "0" değeri bu özelliği devre dışı bırakır.',
 	'RT_MIN_TOPIC_LEVEL'			=> 'Konu türü',
