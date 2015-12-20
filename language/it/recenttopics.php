@@ -21,5 +21,5 @@ if (empty($lang) || !is_array($lang))
 }
 
 $lang = array_merge($lang, array(
-	'RECENT_TOPICS'	=> 'Topic recenti',
+	'RECENT_TOPICS'	=> 'Argomenti recenti',
 ));
