@@ -6,7 +6,7 @@ Extension for phpBB 3.1 to display recent topics as first tab with categories in
 ##### Based on NV Recent Topics for phpBB 3.0, by Joas Schilling ([nickvergessen](https://github.com/nickvergessen))
 ##### Based on Recent Topics for phpBB 3.1, by ([PayBas](https://github.com/PayBas))
 ##### Based on Categories in Tabs for phpBB 3.1, by Tatiana ([Tatiana5](https://github.com/Tatiana5))
-##### Based on work done by bruninoit @ phpbb.com 
+##### Based on work done by bruninoit ([bruninoit](https://github.com/bruninoit))
 
 #### Requirements
 - phpBB 3.1.0 or higher
