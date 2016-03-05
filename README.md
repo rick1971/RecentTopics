@@ -1,60 +1,19 @@
-Recent Topics for phpBB 3.1
+Recent in Tabs for phpBB 3.1
 ============
 
-Extension for phpBB 3.1 to display recent topics.
-
-![Screenshot](screenshot.png)
+Extension for phpBB 3.1 to display recent topics as first tab with categories in tabs.
 
 ##### Based on NV Recent Topics for phpBB 3.0, by Joas Schilling ([nickvergessen](https://github.com/nickvergessen))
-
-
-## Features
-- Adds a list of recent (or unread) topics to the index page.
-- ACP module to change:
-  - number of topics to show
-  - max. number of pages
-  - set minimum topic type level to display (normal/sticky/announcement/global)
-  - exclusion of topics (by ID)
-  - display parent forums in the row
-  - only show unread topics
-  - sort by topic start time, instead of last post time
-- UCP permissions and settings so users can choose their own preferences
-- Inherits all styling from regular "viewforum" templates
-- Tested on:
-  - prosilver
-  - subsilver2
-  - PBWoW 3
-  - PBTech
-  - we_universal
+##### Based on Recent Topics for phpBB 3.1, by ([PayBas](https://github.com/PayBas))
+##### Based on Categories in Tabs for phpBB 3.1, by Tatiana ([Tatiana5](https://github.com/Tatiana5))
+##### Based on work done by bruninoit ([bruninoit](https://github.com/bruninoit))
 
 #### Requirements
 - phpBB 3.1.0 or higher
 - PHP 5.3.3 or higher
 
-#### Languages supported
-- English
-- German
-- Spanish
-- French
-- Russian
-- Greek
-- Dutch
-- Italian
-- Japanese
-- Swedish
-- Estonian
-- Persian
-- Arabic
-- Turkish
-- Polish
-- Romanian
-
-#### To do list
-- Add compatibility for topic prefixes and allow exclusion/inclusion based on predefined prefixes.
-- Add option to have stickies/announcements at the top
-
 ## Installation
-1. [Download the latest release](https://github.com/PayBas/RecentTopics/releases) and unzip it.
+1. [Download the latest release](https://github.com/nachtelb/RecentTopics/tree/recent-in-tabs) and unzip it.
 2. Copy the entire contents from the unzipped folder to `/ext/paybas/recenttopics/`.
 3. Navigate in the ACP to `Customise -> Manage extensions`.
 4. Find `Recent Topics` under "Disabled Extensions" and click `Enable`.
@@ -67,4 +26,3 @@ Extension for phpBB 3.1 to display recent topics.
 ### License
 [GNU General Public License v2](http://opensource.org/licenses/GPL-2.0)
 
-© 2015 - PayBas
