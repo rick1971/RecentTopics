@@ -21,9 +21,9 @@ if (empty($lang) || !is_array($lang))
 }
 
 $lang = array_merge($lang, array(
-	'ACL_U_RT_VIEW'            => 'Recent Topics: view (master)',
-	'ACL_U_RT_ENABLE'          => 'Recent Topics: enable or disable',
-	'ACL_U_RT_ALT_LOCATION'    => 'Recent Topics: use alternative display location',
-	'ACL_U_RT_SORT_START_TIME' => 'Recent Topics: change sort order',
-	'ACL_U_RT_UNREAD_ONLY'     => 'Recent Topics: use unread-only mode',
+	'ACL_U_RT_VIEW'            => 'Son Konular: görüntüler (master)',
+	'ACL_U_RT_ENABLE'          => 'Son Konular: etkinleştir veya devre dışı bırak',
+	'ACL_U_RT_ALT_LOCATION'    => 'Son Konular: farklı yerlerde göster',
+	'ACL_U_RT_SORT_START_TIME' => 'Son Konular: sıralamayı değiştir',
+	'ACL_U_RT_UNREAD_ONLY'     => 'Son Konular: sadece-okunmamış modunu kullan',
 ));
