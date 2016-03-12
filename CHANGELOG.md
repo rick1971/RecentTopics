@@ -1,6 +1,6 @@
 
 ### Changelog 
-- 2.0.6-dev - 12/03/2016
+- 2.0.6 (12/03/2016)
   - [NEW] Croatian translation (Ancica) 
   - [NEW] Hungarian translation (aszilagyi)
   - [NEW] Estonian translation (phpBBeesti)
