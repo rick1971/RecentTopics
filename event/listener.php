@@ -21,9 +21,18 @@ class listener implements EventSubscriberInterface
 	/** @var \phpbb\config\config */
 	protected $config;
 
-	/** @var \phpbb\request\request */
+	/**
+	 * @var \phpbb\request\request
+	 */
 	protected $request;
 
+	/**
+	 * listener constructor.
+	 *
+	 * @param \paybas\recenttopics\core\recenttopics $functions
+	 * @param \phpbb\config\config                   $config
+	 * @param \phpbb\request\request                 $request
+	 */
 	public function __construct(\paybas\recenttopics\core\recenttopics $functions, \phpbb\config\config $config, \phpbb\request\request $request)
 	{
 		$this->rt_functions = $functions;
@@ -31,6 +40,9 @@ class listener implements EventSubscriberInterface
 		$this->request = $request;
 	}
 
+	/**
+	 * @return array
+	 */
 	static public function getSubscribedEvents()
 	{
 		return array(
@@ -43,14 +55,21 @@ class listener implements EventSubscriberInterface
 		);
 	}
 
-	// The main magic
+
+	/**
+	 * modify the page title and load data for the index
+	 *
+	 */
 	public function display_rt()
 	{
 		if (isset($this->config['rt_index']) && $this->config['rt_index'])
 		$this->rt_functions->display_recent_topics();
 	}
 
-	// nickvergessen's newspage ext
+	/**
+	 * nickvergessen's newspage ext
+	 *
+	 */
 	public function display_rt_newspage()
 	{
 		if (isset($this->config['rt_on_newspage']) && $this->config['rt_on_newspage'])
@@ -59,7 +78,12 @@ class listener implements EventSubscriberInterface
 		}
 	}
 
-	// Submit form (add/update)
+	/**
+	 * Submit form (add/update)
+	 * Request forum data and operate on it (parse texts, etc.)
+	 *
+	 * @param $event
+	 */
 	public function acp_manage_forums_request_data($event)
 	{
 		$array = $event['forum_data'];
@@ -67,7 +91,11 @@ class listener implements EventSubscriberInterface
 		$event['forum_data'] = $array;
 	}
 
-	// Default settings for new forums
+	/**
+	 * Initialise data before we display the add/edit form
+	 *
+	 * @param $event
+	 */
 	public function acp_manage_forums_initialise_data($event)
 	{
 		if ($event['action'] == 'add')
@@ -78,7 +106,10 @@ class listener implements EventSubscriberInterface
 		}
 	}
 
-	// ACP forums template output
+	/**
+	 * Modify forum template data before we display the form
+	 * @param $event
+	 */
 	public function acp_manage_forums_display_form($event)
 	{
 		$array = $event['template_data'];

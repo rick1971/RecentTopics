@@ -2,7 +2,7 @@
 /**
  *
  * @package Recent Topics Extension
- * Italian translation by Mauron
+ * Danish translation by EverPvP
  *
  * @copyright (c) 2015 PayBas
  * @license GNU General Public License, version 2 (GPL-2.0)
@@ -21,5 +21,5 @@ if (empty($lang) || !is_array($lang))
 }
 
 $lang = array_merge($lang, array(
-	'RECENT_TOPICS'	=> 'Argomenti recenti',
+	'RECENT_TOPICS'	=> 'Seneste emner',
 ));

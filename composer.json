@@ -2,7 +2,7 @@
     "name": "paybas/recenttopics",
     "type": "phpbb-extension",
     "description": "Adds a list with a number of recent topics to the index.php",
-    "homepage": "https://github.com/PayBas/RecentTopics",
+    "homepage": "https://github.com/sajaki/RecentTopics",
     "version": "2.0.6-dev",
     "time": "2015-04-09",
     "license": "GPL-2.0",
@@ -18,6 +18,12 @@
             "email": "",
             "homepage": "http://www.flying-bits.org/",
             "role": "Previous Developer"
+        },
+        {
+            "name": "Sajaki",
+            "email": "",
+            "homepage": "http://www.avathar.be/",
+            "role": "Maintainer"
         }
     ],
     "require": {
@@ -30,9 +36,9 @@
              "phpbb/phpbb": ">=3.1.0,<3.2.*@dev"
         },
         "version-check": {
-            "host": "paybas.github.io",
-            "directory": "/RecentTopics",
-            "filename": "version.json"
+            "host": "www.avathar.be",
+            "directory": "/versioncheck",
+            "filename": "recenttopics.json"
         }
     }
 }

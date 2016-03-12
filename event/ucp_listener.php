@@ -39,6 +39,9 @@ class ucp_listener implements EventSubscriberInterface
 		$this->user = $user;
 	}
 
+	/**
+	 * @return array
+	 */
 	static public function getSubscribedEvents()
 	{
 		return array(
@@ -47,6 +50,9 @@ class ucp_listener implements EventSubscriberInterface
 		);
 	}
 
+	/**
+	 * @param $event
+	 */
 	public function ucp_prefs_get_data($event)
 	{
 		// Request the user option vars and add them to the data array
@@ -106,6 +112,9 @@ class ucp_listener implements EventSubscriberInterface
 		}
 	}
 
+	/**
+	 * @param $event
+	 */
 	public function ucp_prefs_set_data($event)
 	{
 		$event['sql_ary'] = array_merge($event['sql_ary'], array(

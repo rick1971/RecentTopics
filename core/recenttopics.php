@@ -11,33 +11,43 @@
 
 namespace paybas\recenttopics\core;
 
+use part3\topicprefixes\core\topicprefixes;
+use phpbb\auth\auth;
+use phpbb\config\config;
+use phpbb\content_visibility;
+use phpbb\db\driver\driver_interface;
+use phpbb\event\dispatcher_interface;
+use phpbb\pagination;
+use phpbb\request\request_interface;
+use phpbb\template\template;
+
 class recenttopics
 {
-	/** @var \phpbb\auth\auth */
+	/** @var auth */
 	protected $auth;
 
-	/** @var \phpbb\config\config */
+	/** @var config */
 	protected $config;
 
 	/** @var \phpbb\cache\service */
 	protected $cache;
 
-	/** @var \phpbb\content_visibility */
+	/** @var content_visibility */
 	protected $content_visibility;
 
-	/** @var \phpbb\db\driver\driver_interface */
+	/** @var driver_interface */
 	protected $db;
 
-	/** @var \phpbb\event\dispatcher_interface */
+	/** @var dispatcher_interface */
 	protected $dispatcher;
 
-	/** @var \phpbb\pagination */
+	/** @var pagination */
 	protected $pagination;
 
-	/** @var \phpbb\request\request_interface */
+	/** @var request_interface */
 	protected $request;
 
-	/** @var \phpbb\template\template */
+	/** @var template */
 	protected $template;
 
 	/** @var \phpbb\user */
@@ -48,8 +58,73 @@ class recenttopics
 
 	/** @var string PHP extension */
 	protected $phpEx;
+	/**
+	 * @var topicprefixes
+	 */
+	private $topicprefixes;
 
-	public function __construct(\phpbb\auth\auth $auth, \phpbb\cache\service $cache, \phpbb\config\config $config, \phpbb\content_visibility $content_visibility, \phpbb\db\driver\driver_interface $db, \phpbb\event\dispatcher_interface $dispatcher, \phpbb\pagination $pagination, \phpbb\request\request_interface $request, \phpbb\template\template $template, \phpbb\user $user, $root_path, $phpEx)
+	/**
+	 * @var
+	 */
+	private $CanSeeTopics;
+
+	/**
+	 * array of allowable forum id's
+	 * @var array
+	 */
+	private $forum_ids;
+
+	/**
+	 * array of topics to show
+	 * @var array
+	 */
+	private $topic_list;
+
+
+	private $unread_only;
+
+	/**
+	 * show a forum icon ?
+	 * @var boolean
+	 */
+	private $obtain_icons;
+
+	/**
+	 * forum objects we need
+	 * @var array
+	 */
+	private $forums;
+
+	/**
+	 * recenttopics constructor.
+	 *
+	 * @param auth                                     $auth
+	 * @param \phpbb\cache\service                     $cache
+	 * @param config                                   $config
+	 * @param content_visibility                       $content_visibility
+	 * @param driver_interface                         $db
+	 * @param dispatcher_interface                     $dispatcher
+	 * @param pagination                               $pagination
+	 * @param request_interface                        $request
+	 * @param template                                 $template
+	 * @param \phpbb\user                              $user
+	 * @param                                          $root_path
+	 * @param                                          $phpEx
+	 * @param topicprefixes|NULL $topicprefixes
+	 */
+	public function __construct(auth $auth,
+	                            \phpbb\cache\service $cache,
+	                            config $config,
+	                            content_visibility $content_visibility,
+	                            driver_interface $db,
+	                            dispatcher_interface $dispatcher,
+	                            pagination $pagination,
+	                            request_interface $request,
+	                            template $template,
+	                            \phpbb\user $user,
+	                            $root_path,
+	                            $phpEx,
+	                            topicprefixes $topicprefixes = null)
 	{
 		$this->auth = $auth;
 		$this->cache = $cache;
@@ -63,8 +138,15 @@ class recenttopics
 		$this->user = $user;
 		$this->root_path = $root_path;
 		$this->phpEx = $phpEx;
+		$this->topicprefixes = $topicprefixes;
 	}
 
+
+	/**
+	 * @param string $tpl_loopname
+	 * @param int    $spec_forum_id
+	 * @param bool   $include_subforums
+	 */
 	public function display_recent_topics($tpl_loopname = 'recent_topics', $spec_forum_id = 0, $include_subforums = true)
 	{
 		$this->user->add_lang_ext('paybas/recenttopics', 'recenttopics');
@@ -72,18 +154,17 @@ class recenttopics
 		/**
 		 * Set some internal needed variables
 		 */
-		$topics_per_page = $this->config['rt_number'];
-		$num_pages = $this->config['rt_page_number'];
-		$min_topic_level = $this->config['rt_min_topic_level'];
-		$excluded_topics = explode(', ', $this->config['rt_anti_topics']);
+
 		$alt_location = $this->config['rt_alt_location'];
 		$display_parent_forums = $this->config['rt_parents'];
 		$sort_topics = ($this->config['rt_sort_start_time']) ? 'topic_time' : 'topic_last_post_time';
-		$unread_only = $this->config['rt_unread_only'];
+		$this->unread_only = $this->config['rt_unread_only'];
 
 		$start = $this->request->variable($tpl_loopname . '_start', 0);
+
+		$topics_per_page = $this->config['rt_number'];
+		$num_pages = $this->config['rt_page_number'];
 		$total_topics_limit = $topics_per_page * $num_pages;
-		$sql_forum_include_val = 1;
 
 		if (!function_exists('display_forums'))
 		{
@@ -112,145 +193,28 @@ class recenttopics
 
 			if ($this->auth->acl_get('u_rt_unread_only') && isset($this->user->data['user_rt_unread_only']))
 			{
-				$unread_only = $this->user->data['user_rt_unread_only'];
+				$this->unread_only = $this->user->data['user_rt_unread_only'];
 			}
 		}
 
-		/**
-		 * Get the forums we take our topics from
-		 */
-		// Get the allowed forums
-		$forum_ary = array();
-		$forum_read_ary = $this->auth->acl_getf('f_read');
-		foreach ($forum_read_ary as $forum_id => $allowed)
-		{
-			if ($allowed['f_read'])
-			{
-				$forum_ary[] = (int)$forum_id;
-			}
-		}
-		$forum_ids = array_unique($forum_ary);
+		$this->GetForumlist();
 
-		// No forums with f_read
-		if (!sizeof($forum_ids))
+		// No forums to display
+		if (count($this->forum_ids) == 0)
 		{
 			return;
 		}
 
-		$sql = 'SELECT forum_id
-			FROM ' . FORUMS_TABLE . '
-			WHERE ' . $this->db->sql_in_set('forum_id', $forum_ids) . '
-				AND forum_recent_topics = ' . $sql_forum_include_val;
-		$result = $this->db->sql_query($sql);
-
-		$forum_ids = array();
-		while ($row = $this->db->sql_fetchrow($result))
-		{
-			$forum_ids[] = $row['forum_id'];
-		}
-		$this->db->sql_freeresult($result);
-		$forum_ids = array_unique($forum_ids);
-
-		// No forums with f_read or recent topics enabled
-		if (!sizeof($forum_ids))
-		{
-			return;
-		}
-
-		$forums = $topic_list = array();
-		$topics_count = 0;
-		$obtain_icons = false;
-
-		// Either use the phpBB core function to get unread topics, or the custom function for default behavior
-		if ($unread_only && $this->user->data['user_id'] != ANONYMOUS)
-		{
-			// Get unread topics
-			$sql_extra = ' AND ' . $this->db->sql_in_set('t.topic_id', $excluded_topics, true);
-			$sql_extra .= ' AND ' . $this->content_visibility->get_forums_visibility_sql('topic', $forum_ids, $table_alias = 't.');
-			$unread_topics = get_unread_topics(false, $sql_extra, '', $total_topics_limit);
-
-			foreach ($unread_topics as $topic_id => $mark_time)
-			{
-				$topics_count++;
-				if (($topics_count > $start) && ($topics_count <= ($start + $topics_per_page)))
-				{
-					$topic_list[] = $topic_id;
-				}
-			}
-		}
-		else
-		{
-			// Get the allowed topics
-			$sql_array = array(
-				'SELECT'    => 't.forum_id, t.topic_id, t.topic_type, t.icon_id, tt.mark_time, ft.mark_time as f_mark_time',
-				'FROM'      => array(TOPICS_TABLE => 't'),
-				'LEFT_JOIN' => array(
-					array(
-						'FROM' => array(TOPICS_TRACK_TABLE => 'tt'),
-						'ON'   => 'tt.topic_id = t.topic_id AND tt.user_id = ' . $this->user->data['user_id'],
-					),
-					array(
-						'FROM' => array(FORUMS_TRACK_TABLE => 'ft'),
-						'ON'   => 'ft.forum_id = t.forum_id AND ft.user_id = ' . $this->user->data['user_id'],
-					),
-				),
-				'WHERE'     => $this->db->sql_in_set('t.topic_id', $excluded_topics, true) . '
-					AND t.topic_status <> ' . ITEM_MOVED . '
-					AND ' . $this->content_visibility->get_forums_visibility_sql('topic', $forum_ids, $table_alias = 't.'),
-				'ORDER_BY'  => 't.' . $sort_topics . ' DESC',
-			);
-
-			// Check if we want all topics, or only stickies/announcements/globals
-			if ($min_topic_level > 0)
-			{
-				$sql_array['WHERE'] .= ' AND t.topic_type >= ' . $min_topic_level;
-			}
-
-			/**
-			* Event to modify the SQL query before the allowed topics list data is retrieved
-			*
-			* @event paybas.recenttopics.sql_pull_topics_list
-			* @var    array    sql_array        The SQL array
-			* @since 2.0.4
-			*/
-			$vars = array('sql_array');
-			extract($this->dispatcher->trigger_event('paybas.recenttopics.sql_pull_topics_list', compact($vars)));
-
-			$sql = $this->db->sql_build_query('SELECT', $sql_array);
-			$result = $this->db->sql_query_limit($sql, $total_topics_limit);
-
-			while ($row = $this->db->sql_fetchrow($result))
-			{
-				$topics_count++;
-				if (($topics_count > $start) && ($topics_count <= ($start + $topics_per_page)))
-				{
-					$topic_list[] = $row['topic_id'];
-
-					$rowset[$row['topic_id']] = $row;
-					if (!isset($forums[$row['forum_id']]) && $this->user->data['is_registered'] && $this->config['load_db_lastread'])
-					{
-						$forums[$row['forum_id']]['mark_time'] = $row['f_mark_time'];
-					}
-					$forums[$row['forum_id']]['topic_list'][] = $row['topic_id'];
-					$forums[$row['forum_id']]['rowset'][$row['topic_id']] = & $rowset[$row['topic_id']];
-
-					if ($row['icon_id'] && $this->auth->acl_get('f_icons', $row['forum_id']))
-					{
-						$obtain_icons = true;
-					}
-				}
-			}
-			$this->db->sql_freeresult($result);
-		}
+		$topics_count = $this->GetTopicList($start, $topics_per_page, $total_topics_limit, $sort_topics);
 
 		// No topics to display
-		if (!sizeof($topic_list))
+		if (!sizeof($this->topic_list))
 		{
 			return;
 		}
 
 		// Grab icons
-		if ($obtain_icons)
+		if ($this->obtain_icons)
 		{
 			$icons = $this->cache->obtain_icons();
 		}
@@ -260,7 +224,7 @@ class recenttopics
 		}
 
 		// Borrowed from search.php
-		foreach ($forums as $forum_id => $forum)
+		foreach ($this->forums as $forum_id => $forum)
 		{
 			if ($this->user->data['is_registered'] && $this->config['load_db_lastread'])
 			{
@@ -268,7 +232,7 @@ class recenttopics
 			}
 			else if ($this->config['load_anon_lastread'] || $this->user->data['is_registered'])
 			{
-				$tracking_topics = $this->request->variable($this->config['cookie_name'] . '_track', '', true, \phpbb\request\request_interface::COOKIE);
+				$tracking_topics = $this->request->variable($this->config['cookie_name'] . '_track', '', true, request_interface::COOKIE);
 				$tracking_topics = ($tracking_topics) ? tracking_unserialize($tracking_topics) : array();
 
 				$topic_tracking_info[$forum_id] = get_complete_topic_tracking($forum_id, $forum['topic_list'], ($forum_id) ? false : $forum['topic_list']);
@@ -294,7 +258,7 @@ class recenttopics
 					'ON'   => 'f.forum_id = t.forum_id',
 				),
 			),
-			'WHERE'     => $this->db->sql_in_set('t.topic_id', $topic_list),
+			'WHERE'     => $this->db->sql_in_set('t.topic_id', $this->topic_list),
 			'ORDER_BY'  => 't.' . $sort_topics . ' DESC',
 		);
 
@@ -304,12 +268,12 @@ class recenttopics
 		}
 
 		/**
-		* Event to modify the SQL query before the topics data is retrieved
-		*
-		* @event paybas.recenttopics.sql_pull_topics_data
-		* @var    array    sql_array        The SQL array
-		* @since 2.0.0
-		*/
+		 * Event to modify the SQL query before the topics data is retrieved
+		 *
+		 * @event paybas.recenttopics.sql_pull_topics_data
+		 * @var    array    sql_array        The SQL array
+		 * @since 2.0.0
+		 */
 		$vars = array('sql_array');
 		extract($this->dispatcher->trigger_event('paybas.recenttopics.sql_pull_topics_data', compact($vars)));
 
@@ -331,15 +295,17 @@ class recenttopics
 		}
 
 		/**
-		* Event to modify the topics list data before we start the display loop
-		*
-		* @event paybas.recenttopics.modify_topics_list
-		* @var    array    topic_list        Array of all the topic IDs
-		* @var    array    rowset            The full topics list array
-		* @since 2.0.1
-		*/
+		 * Event to modify the topics list data before we start the display loop
+		 *
+		 * @event paybas.recenttopics.modify_topics_list
+		 * @var    array    topic_list        Array of all the topic IDs
+		 * @var    array    rowset            The full topics list array
+		 * @since 2.0.1
+		 */
 		$vars = array('topic_list', 'rowset');
-		extract($this->dispatcher->trigger_event('paybas.recenttopics.modify_topics_list', compact($vars)));
+
+		$modify_topics_list = $this->dispatcher->trigger_event('paybas.recenttopics.modify_topics_list', compact($vars));
+		extract($modify_topics_list);
 
 		foreach ($rowset as $row)
 		{
@@ -350,7 +316,7 @@ class recenttopics
 			//$replies = ($this->auth->acl_get('m_approve', $forum_id)) ? $row['topic_replies_real'] : $row['topic_replies'];
 			$replies = $this->content_visibility->get_count('topic_posts', $row, $forum_id) - 1;
 
-			if ($unread_only)
+			if ($this->unread_only)
 			{
 				topic_status($row, $replies, true, $folder_img, $folder_alt, $topic_type);
 				$unread_topic = true;
@@ -379,6 +345,16 @@ class recenttopics
 			$folder_img = $folder_alt = $topic_type = '';
 			topic_status($row, $replies, $unread_topic, $folder_img, $folder_alt, $topic_type);
 
+			$topic_title = censor_text($row['topic_title']);
+
+			if ($this->topicprefixes !== null)
+			{
+				if (!empty($row['topic_prefix']))
+				{
+					$topic_title =  '[' . $row['topic_prefix'] . '] ' . $topic_title;
+				}
+			}
+
 			$tpl_ary = array(
 				'FORUM_ID'                => $forum_id,
 				'TOPIC_ID'                => $topic_id,
@@ -396,7 +372,7 @@ class recenttopics
 
 				'REPLIES'                 => $replies,
 				'VIEWS'                   => $row['topic_views'],
-				'TOPIC_TITLE'             => censor_text($row['topic_title']),
+				'TOPIC_TITLE'             => $topic_title,
 				'FORUM_NAME'              => $row['forum_name'],
 
 				'TOPIC_TYPE'              => $topic_type,
@@ -437,13 +413,13 @@ class recenttopics
 			);
 
 			/**
-			* Modify the topic data before it is assigned to the template
-			*
-			* @event paybas.recenttopics.modify_tpl_ary
-			* @var    array    row            Array with topic data
-			* @var    array    tpl_ary        Template block array with topic data
-			* @since 2.0.0
-			*/
+			 * Modify the topic data before it is assigned to the template
+			 *
+			 * @event paybas.recenttopics.modify_tpl_ary
+			 * @var    array    row            Array with topic data
+			 * @var    array    tpl_ary        Template block array with topic data
+			 * @since 2.0.0
+			 */
 			$vars = array('row', 'tpl_ary');
 			extract($this->dispatcher->trigger_event('paybas.recenttopics.modify_tpl_ary', compact($vars)));
 
@@ -489,7 +465,10 @@ class recenttopics
 		}
 
 		// Some styles simply aren't compatible with alternative display locations
-		$alt_loc_incomp_list = array('pbtech','pbwow3','pbwow3_battlecry','pbwow3_diablo','pbwow3_garrison','pbwow3_heroes','pbwow3_pandaria','pbwow3_tbc','pbwow3_tech','pbwow3_tribute','pbwow3_warlords','pbwow3_wildstar','pbwow3_wotlk','pbwow3_xmas');
+		$alt_loc_incomp_list = array('pbtech','pbwow3','pbwow3_battlecry','pbwow3_diablo','pbwow3_garrison',
+			'pbwow3_heroes','pbwow3_pandaria','pbwow3_tbc','pbwow3_tech','pbwow3_tribute','pbwow3_warlords',
+			'pbwow3_wildstar','pbwow3_wotlk','pbwow3_xmas');
+
 		if (in_array($this->user->style['style_path'], $alt_loc_incomp_list))
 		{
 			$alt_location = false;
@@ -508,4 +487,148 @@ class recenttopics
 			strtoupper($tpl_loopname) . '_DISPLAY' => true,
 		));
 	}
+
+
+	/**
+	 * Get the forums we take our topics from
+	 */
+	private function GetForumlist()
+	{
+		// Get the allowed forums
+		$forum_ary = array();
+		$forum_read_ary = $this->auth->acl_getf('f_read');
+		foreach ($forum_read_ary as $forum_id => $allowed)
+		{
+			if ($allowed['f_read'])
+			{
+				$forum_ary[] = (int)$forum_id;
+			}
+		}
+		$this->forum_ids = array_unique($forum_ary);
+
+		if (count($this->forum_ids) > 1)
+		{
+
+			$sql_forum_include_val = 1;
+			$sql = 'SELECT forum_id
+					FROM ' . FORUMS_TABLE . '
+					WHERE ' . $this->db->sql_in_set('forum_id', $this->forum_ids) . '
+					AND forum_recent_topics = ' . $sql_forum_include_val;
+
+			$result = $this->db->sql_query($sql);
+
+			$this->forum_ids = array();
+			while ($row = $this->db->sql_fetchrow($result))
+			{
+				$this->forum_ids[] = $row['forum_id'];
+			}
+			$this->db->sql_freeresult($result);
+			$this->forum_ids = array_unique($this->forum_ids);
+
+		}
+	}
+
+	/**
+	 * Get the topic list
+	 * @param $start
+	 * @param $topics_per_page
+	 * @param $total_topics_limit
+	 * @param $sort_topics
+	 * @return int
+	 */
+	private function GetTopicList($start, $topics_per_page, $total_topics_limit, $sort_topics)
+	{
+		$this->topic_list = array();
+		$topics_count = 0;
+		$this->obtain_icons = false;
+		$excluded_topics = explode(', ', $this->config['rt_anti_topics']);
+		$min_topic_level = $this->config['rt_min_topic_level'];
+
+		// Either use the phpBB core function to get unread topics, or the custom function for default behavior
+		if ($this->unread_only && $this->user->data['user_id'] != ANONYMOUS)
+		{
+			// Get unread topics
+			$sql_extra = ' AND ' . $this->db->sql_in_set('t.topic_id', $excluded_topics, true);
+			$sql_extra .= ' AND ' . $this->content_visibility->get_forums_visibility_sql('topic', $this->forum_ids, $table_alias = 't.');
+			$unread_topics = get_unread_topics(false, $sql_extra, '', $total_topics_limit);
+
+			foreach ($unread_topics as $topic_id => $mark_time)
+			{
+				$topics_count++;
+				if (($topics_count > $start) && ($topics_count <= ($start + $topics_per_page)))
+				{
+					$this->topic_list[] = $topic_id;
+				}
+			}
+		}
+		else
+		{
+			// Get the allowed topics
+			$sql_array = array(
+				'SELECT'    => 't.forum_id, t.topic_id, t.topic_type, t.icon_id, tt.mark_time, ft.mark_time as f_mark_time',
+				'FROM'      => array(TOPICS_TABLE => 't'),
+				'LEFT_JOIN' => array(
+					array(
+						'FROM' => array(TOPICS_TRACK_TABLE => 'tt'),
+						'ON'   => 'tt.topic_id = t.topic_id AND tt.user_id = ' . $this->user->data['user_id'],
+					),
+					array(
+						'FROM' => array(FORUMS_TRACK_TABLE => 'ft'),
+						'ON'   => 'ft.forum_id = t.forum_id AND ft.user_id = ' . $this->user->data['user_id'],
+					),
+				),
+				'WHERE'     => $this->db->sql_in_set('t.topic_id', $excluded_topics, true) . '
+					AND t.topic_status <> ' . ITEM_MOVED . '
+					AND ' . $this->content_visibility->get_forums_visibility_sql('topic', $this->forum_ids, $table_alias = 't.'),
+				'ORDER_BY'  => 't.' . $sort_topics . ' DESC',
+			);
+
+			// Check if we want all topics, or only stickies/announcements/globals
+			if ($min_topic_level > 0)
+			{
+				$sql_array['WHERE'] .= ' AND t.topic_type >= ' . $min_topic_level;
+			}
+
+			/**
+			 * Event to modify the SQL query before the allowed topics list data is retrieved
+			 *
+			 * @event paybas.recenttopics.sql_pull_topics_list
+			 * @var    array    sql_array        The SQL array
+			 * @since 2.0.4
+			 */
+			$vars = array('sql_array');
+			extract($this->dispatcher->trigger_event('paybas.recenttopics.sql_pull_topics_list', compact($vars)));
+
+			$sql = $this->db->sql_build_query('SELECT', $sql_array);
+			$result = $this->db->sql_query_limit($sql, $total_topics_limit);
+
+			while ($row = $this->db->sql_fetchrow($result))
+			{
+				$topics_count++;
+				if (($topics_count > $start) && ($topics_count <= ($start + $topics_per_page)))
+				{
+					$this->topic_list[] = $row['topic_id'];
+
+					$rowset[$row['topic_id']] = $row;
+					if (!isset($this->forums[$row['forum_id']]) && $this->user->data['is_registered'] && $this->config['load_db_lastread'])
+					{
+						$this->forums[$row['forum_id']]['mark_time'] = $row['f_mark_time'];
+					}
+					$this->forums[$row['forum_id']]['topic_list'][] = $row['topic_id'];
+					$this->forums[$row['forum_id']]['rowset'][$row['topic_id']] = & $rowset[$row['topic_id']];
+
+					if ($row['icon_id'])
+					{
+						$this->obtain_icons = true;
+					}
+
+				}
+			}
+			$this->db->sql_freeresult($result);
+		}
+
+		return $topics_count;
+
+	}
+
 }
