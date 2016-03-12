@@ -524,7 +524,7 @@ class recenttopics
 		{
 			if ($allowed['f_read'])
 			{
-				$forum_ary[] = (int)$forum_id;
+				$forum_ary[] = (int) $forum_id;
 			}
 		}
 		$this->forum_ids = array_unique($forum_ary);
