@@ -11,9 +11,11 @@
 
 namespace paybas\recenttopics\core;
 
+use phpbb\auth\auth;
+
 class recenttopics
 {
-	/** @var \phpbb\auth\auth */
+	/** @var auth */
 	protected $auth;
 
 	/** @var \phpbb\config\config */
@@ -49,7 +51,23 @@ class recenttopics
 	/** @var string PHP extension */
 	protected $phpEx;
 
-	public function __construct(\phpbb\auth\auth $auth, \phpbb\cache\service $cache, \phpbb\config\config $config, \phpbb\content_visibility $content_visibility, \phpbb\db\driver\driver_interface $db, \phpbb\event\dispatcher_interface $dispatcher, \phpbb\pagination $pagination, \phpbb\request\request_interface $request, \phpbb\template\template $template, \phpbb\user $user, $root_path, $phpEx)
+	/**
+	 * recenttopics constructor.
+	 *
+	 * @param auth                  $auth
+	 * @param \phpbb\cache\service              $cache
+	 * @param \phpbb\config\config              $config
+	 * @param \phpbb\content_visibility         $content_visibility
+	 * @param \phpbb\db\driver\driver_interface $db
+	 * @param \phpbb\event\dispatcher_interface $dispatcher
+	 * @param \phpbb\pagination                 $pagination
+	 * @param \phpbb\request\request_interface  $request
+	 * @param \phpbb\template\template          $template
+	 * @param \phpbb\user                       $user
+	 * @param                                   $root_path
+	 * @param                                   $phpEx
+	 */
+	public function __construct(auth $auth, \phpbb\cache\service $cache, \phpbb\config\config $config, \phpbb\content_visibility $content_visibility, \phpbb\db\driver\driver_interface $db, \phpbb\event\dispatcher_interface $dispatcher, \phpbb\pagination $pagination, \phpbb\request\request_interface $request, \phpbb\template\template $template, \phpbb\user $user, $root_path, $phpEx)
 	{
 		$this->auth = $auth;
 		$this->cache = $cache;
@@ -65,6 +83,11 @@ class recenttopics
 		$this->phpEx = $phpEx;
 	}
 
+	/**
+	 * @param string $tpl_loopname
+	 * @param int    $spec_forum_id
+	 * @param bool   $include_subforums
+	 */
 	public function display_recent_topics($tpl_loopname = 'recent_topics', $spec_forum_id = 0, $include_subforums = true)
 	{
 		$this->user->add_lang_ext('paybas/recenttopics', 'recenttopics');
@@ -234,10 +257,11 @@ class recenttopics
 					$forums[$row['forum_id']]['topic_list'][] = $row['topic_id'];
 					$forums[$row['forum_id']]['rowset'][$row['topic_id']] = & $rowset[$row['topic_id']];
 
-					if ($row['icon_id'] && $this->auth->acl_get('f_icons', $row['forum_id']))
+					if ($row['icon_id'])
 					{
 						$obtain_icons = true;
 					}
+
 				}
 			}
 			$this->db->sql_freeresult($result);
