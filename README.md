@@ -2,13 +2,11 @@ Recent Topics for phpBB 3.1
 ============
 
 Extension for phpBB 3.1 to display recent topics.
+Based on NV Recent Topics for phpBB 3.0, by Joas Schilling ([nickvergessen](https://github.com/nickvergessen))
 
 ![Screenshot](screenshot.png)
 
-##### Based on NV Recent Topics for phpBB 3.0, by Joas Schilling ([nickvergessen](https://github.com/nickvergessen))
-
-
-## Features
+#### Features
 - Adds a list of recent (or unread) topics to the index page.
 - ACP module to change:
   - number of topics to show
@@ -28,9 +26,9 @@ Extension for phpBB 3.1 to display recent topics.
   - PBTech
   - we_universal
 
-
 #### Version
 v2.0.6 (12-3-2016)
+[![Build Status](https://api.travis-ci.org/Sajaki/RecentTopics.svg)](https://travis-ci.org/Sajaki/RecentTopics)
 
 #### Requirements
 - phpBB 3.1.0 or higher
@@ -42,14 +40,13 @@ v2.0.6 (12-3-2016)
 #### To do list
 - Add option to have stickies/announcements at the top
 
-  
-## Installation
+### Installation
 1. [Download the latest release](https://github.com/sajaki/RecentTopics/releases) and unzip it.
 2. Copy the entire contents from the unzipped folder to `/ext/paybas/recenttopics/`.
 3. Navigate in the ACP to `Customise -> Manage extensions`.
 4. Find `Recent Topics` under "Disabled Extensions" and click `Enable`.
 
-## Uninstallation
+#### Uninstallation
 1. Navigate in the ACP to `Customise -> Manage extensions`.
 2. Click the `Disable` link for `Recent Topics`.
 3. To permanently uninstall, click `Delete Data`, then delete the `recenttopics` folder from `/ext/paybas/`.
