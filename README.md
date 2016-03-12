@@ -20,6 +20,7 @@ Extension for phpBB 3.1 to display recent topics.
   - sort by topic start time, instead of last post time
 - UCP permissions and settings so users can choose their own preferences
 - Inherits all styling from regular "viewforum" templates
+- compatible with Topic Prefix Extension from Stathis
 - Tested on:
   - prosilver
   - subsilver2

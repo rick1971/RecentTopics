@@ -12,4 +12,4 @@
   - [FIX] #17 Mark topics as read when using the forum AJAX function, fixes issue (Kasimi)
   - [UPD] Japanese translation (momo-i)     
   - [FIX] #1 topic icons show also when logged out 
-   
+  - [NEW] compatible with Topic Prefix Extension from Stathis
