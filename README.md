@@ -56,18 +56,6 @@ Extension for phpBB 3.1 to display recent topics.
 - Add compatibility for topic prefixes and allow exclusion/inclusion based on predefined prefixes.
 - Add option to have stickies/announcements at the top
 
-### Changelog 
-- 2.0.6-dev - 12/03/2016
-  - [NEW] Croatian translation (Ancica) 
-  - [NEW] Hungarian translation (aszilagyi)
-  - [NEW] Estonian translation (phpBBeesti)
-  - [NEW] Arabic translation (Alhitary)  
-  - [NEW] Turkish translation (edipdincer)   
-  - [NEW] Italian translation (Mauron)     
-  - [FIX] Danish translation (jensz12)       
-  - [UPD] French translation (Galixte)      
-  - [FIX] #17 Mark topics as read when using the forum AJAX function, fixes issue (Kasimi)
-  - [UPD] Japanese translation (momo-i)     
   
 ## Installation
 1. [Download the latest release](https://github.com/sajaki/RecentTopics/releases) and unzip it.
