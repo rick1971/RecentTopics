@@ -32,29 +32,12 @@ Extension for phpBB 3.1 to display recent topics.
 - PHP 5.3.3 or higher
 
 #### Languages supported
-- English
-- German
-- Spanish
-- French
-- Russian
-- Greek
-- Dutch
-- Italian
-- Japanese
-- Swedish
-- Estonian
-- Persian
-- Arabic
-- Turkish
-- Polish
-- Romanian
-- Croatian  
-- Hungarian
-- Danish       
+- English, German, Spanish, French, Russian, Greek, Dutch, Italian, Japanese, Swedish, Estonian, Persian, Arabic, Turkish, Polish, Romanian, Croatian, Hungarian, Danish       
   
 #### To do list
 - Add compatibility for topic prefixes and allow exclusion/inclusion based on predefined prefixes.
 - Add option to have stickies/announcements at the top
+imkingdavid/prefixed
 
   
 ## Installation
