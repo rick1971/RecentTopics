@@ -239,7 +239,14 @@ class recenttopics
 
 				if (!$this->user->data['is_registered'])
 				{
-					$this->user->data['user_lastmark'] = (isset($tracking_topics['l'])) ? (int)(base_convert($tracking_topics['l'], 36, 10) + $this->config['board_startdate']) : 0;
+					if ((isset($tracking_topics['l'])))
+					{
+						$this->user->data['user_lastmark'] = (int) (base_convert($tracking_topics['l'], 36, 10) + $this->config['board_startdate']);
+					}
+					else
+					{
+						$this->user->data['user_lastmark'] = 0;
+					}
 				}
 			}
 		}
@@ -316,6 +323,9 @@ class recenttopics
 			//$replies = ($this->auth->acl_get('m_approve', $forum_id)) ? $row['topic_replies_real'] : $row['topic_replies'];
 			$replies = $this->content_visibility->get_count('topic_posts', $row, $forum_id) - 1;
 
+			// Get folder img, topic status/type related information
+			$folder_img = $folder_alt = $topic_type = '';
+
 			if ($this->unread_only)
 			{
 				topic_status($row, $replies, true, $folder_img, $folder_alt, $topic_type);
@@ -323,8 +333,23 @@ class recenttopics
 			}
 			else
 			{
-				topic_status($row, $replies, (isset($topic_tracking_info[$forum_id][$row['topic_id']]) && $row['topic_last_post_time'] > $topic_tracking_info[$forum_id][$row['topic_id']]) ? true : false, $folder_img, $folder_alt, $topic_type);
-				$unread_topic = (isset($topic_tracking_info[$forum_id][$row['topic_id']]) && $row['topic_last_post_time'] > $topic_tracking_info[$forum_id][$row['topic_id']]) ? true : false;
+				if ((isset($topic_tracking_info[$forum_id][$row['topic_id']]) && $row['topic_last_post_time'] > $topic_tracking_info[$forum_id][$row['topic_id']]))
+				{
+					topic_status($row, $replies, true, $folder_img, $folder_alt, $topic_type);
+				}
+				else
+				{
+					topic_status($row, $replies, false, $folder_img, $folder_alt, $topic_type);
+				}
+
+				if ((isset($topic_tracking_info[$forum_id][$row['topic_id']]) && $row['topic_last_post_time'] > $topic_tracking_info[$forum_id][$row['topic_id']]))
+				{
+					$unread_topic = true;
+				}
+				else
+				{
+					$unread_topic = false;
+				}
 			}
 
 			$view_topic_url = append_sid("{$this->root_path}viewtopic.$this->phpEx", 'f=' . $forum_id . '&amp;t=' . $topic_id);
@@ -341,8 +366,6 @@ class recenttopics
 				$topic_icons[] = $topic_id;
 			}
 
-			// Get folder img, topic status/type related information
-			$folder_img = $folder_alt = $topic_type = '';
 			topic_status($row, $replies, $unread_topic, $folder_img, $folder_alt, $topic_type);
 
 			$topic_title = censor_text($row['topic_title']);
