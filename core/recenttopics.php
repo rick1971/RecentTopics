@@ -281,8 +281,8 @@ class recenttopics
 		 * @var    array    sql_array        The SQL array
 		 * @since 2.0.0
 		 */
-		$vars = array('sql_array');
-		extract($this->dispatcher->trigger_event('paybas.recenttopics.sql_pull_topics_data', compact($vars)));
+		extract($this->dispatcher->trigger_event('paybas.recenttopics.sql_pull_topics_data',
+				array('sql_array' => $sql_array )));
 
 		$sql = $this->db->sql_build_query('SELECT', $sql_array);
 		$result = $this->db->sql_query_limit($sql, $topics_per_page);
