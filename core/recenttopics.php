@@ -309,9 +309,10 @@ class recenttopics
 		 * @var    array    rowset            The full topics list array
 		 * @since 2.0.1
 		 */
-		$vars = array('topic_list', 'rowset');
-		$modify_topics_list = (array) $this->dispatcher->trigger_event('paybas.recenttopics.modify_topics_list', compact($vars));
-		extract($modify_topics_list);
+		extract ($this->dispatcher->trigger_event('paybas.recenttopics.modify_topics_list',
+			array( 'topic_list' => $this->topic_list,
+				   'rowset' => $rowset)
+			));
 
 		foreach ($rowset as $row)
 		{
