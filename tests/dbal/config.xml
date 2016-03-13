@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataset>
+    <table name="phpbb_config">
+        <column>config_name</column>
+        <column>config_value</column>
+        <column>is_dynamic</column>
+        <row>
+            <value>rt_alt_location</value>
+            <value></value>
+            <value>0</value>
+        </row>
+        <row>
+            <value>rt_anti_topics</value>
+            <value>0</value>
+            <value>0</value>
+        </row>
+        <row>
+            <value>rt_index</value>
+            <value>1</value>
+            <value>0</value>
+        </row>
+        <row>
+            <value>rt_min_topic_level</value>
+            <value>0</value>
+            <value>0</value>
+        </row>
+        <row>
+            <value>rt_number</value>
+            <value>5</value>
+            <value>0</value>
+        </row>
+        <row>
+            <value>rt_on_newspage</value>
+            <value>0</value>
+            <value>0</value>
+        </row>
+        <row>
+            <value>rt_page_number</value>
+            <value>0</value>
+            <value>0</value>
+        </row>
+        <row>
+            <value>rt_parents</value>
+            <value>1</value>
+            <value>0</value>
+        </row>
+        <row>
+            <value>rt_sort_start_time</value>
+            <value></value>
+            <value>0</value>
+        </row>
+        <row>
+            <value>rt_unread_only</value>
+            <value></value>
+            <value>0</value>
+        </row>
+        <row>
+            <value>rt_version</value>
+            <value>2.0.6</value>
+            <value>0</value>
+        </row>
+
+
+
+
+
+    </table>
+</dataset>
