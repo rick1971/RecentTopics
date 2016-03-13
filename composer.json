@@ -29,6 +29,10 @@
         "php": ">=5.3.3",
         "composer/installers": "~1.0"
     },
+    "require-dev": {
+        "phpbb/epv": "dev-master",
+        "phpbb/translation-validator" : "1.3.*"
+    },
     "extra": {
         "display-name": "Recent Topics",
         "soft-require": {
