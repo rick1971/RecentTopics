@@ -8,20 +8,19 @@
  * @license GNU General Public License, version 2 (GPL-2.0)
  *
  * Based on the original NV Recent Topics by Joas Schilling (nickvergessen)
- *
  */
-if (!defined('IN_PHPBB'))
-{
-	exit;
+if (!defined('IN_PHPBB')) {
+    exit;
 }
-if (empty($lang) || !is_array($lang))
-{
-	$lang = array();
+if (empty($lang) || !is_array($lang)) {
+    $lang = array();
 }
-$lang = array_merge($lang, array(
-	'ACL_U_RT_VIEW'            => 'Hiljutised teemad: vaade (master)',
-	'ACL_U_RT_ENABLE'          => 'Hiljutised teemad: luba või keela',
-	'ACL_U_RT_ALT_LOCATION'    => 'Hiljutised teemad: kasuta alternatiivset asukohta',
-	'ACL_U_RT_SORT_START_TIME' => 'Hiljutised teemad: muuda sorteerimis järjekorda',
-	'ACL_U_RT_UNREAD_ONLY'     => 'Hiljutised teemad: kasuta ainult lugemata režiimi',
-));
+$lang = array_merge(
+    $lang, array(
+    'ACL_U_RT_VIEW'            => 'Hiljutised teemad: vaade (master)',
+    'ACL_U_RT_ENABLE'          => 'Hiljutised teemad: luba või keela',
+    'ACL_U_RT_ALT_LOCATION'    => 'Hiljutised teemad: kasuta alternatiivset asukohta',
+    'ACL_U_RT_SORT_START_TIME' => 'Hiljutised teemad: muuda sorteerimis järjekorda',
+    'ACL_U_RT_UNREAD_ONLY'     => 'Hiljutised teemad: kasuta ainult lugemata režiimi',
+    )
+);
