@@ -6,7 +6,6 @@
  * @license GNU General Public License, version 2 (GPL-2.0)
  *
  * Based on the original NV Recent Topics by Joas Schilling (nickvergessen)
- *
  */
 
 namespace paybas\recenttopics\acp;
@@ -26,10 +25,8 @@ class recenttopics_module
 		$form_key = 'acp_recenttopics';
 		add_form_key($form_key);
 
-		if ($request->is_set_post('submit'))
-		{
-			if (!check_form_key($form_key))
-			{
+		if ($request->is_set_post('submit')) {
+			if (!check_form_key($form_key)) {
 				trigger_error($user->lang('FORM_INVALID') . adm_back_link($this->u_action), E_USER_WARNING);
 			}
 
@@ -68,7 +65,8 @@ class recenttopics_module
 			trigger_error($user->lang['CONFIG_UPDATED'] . adm_back_link($this->u_action));
 		}
 
-		$template->assign_vars(array(
+		$template->assign_vars(
+			array(
 			'RT_ALT_LOCATION'    => isset($config['rt_alt_location']) ? $config['rt_alt_location'] : false,
 			'RT_ANTI_TOPICS'     => isset($config['rt_anti_topics']) ? $config['rt_anti_topics'] : '',
 			'RT_MIN_TOPIC_LEVEL' => isset($config['rt_min_topic_level']) ? $config['rt_min_topic_level'] : '',
@@ -77,12 +75,11 @@ class recenttopics_module
 			'RT_PARENTS'         => isset($config['rt_parents']) ? $config['rt_parents'] : false,
 			'RT_UNREAD_ONLY'     => isset($config['rt_unread_only']) ? $config['rt_unread_only'] : false,
 			'RT_SORT_START_TIME' => isset($config['rt_sort_start_time']) ? $config['rt_sort_start_time'] : false,
-
 			'RT_INDEX'           => isset($config['rt_index']) ? $config['rt_index'] : false,
 			'RT_ON_NEWSPAGE'     => isset($config['rt_on_newspage']) ? $config['rt_on_newspage'] : false,
 			'S_RT_NEWSPAGE'      => $phpbb_extension_manager->is_enabled('nickvergessen/newspage'),
-
 			'U_ACTION'           => $this->u_action,
-		));
+			)
+		);
 	}
 }

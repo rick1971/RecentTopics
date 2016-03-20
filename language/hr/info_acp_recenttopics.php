@@ -8,19 +8,17 @@
  * @license GNU General Public License, version 2 (GPL-2.0)
  *
  * Based on the original NV Recent Topics by Joas Schilling (nickvergessen)
- *
  */
 
-if (!defined('IN_PHPBB'))
-{
+if (!defined('IN_PHPBB')) {
 	exit;
 }
-if (empty($lang) || !is_array($lang))
-{
+if (empty($lang) || !is_array($lang)) {
 	$lang = array();
 }
 
-$lang = array_merge($lang, array(
+$lang = array_merge(
+	$lang, array(
 	'RECENT_TOPICS'=>'Aktualne teme',
 	'RECENT_TOPICS_LIST'=>'Prikaži na "Aktualnim temama"',
 	'RECENT_TOPICS_LIST_EXPLAIN'=>'Ukoliko izabereš “Da”, teme postane u [ovaj] forum bit će prikazane na listi aktualnih tema.',
@@ -40,4 +38,5 @@ $lang = array_merge($lang, array(
 	'RT_UNREADONLY'=>'Prikaži samo nepročitane teme',
 	'RT_UNREADONLY_EXP'=>'Ukoliko izabereš “Da”, bit će prikazane [samo] nepročitane teme - neovisno o tome jesu li ili nisu aktualne [(ova) funkcija koristi iste postavke kao normalan način rada (izuzimanje  foruma/tema i sl.) i odnosi se samo na prijavljene korisnike/ce što će reći da će samo njima biti prikazane (samo) nepročitane teme dok će gostima biti prikazane sve (aktualne) teme].',
 	'RT_VIEW_ON'=>'Prikaži "Aktualne teme" na:',
-));
+	)
+);

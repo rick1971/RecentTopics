@@ -8,42 +8,41 @@
  * @license GNU General Public License, version 2 (GPL-2.0)
  *
  * Based on the original NV Recent Topics by Joas Schilling (nickvergessen)
- *
  */
 
-if (!defined('IN_PHPBB'))
-{
+if (!defined('IN_PHPBB')) {
 	exit;
 }
-if (empty($lang) || !is_array($lang))
-{
+if (empty($lang) || !is_array($lang)) {
 	$lang = array();
 }
 
-$lang = array_merge($lang, array(
-	'RECENT_TOPICS'					=> 'Aktuella ämnen',
-	'RECENT_TOPICS_EXPLAIN'			=> 'On this page you can change the settings specific for the Recent Topics extension.<br /><br />Specific forums can be included or excluded by editing the respective forums in your ACP.<br />Also be sure to check your user permissions, which allow users to change some of the settings found below for themselves.',
+$lang = array_merge(
+	$lang, array(
+	'RECENT_TOPICS'                    => 'Aktuella ämnen',
+	'RECENT_TOPICS_EXPLAIN'            => 'On this page you can change the settings specific for the Recent Topics extension.<br /><br />Specific forums can be included or excluded by editing the respective forums in your ACP.<br />Also be sure to check your user permissions, which allow users to change some of the settings found below for themselves.',
 
-	'RECENT_TOPICS_LIST'			=> 'Visa i "Aktuella ämnen"',
-	'RECENT_TOPICS_LIST_EXPLAIN'	=> 'Aktivera denna funktion för att visa ämnen i tillägget "Aktuella ämnen".',
+	'RECENT_TOPICS_LIST'            => 'Visa i "Aktuella ämnen"',
+	'RECENT_TOPICS_LIST_EXPLAIN'    => 'Aktivera denna funktion för att visa ämnen i tillägget "Aktuella ämnen".',
 
-	'RT_CONFIG'						=> 'Inställningar',
-	'RT_ALT_LOCATION'				=> 'Display in alternative location',
-	'RT_ALT_LOCATION_EXP'			=> 'Use alternative location to display recent topics.<br />Not all styles will support this, for prosilver it will be moved to the bottom of the page.',
-	'RT_ANTI_TOPICS'				=> 'Uteslutna ämnen',
-	'RT_ANTI_TOPICS_EXP'			=> 'Separerade med ", " (exampel: 7, 9)<br />Ange 0 om du ej vill utesluta ämnen.',
-	'RT_MIN_TOPIC_LEVEL'			=> 'Minsta nivå av ämnestyp',
-	'RT_MIN_TOPIC_LEVEL_EXP'		=> 'Anger minsta nivå av ämnestyp som skall visas. Den inställda nivån och högre kommer att visas.<br />(0 = normal, 1 = klistrat, 2 = anslag, 3 = globalt anslag)',
-	'RT_NUMBER'						=> 'Antal ämnen',
-	'RT_NUMBER_EXP'					=> 'Antalet aktuella ämnen som ska visas på forumets startsida.',
-	'RT_PAGE_NUMBER'				=> 'Sidor med aktuella ämnen',
-	'RT_PAGE_NUMBER_EXP'			=> 'Du kan visa fler aktuella ämnen genom att föredela dem på flera sidor. Ange 1 för att deaktivera denna funktion. Om du anger 0 så kommer antalet sidor att anpassas till antalet ämnen i ditt forum (rekommenderas ej).',
-	'RT_PARENTS'					=> 'Visa överordnade forum',
-	'RT_PARENTS_EXP'				=> 'Visa överordnade forum inom ämnesraden för aktuella ämnen.',
-	'RT_SORT_START_TIME'			=> 'Sortera efter ämnenas startdatum',
-	'RT_SORT_START_TIME_EXP'		=> 'Aktivera detta för att sortera efter ämnenas startdatum istället för senaste svar.',
-	'RT_UNREAD_ONLY'				=> 'Visa endast olästa ämnen',
-	'RT_UNREAD_ONLY_EXP'			=> 'Aktivera denna funktion för att endast visa olästa ämnen (oavsett om de är "aktuella" eller ej). Denna funktion använder samma inställningar (uteslutna ämnen/forum osv.) som det normala läget. Notera: detta fungerar endast för inloggade användare; gäster kommer att se den normala listan.',
+	'RT_CONFIG'                        => 'Inställningar',
+	'RT_ALT_LOCATION'                => 'Display in alternative location',
+	'RT_ALT_LOCATION_EXP'            => 'Use alternative location to display recent topics.<br />Not all styles will support this, for prosilver it will be moved to the bottom of the page.',
+	'RT_ANTI_TOPICS'                => 'Uteslutna ämnen',
+	'RT_ANTI_TOPICS_EXP'            => 'Separerade med ", " (exampel: 7, 9)<br />Ange 0 om du ej vill utesluta ämnen.',
+	'RT_MIN_TOPIC_LEVEL'            => 'Minsta nivå av ämnestyp',
+	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Anger minsta nivå av ämnestyp som skall visas. Den inställda nivån och högre kommer att visas.<br />(0 = normal, 1 = klistrat, 2 = anslag, 3 = globalt anslag)',
+	'RT_NUMBER'                        => 'Antal ämnen',
+	'RT_NUMBER_EXP'                    => 'Antalet aktuella ämnen som ska visas på forumets startsida.',
+	'RT_PAGE_NUMBER'                => 'Sidor med aktuella ämnen',
+	'RT_PAGE_NUMBER_EXP'            => 'Du kan visa fler aktuella ämnen genom att föredela dem på flera sidor. Ange 1 för att deaktivera denna funktion. Om du anger 0 så kommer antalet sidor att anpassas till antalet ämnen i ditt forum (rekommenderas ej).',
+	'RT_PARENTS'                    => 'Visa överordnade forum',
+	'RT_PARENTS_EXP'                => 'Visa överordnade forum inom ämnesraden för aktuella ämnen.',
+	'RT_SORT_START_TIME'            => 'Sortera efter ämnenas startdatum',
+	'RT_SORT_START_TIME_EXP'        => 'Aktivera detta för att sortera efter ämnenas startdatum istället för senaste svar.',
+	'RT_UNREAD_ONLY'                => 'Visa endast olästa ämnen',
+	'RT_UNREAD_ONLY_EXP'            => 'Aktivera denna funktion för att endast visa olästa ämnen (oavsett om de är "aktuella" eller ej). Denna funktion använder samma inställningar (uteslutna ämnen/forum osv.) som det normala läget. Notera: detta fungerar endast för inloggade användare; gäster kommer att se den normala listan.',
 
-	'RT_VIEW_ON'					=> 'Visa aktuella ämnen på:',
-));
+	'RT_VIEW_ON'                    => 'Visa aktuella ämnen på:',
+	)
+);
