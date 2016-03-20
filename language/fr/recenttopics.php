@@ -14,11 +14,11 @@
 * DO NOT CHANGE
 */
 if (!defined('IN_PHPBB')) {
-    exit;
+	exit;
 }
 
 if (empty($lang) || !is_array($lang)) {
-    $lang = array();
+	$lang = array();
 }
 
 // DEVELOPERS PLEASE NOTE
@@ -38,7 +38,7 @@ if (empty($lang) || !is_array($lang)) {
 //
 
 $lang = array_merge(
-    $lang, array(
-    'RECENT_TOPICS'    => 'Sujets récents',
-    )
+	$lang, array(
+	'RECENT_TOPICS'    => 'Sujets récents',
+	)
 );

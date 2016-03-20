@@ -11,19 +11,19 @@
  */
 
 if (!defined('IN_PHPBB')) {
-    exit;
+	exit;
 }
 if (empty($lang) || !is_array($lang)) {
-    $lang = array();
+	$lang = array();
 }
 
 $lang = array_merge(
-    $lang, array(
-    'RT_ENABLE'              => 'Vis seneste emner',
-    'RT_ALT_LOCATION'        => 'Brug alternativ lokation',
-    'RT_ALT_LOCATION_EXP'    => 'Flyt seneste emner, til en anden placering (Som regel buden, men det afhænger af temaet).',
-    'RT_SORT_START_TIME'     => 'Sorter seneste emner efter emnets indsendelses tid.',
-    'RT_SORT_START_TIME_EXP' => 'I stedet for at sortere dem efter seneste sendte emne.',
-    'RT_UNREAD_ONLY'         => 'Vis kun ulæste emner i seneste emner',
-    )
+	$lang, array(
+	'RT_ENABLE'              => 'Vis seneste emner',
+	'RT_ALT_LOCATION'        => 'Brug alternativ lokation',
+	'RT_ALT_LOCATION_EXP'    => 'Flyt seneste emner, til en anden placering (Som regel buden, men det afhænger af temaet).',
+	'RT_SORT_START_TIME'     => 'Sorter seneste emner efter emnets indsendelses tid.',
+	'RT_SORT_START_TIME_EXP' => 'I stedet for at sortere dem efter seneste sendte emne.',
+	'RT_UNREAD_ONLY'         => 'Vis kun ulæste emner i seneste emner',
+	)
 );

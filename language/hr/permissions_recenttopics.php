@@ -11,18 +11,18 @@
  */
 
 if (!defined('IN_PHPBB')) {
-    exit;
+	exit;
 }
 if (empty($lang) || !is_array($lang)) {
-    $lang = array();
+	$lang = array();
 }
 
 $lang = array_merge(
-    $lang, array(
-    'ACL_U_RT_VIEW'            => 'Aktualne teme : pogled ( master )',
-    'ACL_U_RT_ENABLE'          => 'Aktualne teme : uključivanje ili isključivanje',
-    'ACL_U_RT_ALT_LOCATION'    => 'Aktualne teme : koristiti alternativne lokacije za prikaz',
-    'ACL_U_RT_SORT_START_TIME' => 'Aktualne teme : Promjena vrsta reda',
-    'ACL_U_RT_UNREAD_ONLY'     => 'Aktualne teme : koristite nepročitana samo za modu',
-    )
+	$lang, array(
+	'ACL_U_RT_VIEW'            => 'Aktualne teme : pogled ( master )',
+	'ACL_U_RT_ENABLE'          => 'Aktualne teme : uključivanje ili isključivanje',
+	'ACL_U_RT_ALT_LOCATION'    => 'Aktualne teme : koristiti alternativne lokacije za prikaz',
+	'ACL_U_RT_SORT_START_TIME' => 'Aktualne teme : Promjena vrsta reda',
+	'ACL_U_RT_UNREAD_ONLY'     => 'Aktualne teme : koristite nepročitana samo za modu',
+	)
 );

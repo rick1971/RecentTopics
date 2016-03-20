@@ -11,19 +11,19 @@
  */
 
 if (!defined('IN_PHPBB')) {
-    exit;
+	exit;
 }
 if (empty($lang) || !is_array($lang)) {
-    $lang = array();
+	$lang = array();
 }
 
 $lang = array_merge(
-    $lang, array(
-    'RT_ENABLE'              => 'A kijelző Friss témák',
-    'RT_ALT_LOCATION'        => 'Az alternatív megjelenítési helyét',
-    'RT_ALT_LOCATION_EXP'    => 'Mozgás utóbbi téma egy másik helyre (általában az alján, de attól függ, hogy a stílus használható) .',
-    'RT_SORT_START_TIME'     => 'Rendezés Legújabb témák téma kezdési időpont',
-    'RT_SORT_START_TIME_EXP' => 'Rendezés helyett ezek az utolsó üzenet ideje.',
-    'RT_UNREAD_ONLY'         => 'Csak megjelenítéséhez olvasatlan téma az utóbbi témák',
-    )
+	$lang, array(
+	'RT_ENABLE'              => 'A kijelző Friss témák',
+	'RT_ALT_LOCATION'        => 'Az alternatív megjelenítési helyét',
+	'RT_ALT_LOCATION_EXP'    => 'Mozgás utóbbi téma egy másik helyre (általában az alján, de attól függ, hogy a stílus használható) .',
+	'RT_SORT_START_TIME'     => 'Rendezés Legújabb témák téma kezdési időpont',
+	'RT_SORT_START_TIME_EXP' => 'Rendezés helyett ezek az utolsó üzenet ideje.',
+	'RT_UNREAD_ONLY'         => 'Csak megjelenítéséhez olvasatlan téma az utóbbi témák',
+	)
 );

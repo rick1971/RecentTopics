@@ -14,11 +14,11 @@
 * DO NOT CHANGE
 */
 if (!defined('IN_PHPBB')) {
-    exit;
+	exit;
 }
 
 if (empty($lang) || !is_array($lang)) {
-    $lang = array();
+	$lang = array();
 }
 
 // DEVELOPERS PLEASE NOTE
@@ -38,11 +38,11 @@ if (empty($lang) || !is_array($lang)) {
 //
 
 $lang = array_merge(
-    $lang, array(
-    'ACL_U_RT_VIEW'            => 'Peut voir les « sujets récents ».',
-    'ACL_U_RT_ENABLE'          => 'Peut activer/désactiver les « sujets récents ».',
-    'ACL_U_RT_ALT_LOCATION'    => 'Peut afficher les « sujets récents » sur un emplacement alternatif.',
-    'ACL_U_RT_SORT_START_TIME' => 'Peut modifier le mode de tri des « sujets récents ».',
-    'ACL_U_RT_UNREAD_ONLY'     => 'Peut afficher uniquement les sujets non lus dans les « sujets récents ».',
-    )
+	$lang, array(
+	'ACL_U_RT_VIEW'            => 'Peut voir les « sujets récents ».',
+	'ACL_U_RT_ENABLE'          => 'Peut activer/désactiver les « sujets récents ».',
+	'ACL_U_RT_ALT_LOCATION'    => 'Peut afficher les « sujets récents » sur un emplacement alternatif.',
+	'ACL_U_RT_SORT_START_TIME' => 'Peut modifier le mode de tri des « sujets récents ».',
+	'ACL_U_RT_UNREAD_ONLY'     => 'Peut afficher uniquement les sujets non lus dans les « sujets récents ».',
+	)
 );
