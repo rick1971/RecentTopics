@@ -80,7 +80,7 @@ class recenttopics_module
 				'alt_location_row',
 				array(
 					'VALUE'    => $key,
-					'SELECTED' => ($config['rt_anti_topics'] == $key) ? ' selected="selected"' : '',
+					'SELECTED' => ($config['rt_alt_location'] == $key) ? 'selected="selected"' : '',
 					'OPTION'   => $display_type,
 				)
 			);
