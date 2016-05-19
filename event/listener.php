@@ -48,7 +48,8 @@ class listener implements EventSubscriberInterface
 	// The main magic
 	public function display_rt()
 	{
-		if (isset($this->config['rt_index']) && $this->config['rt_index']) {
+		if (isset($this->config['rt_index']) && $this->config['rt_index'])
+		{
 		$this->rt_functions->display_recent_topics(); }
 	}
 

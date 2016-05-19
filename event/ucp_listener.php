@@ -75,7 +75,8 @@ class ucp_listener implements EventSubscriberInterface
 		);
 
 		// Output the data vars to the template (except on form submit)
-		if (!$event['submit'] && $this->auth->acl_get('u_rt_view')) {
+		if (!$event['submit'] && $this->auth->acl_get('u_rt_view'))
+		{
 			$this->user->add_lang_ext('paybas/recenttopics', 'recenttopics_ucp');
 			$template_vars = array();
 
@@ -85,28 +86,32 @@ class ucp_listener implements EventSubscriberInterface
 				);
 			}
 
-			if ($this->auth->acl_get('u_rt_enable')) {
+			if ($this->auth->acl_get('u_rt_enable'))
+			{
 				$template_vars += array(
 				'A_RT_ENABLE' => true,
 				'S_RT_ENABLE' => $event['data']['rt_enable'],
 				);
 			}
 
-			if ($this->auth->acl_get('u_rt_alt_location')) {
+			if ($this->auth->acl_get('u_rt_alt_location'))
+			{
 				$template_vars += array(
 				'A_RT_ALT_LOCATION' => true,
 				'S_RT_ALT_LOCATION' => $event['data']['rt_alt_location'],
 				);
 			}
 
-			if ($this->auth->acl_get('u_rt_sort_start_time')) {
+			if ($this->auth->acl_get('u_rt_sort_start_time'))
+			{
 				$template_vars += array(
 				'A_RT_SORT_START_TIME' => true,
 				'S_RT_SORT_START_TIME' => $event['data']['rt_sort_start_time'],
 				);
 			}
 
-			if ($this->auth->acl_get('u_rt_unread_only')) {
+			if ($this->auth->acl_get('u_rt_unread_only'))
+			{
 				$template_vars += array(
 				'A_RT_UNREAD_ONLY' => true,
 				'S_RT_UNREAD_ONLY' => $event['data']['rt_unread_only'],

@@ -25,8 +25,10 @@ class recenttopics_module
 		$form_key = 'acp_recenttopics';
 		add_form_key($form_key);
 
-		if ($request->is_set_post('submit')) {
-			if (!check_form_key($form_key)) {
+		if ($request->is_set_post('submit'))
+		{
+			if (!check_form_key($form_key))
+			{
 				trigger_error($user->lang('FORM_INVALID') . adm_back_link($this->u_action), E_USER_WARNING);
 			}
 
