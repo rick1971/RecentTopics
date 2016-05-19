@@ -283,20 +283,20 @@ class recenttopics
 
 		// Now only pull the data of the requested topics
 		$sql_array = array(
-		'SELECT'    => 't.*, tp.topic_posted, f.forum_name',
-		'FROM'      => array(TOPICS_TABLE => 't'),
-		'LEFT_JOIN' => array(
-		array(
-		'FROM' => array(TOPICS_POSTED_TABLE => 'tp'),
-		'ON'   => 't.topic_id = tp.topic_id AND tp.user_id = ' . $this->user->data['user_id'],
-		),
-		array(
-		'FROM' => array(FORUMS_TABLE => 'f'),
-		'ON'   => 'f.forum_id = t.forum_id',
-		),
-		),
-		'WHERE'     => $this->db->sql_in_set('t.topic_id', $this->topic_list),
-		'ORDER_BY'  => 't.' . $sort_topics . ' DESC',
+			'SELECT'    => 't.*, tp.topic_posted, f.forum_name',
+			'FROM'      => array(TOPICS_TABLE => 't'),
+			'LEFT_JOIN' => array(
+				array(
+					'FROM' => array(TOPICS_POSTED_TABLE => 'tp'),
+					'ON'   => 't.topic_id = tp.topic_id AND tp.user_id = ' . $this->user->data['user_id'],
+				),
+				array(
+					'FROM' => array(FORUMS_TABLE => 'f'),
+					'ON'   => 'f.forum_id = t.forum_id',
+				),
+			),
+			'WHERE'     => $this->db->sql_in_set('t.topic_id', $this->topic_list),
+			'ORDER_BY'  => 't.' . $sort_topics . ' DESC',
 		);
 
 		if ($display_parent_forums)
@@ -603,7 +603,7 @@ class recenttopics
 	 */
 	private function GetTopicList($start, $topics_per_page, $total_topics_limit, $sort_topics)
 	{
-		$this->topic_list = array();
+		$this->forums = $this->topic_list = array();
 		$topics_count = 0;
 		$this->obtain_icons = false;
 		$excluded_topics = explode(', ', $this->config['rt_anti_topics']);
@@ -630,22 +630,22 @@ class recenttopics
 		{
 			// Get the allowed topics
 			$sql_array = array(
-			'SELECT'    => 't.forum_id, t.topic_id, t.topic_type, t.icon_id, tt.mark_time, ft.mark_time as f_mark_time',
-			'FROM'      => array(TOPICS_TABLE => 't'),
-			'LEFT_JOIN' => array(
-			array(
-			'FROM' => array(TOPICS_TRACK_TABLE => 'tt'),
-			'ON'   => 'tt.topic_id = t.topic_id AND tt.user_id = ' . $this->user->data['user_id'],
-			),
-			array(
-			'FROM' => array(FORUMS_TRACK_TABLE => 'ft'),
-			'ON'   => 'ft.forum_id = t.forum_id AND ft.user_id = ' . $this->user->data['user_id'],
-			),
-			),
-			'WHERE'     => $this->db->sql_in_set('t.topic_id', $excluded_topics, true) . '
+				'SELECT'    => 't.forum_id, t.topic_id, t.topic_type, t.icon_id, tt.mark_time, ft.mark_time as f_mark_time',
+				'FROM'      => array(TOPICS_TABLE => 't'),
+				'LEFT_JOIN' => array(
+					array(
+						'FROM' => array(TOPICS_TRACK_TABLE => 'tt'),
+						'ON'   => 'tt.topic_id = t.topic_id AND tt.user_id = ' . $this->user->data['user_id'],
+					),
+					array(
+						'FROM' => array(FORUMS_TRACK_TABLE => 'ft'),
+						'ON'   => 'ft.forum_id = t.forum_id AND ft.user_id = ' . $this->user->data['user_id'],
+					),
+				),
+				'WHERE'     => $this->db->sql_in_set('t.topic_id', $excluded_topics, true) . '
 					AND t.topic_status <> ' . ITEM_MOVED . '
 					AND ' . $this->content_visibility->get_forums_visibility_sql('topic', $this->forum_ids, $table_alias = 't.'),
-			'ORDER_BY'  => 't.' . $sort_topics . ' DESC',
+				'ORDER_BY'  => 't.' . $sort_topics . ' DESC',
 			);
 
 			// Check if we want all topics, or only stickies/announcements/globals
