@@ -46,5 +46,9 @@ $lang = array_merge(
 	'RT_UNREAD_ONLY_EXP'            => 'Deze optie zorgt ervoor dat alleen de ongelezen onderwerpen worden weergegeven (ongeacht of ze recent zijn). Deze functie gebruikt dezelfde instellingen (uitsluiting van forums/onderwerpen etc.) als in de normale situatie. NB: dit werkt alleen bij ingelogde gebruikers; gasten krijgen de normale lijst te zien.',
 
 	'RT_VIEW_ON'                    => 'Geef recente onderwerpen weer bij:',
+
+	'RT_TOP'                         => 'Toon boven',
+	'RT_BOTTOM'                      => 'Toon beneden',
+	'RT_SIDE'                        => 'Toon rechts',
 	)
 );

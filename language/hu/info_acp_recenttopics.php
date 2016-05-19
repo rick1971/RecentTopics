@@ -42,5 +42,9 @@ $lang = array_merge(
 	'RT_UNREADONLY_EXP'                => 'Csak az olvasatlan témákat jelenítse meg, függetlenül attól, "frissek"-e. Ez a funkció ugyanazokat a beállításokat használja (fórumok/témák kizárása, stb.), mint a normál mód. Megjegyzés: ez csak a bejelentkezett felhasználóknak működik, a vendégek a normál listát kapják.',
 
 	'RT_VIEW_ON'                    => 'Friss témák megjelenítése itt:',
+
+	'RT_TOP'                         => 'Show on top',
+	'RT_BOTTOM'                      => 'Show on bottom',
+	'RT_SIDE'                        => 'Show on side',
 	)
 );

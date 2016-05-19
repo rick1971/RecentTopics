@@ -46,5 +46,8 @@ $lang = array_merge(
 	'RT_UNREAD_ONLY_EXP'            => 'Włączenie tej funkcji spowoduje wyświetlanie na liście tylko nieprzeczytanych tematów. Ta opcja wykorzystuje te same ustawienia co tryb najnowszych tematów. Informacja: Opcja działa tylko dla zalogowanych użytkowników. Dla gości nadal jest wyświetlana lista najnowszych tematów.',
 
 	'RT_VIEW_ON'                    => 'Wyświetlanie najnowszych tematów',
+	'RT_TOP'                         => 'Show on top',
+	'RT_BOTTOM'                      => 'Show on bottom',
+	'RT_SIDE'                        => 'Show on side',
 	)
 );

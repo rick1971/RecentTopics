@@ -46,5 +46,9 @@ $lang = array_merge(
 	'RT_UNREAD_ONLY_EXP'            => 'Aktivera denna funktion för att endast visa olästa ämnen (oavsett om de är "aktuella" eller ej). Denna funktion använder samma inställningar (uteslutna ämnen/forum osv.) som det normala läget. Notera: detta fungerar endast för inloggade användare; gäster kommer att se den normala listan.',
 
 	'RT_VIEW_ON'                    => 'Visa aktuella ämnen på:',
+
+	'RT_TOP'                         => 'Show on top',
+	'RT_BOTTOM'                      => 'Show on bottom',
+	'RT_SIDE'                        => 'Show on side',
 	)
 );

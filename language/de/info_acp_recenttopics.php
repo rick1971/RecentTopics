@@ -46,5 +46,9 @@ $lang = array_merge(
 	'RT_UNREAD_ONLY_EXP'            => 'Diese Option zeigt nur ungelesene Themen an (egal ob diese aktuell sind oder nicht). Diese Funktion nutzt die gleichen Einstellungen (Ausgeschlossene Foren / Themen, etc.) wie die normale Version. Hinweis: diese Funktion steht nur eingeloggten Benutzern zur Verfügung; Gäste sehen die normale „Aktuelle Themen“ Liste.',
 
 	'RT_VIEW_ON'                    => 'Recent topics anzeigen:',
+
+	'RT_TOP'                         => 'Show on top',
+	'RT_BOTTOM'                      => 'Show on bottom',
+	'RT_SIDE'                        => 'Show on side',
 	)
 );

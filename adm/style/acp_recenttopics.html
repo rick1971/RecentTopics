@@ -24,8 +24,11 @@
 		<dl>
 			<dt><label for="rt_alt_location">{L_RT_ALT_LOCATION}{L_COLON}</label><br /><span>{L_RT_ALT_LOCATION_EXP}</span></dt>
 			<dd>
-				<label><input type="radio" class="radio" name="rt_alt_location" value="1" id="rt_alt_location"<!-- IF RT_ALT_LOCATION --> checked="checked"<!-- ENDIF -->/> {L_YES}</label>
-				<label><input type="radio" class="radio" name="rt_alt_location" value="0"<!-- IF not RT_ALT_LOCATION --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+				<select name="rt_alt_location" class="input" id="rt_alt_location">
+					<!-- BEGIN alt_location_row -->
+					<option value="{alt_location_row.VALUE}"{alt_location_row.SELECTED}>{alt_location_row.OPTION}</option>
+					<!-- END alt_location_row -->
+				</select>
 			</dd>
 		</dl>
 		<dl>

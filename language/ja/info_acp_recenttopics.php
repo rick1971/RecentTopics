@@ -46,5 +46,9 @@ $lang = array_merge(
 	'RT_UNREAD_ONLY_EXP'            => '未読トピックのみの表示を有効にします。(それらが"新着"であるか否か)この機能は通常モードとして同じ設定(フォーラム/トピックなどを除いて)を使用します。注: これはログイン済みユーザーにのみ動作し、ゲストは通常のリストを取得します。',
 
 	'RT_VIEW_ON'                    => '新着トピックを表示:',
+
+	'RT_TOP'                         => 'Show on top',
+	'RT_BOTTOM'                      => 'Show on bottom',
+	'RT_SIDE'                        => 'Show on side',
 	)
 );

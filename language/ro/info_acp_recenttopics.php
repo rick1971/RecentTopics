@@ -46,5 +46,9 @@ $lang = array_merge(
 	'RT_UNREAD_ONLY_EXP'            => 'Activarea afişării doar a subiectelor necitite (indiferent dacă acestea sunt "recente" sau nu). Această funcție utilizează aceleași setări (cu excepția forumuri / subiecte etc.) ca în mod normal. Notă: Aceasta funcționează doar pentru utilizatorii autentificați; vizitatorii vor vedea lista normală.',
 
 	'RT_VIEW_ON'                    => 'Afişarea subiectelor recente pe:',
+
+	'RT_TOP'                         => 'Show on top',
+	'RT_BOTTOM'                      => 'Show on bottom',
+	'RT_SIDE'                        => 'Show on side',
 	)
 );

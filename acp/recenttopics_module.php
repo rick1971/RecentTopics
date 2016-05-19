@@ -32,7 +32,7 @@ class recenttopics_module
 				trigger_error($user->lang('FORM_INVALID') . adm_back_link($this->u_action), E_USER_WARNING);
 			}
 
-			$rt_alt_location = $request->variable('rt_alt_location', false);
+			$rt_alt_location = $request->variable('rt_alt_location', 'RT_TOP');
 			$config->set('rt_alt_location', $rt_alt_location);
 
 			// variable should be '' as it is a string ("1, 2, 3928") here, not an integer.
@@ -60,11 +60,30 @@ class recenttopics_module
 			$rt_index = $request->variable('rt_index', 0);
 			$config->set('rt_index', $rt_index);
 
+
 			// Enable on other extension pages?
 			$rt_on_newspage = $request->variable('rt_on_newspage', 0);
 			$config->set('rt_on_newspage', $rt_on_newspage);
 
 			trigger_error($user->lang['CONFIG_UPDATED'] . adm_back_link($this->u_action));
+		}
+
+		$display_types = array (
+			'RT_TOP'    => $user->lang['RT_TOP'],
+			'RT_BOTTOM' => $user->lang['RT_BOTTOM'],
+			'RT_SIDE'   => $user->lang['RT_SIDE'],
+		);
+
+		foreach ($display_types as $key => $display_type)
+		{
+			$template->assign_block_vars(
+				'alt_location_row',
+				array(
+					'VALUE'    => $key,
+					'SELECTED' => ($config['rt_anti_topics'] == $key) ? ' selected="selected"' : '',
+					'OPTION'   => $display_type,
+				)
+			);
 		}
 
 		$template->assign_vars(

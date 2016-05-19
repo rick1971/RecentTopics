@@ -45,6 +45,9 @@ $lang = array_merge(
 	'RT_UNREAD_ONLY'                => 'Sadece okunmamış konuları göster',
 	'RT_UNREAD_ONLY_EXP'            => 'Bu seçeneğin etkinleştirilmesi sadece okunmamış konuların görüntülenmesini sağlar. Konu türü ayrımı olmayacaktır.<br /><strong>NOT:</strong> Bu özellik giriş yapmış kullanıcılar için geçerlidir; Misafirler normal "Son Konular" listesini görecektir.',
 
-	'RT_VIEW_ON'                    => 'Son Konuları göster:',
+	'RT_VIEW_ON'                     => 'Son Konuları göster:',
+	'RT_TOP'                         => 'Show on top',
+	'RT_BOTTOM'                      => 'Show on bottom',
+	'RT_SIDE'                        => 'Show on side',
 	)
 );

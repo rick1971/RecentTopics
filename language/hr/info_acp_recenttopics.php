@@ -40,5 +40,9 @@ $lang = array_merge(
 	'RT_UNREADONLY'=>'Prikaži samo nepročitane teme',
 	'RT_UNREADONLY_EXP'=>'Ukoliko izabereš “Da”, bit će prikazane [samo] nepročitane teme - neovisno o tome jesu li ili nisu aktualne [(ova) funkcija koristi iste postavke kao normalan način rada (izuzimanje  foruma/tema i sl.) i odnosi se samo na prijavljene korisnike/ce što će reći da će samo njima biti prikazane (samo) nepročitane teme dok će gostima biti prikazane sve (aktualne) teme].',
 	'RT_VIEW_ON'=>'Prikaži "Aktualne teme" na:',
+
+	'RT_TOP'                         => 'Show on top',
+	'RT_BOTTOM'                      => 'Show on bottom',
+	'RT_SIDE'                        => 'Show on side',
 	)
 );

@@ -46,5 +46,10 @@ $lang = array_merge(
 	'RT_UNREAD_ONLY_EXP'            => 'Aktive "vis kun ulæste emner"  (uanset om det er de seneste eller ej). Denne funktion bruger de samme indstillinger (ekskl. fora / emner osv) som normal tilstand. Bemærk: Dette virker kun for registrerede brugere; gæster vil få den normale liste.',
 
 	'RT_VIEW_ON'                    => 'Vis seneste emner på:',
+
+
+	'RT_TOP'                         => 'Show on top',
+	'RT_BOTTOM'                      => 'Show on bottom',
+	'RT_SIDE'                        => 'Show on side',
 	)
 );

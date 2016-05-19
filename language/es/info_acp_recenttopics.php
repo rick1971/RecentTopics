@@ -46,5 +46,8 @@ $lang = array_merge(
 	'RT_UNREAD_ONLY_EXP'            => 'Esta opción sólo mostrará temas no leídos (tanto si son "recientes" o no). Esta función utiliza la misma configuración (excluyendo forums/topics etc.) que el modo normal. Nota: esto sólo funciona para usuarios registrados e identificados; los invitados podrán obtener la lista normal.',
 
 	'RT_VIEW_ON'                    => 'Ver temas recientes en:',
+	'RT_TOP'                         => 'Show on top',
+	'RT_BOTTOM'                      => 'Show on bottom',
+	'RT_SIDE'                        => 'Show on side',
 	)
 );

@@ -66,5 +66,9 @@ $lang = array_merge(
 	'RT_UNREAD_ONLY_EXP'            => 'Affiche uniquement les sujets non lus (qu’ils soient « récents » ou non). Cette fonctionnalité utilise les mêmes paramètres que le mode normal (en excluant les forums / sujets, etc…). Note : Cela fonctionne uniquement pour les utilisateurs connectés; les invités verront la liste normale.',
 
 	'RT_VIEW_ON'                    => 'Afficher les « sujets récents » sur :',
+
+	'RT_TOP'                         => 'Show on top',
+	'RT_BOTTOM'                      => 'Show on bottom',
+	'RT_SIDE'                        => 'Show on side',
 	)
 );

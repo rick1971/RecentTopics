@@ -41,5 +41,9 @@ $lang = array_merge(
 	'RT_UNREAD_ONLY'                => 'Näita ainult lugemata teemasi',
 	'RT_UNREAD_ONLY_EXP'            => 'Lubades selle, näidatakse ainult lugemata teemasi (ükskõik kas nad on "hiljutised" või mitte). Antud funktsioon kasutab samu seadeid (va foorumid/teemad jne.) nagu tavaline vaadegi. Märkus: see töötab ainult registreeritud kasutajatel; külalised näevad ikka tavalist vaadet.',
 	'RT_VIEW_ON'                    => 'Näita "Hiljutised teemad" laiendust:',
+
+	'RT_TOP'                         => 'Show on top',
+	'RT_BOTTOM'                      => 'Show on bottom',
+	'RT_SIDE'                        => 'Show on side',
 	)
 );
