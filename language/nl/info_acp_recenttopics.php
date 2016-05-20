@@ -28,8 +28,6 @@ $lang = array_merge(
 	'RECENT_TOPICS_LIST_EXPLAIN'    => 'Moeten onderwerpen uit dit forum worden weergegeven in de "recente onderwerpen" lijst?',
 
 	'RT_CONFIG'                        => 'Configuratie',
-	'RT_ALT_LOCATION'                => 'Display in alternative location',
-	'RT_ALT_LOCATION_EXP'            => 'Use alternative location to display recent topics.<br />Not all styles will support this, for prosilver it will be moved to the bottom of the page.',
 	'RT_ANTI_TOPICS'                => 'Uitgesloten onderwerpen',
 	'RT_ANTI_TOPICS_EXP'            => 'Gescheiden door een ", " (Voorbeeld: 7, 9)<br />Als je geen onderwerpen wilt uitsluiten, vul een 0 in.',
 	'RT_MIN_TOPIC_LEVEL'            => 'Minimum topic type level',
@@ -47,8 +45,11 @@ $lang = array_merge(
 
 	'RT_VIEW_ON'                    => 'Geef recente onderwerpen weer bij:',
 
+	'RT_LOCATION'                    => 'Display location',
+	'RT_LOCATION_EXP'                => 'Select location to display recent topics. (prosilver)<br /> (pbWoW3 & pbTech have fixed display locations on the side)',
 	'RT_TOP'                         => 'Toon boven',
 	'RT_BOTTOM'                      => 'Toon beneden',
 	'RT_SIDE'                        => 'Toon rechts',
+
 	)
 );

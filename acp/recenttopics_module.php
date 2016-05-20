@@ -32,8 +32,8 @@ class recenttopics_module
 				trigger_error($user->lang('FORM_INVALID') . adm_back_link($this->u_action), E_USER_WARNING);
 			}
 
-			$rt_alt_location = $request->variable('rt_alt_location', 'RT_TOP');
-			$config->set('rt_alt_location', $rt_alt_location);
+			$rt_location = $request->variable('rt_location', 'RT_TOP');
+			$config->set('rt_location', $rt_location);
 
 			// variable should be '' as it is a string ("1, 2, 3928") here, not an integer.
 			$rt_anti_topics = $request->variable('rt_anti_topics', '0');
@@ -77,10 +77,10 @@ class recenttopics_module
 		foreach ($display_types as $key => $display_type)
 		{
 			$template->assign_block_vars(
-				'alt_location_row',
+				'location_row',
 				array(
 					'VALUE'    => $key,
-					'SELECTED' => ($config['rt_alt_location'] == $key) ? 'selected="selected"' : '',
+					'SELECTED' => ($config['rt_location'] == $key) ? 'selected="selected"' : '',
 					'OPTION'   => $display_type,
 				)
 			);
@@ -88,7 +88,7 @@ class recenttopics_module
 
 		$template->assign_vars(
 			array(
-			'RT_ALT_LOCATION'    => isset($config['rt_alt_location']) ? $config['rt_alt_location'] : false,
+			'RT_ALT_LOCATION'    => isset($config['rt_location']) ? $config['rt_location'] : false,
 			'RT_ANTI_TOPICS'     => isset($config['rt_anti_topics']) ? $config['rt_anti_topics'] : '',
 			'RT_MIN_TOPIC_LEVEL' => isset($config['rt_min_topic_level']) ? $config['rt_min_topic_level'] : '',
 			'RT_NUMBER'          => isset($config['rt_number']) ? $config['rt_number'] : '',

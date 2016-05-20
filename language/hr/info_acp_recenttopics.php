@@ -41,6 +41,8 @@ $lang = array_merge(
 	'RT_UNREADONLY_EXP'=>'Ukoliko izabereš “Da”, bit će prikazane [samo] nepročitane teme - neovisno o tome jesu li ili nisu aktualne [(ova) funkcija koristi iste postavke kao normalan način rada (izuzimanje  foruma/tema i sl.) i odnosi se samo na prijavljene korisnike/ce što će reći da će samo njima biti prikazane (samo) nepročitane teme dok će gostima biti prikazane sve (aktualne) teme].',
 	'RT_VIEW_ON'=>'Prikaži "Aktualne teme" na:',
 
+	'RT_LOCATION'                    => 'Display location',
+	'RT_LOCATION_EXP'                => 'Select location to display recent topics. (prosilver)<br /> (pbWoW3 & pbTech have fixed display locations on the side)',
 	'RT_TOP'                         => 'Show on top',
 	'RT_BOTTOM'                      => 'Show on bottom',
 	'RT_SIDE'                        => 'Show on side',

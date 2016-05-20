@@ -22,8 +22,8 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge(
 	$lang, array(
 	'RT_ENABLE'              => 'Display recent topics',
-	'RT_ALT_LOCATION'        => 'Use alternative display location',
-	'RT_ALT_LOCATION_EXP'    => 'Move recent topics to a different location (usually the bottom, but depends on the style used).',
+	'RT_LOCATION'            => 'Select location to display recent topics',
+	'RT_LOCATION_EXP'        => 'For prosilver styles.',
 	'RT_SORT_START_TIME'     => 'Sort recent topics by topic start time',
 	'RT_SORT_START_TIME_EXP' => 'Instead of sorting them by last post time.',
 	'RT_UNREAD_ONLY'         => 'Only display unread topics in recent topics',

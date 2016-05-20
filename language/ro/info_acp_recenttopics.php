@@ -28,8 +28,6 @@ $lang = array_merge(
 	'RECENT_TOPICS_LIST_EXPLAIN'    => 'Activați pentru a afișa subiectele acestui forum în extensia "subiecte recente".',
 
 	'RT_CONFIG'                        => 'Configurare',
-	'RT_ALT_LOCATION'                => 'Display in alternative location',
-	'RT_ALT_LOCATION_EXP'            => 'Use alternative location to display recent topics.<br />Not all styles will support this, for prosilver it will be moved to the bottom of the page.',
 	'RT_ANTI_TOPICS'                => 'Excludere subiecte',
 	'RT_ANTI_TOPICS_EXP'            => 'ID-ul subiectelor ce vor fi excluse, separate prin ", " (Exemplu: 7, 9)<br />Dacă nu vreţi să excludeţi subiecte, introduceţi 0.',
 	'RT_MIN_TOPIC_LEVEL'            => 'Nivel minim subiect',
@@ -47,6 +45,8 @@ $lang = array_merge(
 
 	'RT_VIEW_ON'                    => 'Afişarea subiectelor recente pe:',
 
+	'RT_LOCATION'                    => 'Display location',
+	'RT_LOCATION_EXP'                => 'Select location to display recent topics. (prosilver)<br /> (pbWoW3 & pbTech have fixed display locations on the side)',
 	'RT_TOP'                         => 'Show on top',
 	'RT_BOTTOM'                      => 'Show on bottom',
 	'RT_SIDE'                        => 'Show on side',

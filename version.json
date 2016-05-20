@@ -1,8 +1,8 @@
 {
 	"stable": {
 		"2.0": {
-			"current": "2.0.5",
-			"announcement": "https://github.com/PayBas/RecentTopics/releases/tag/v2.0.5",
+			"current": "2.1.0",
+			"announcement": "https://github.com/Sajaki/RecentTopics/releases/tag/v2.1.0",
 			"eol": null,
 			"security": false
 		}

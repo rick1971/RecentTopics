@@ -48,8 +48,6 @@ $lang = array_merge(
 	'RECENT_TOPICS_LIST_EXPLAIN'    => 'Affiche les sujets de ce forum au moyen de l’extension « Sujets récents ».',
 
 	'RT_CONFIG'                        => 'Configuration',
-	'RT_ALT_LOCATION'                => 'Afficher sur un emplacement alternatif',
-	'RT_ALT_LOCATION_EXP'            => 'Utilise un emplacement alternatif pour afficher les « sujets récents ».<br />Tous les styles ne supportent pas cette fonctionnalité, pour le style prosilver et ses styles enfants l’affichage sera déplacé vers le bas de la page.',
 	'RT_ANTI_TOPICS'                => 'Sujets exclus',
 	'RT_ANTI_TOPICS_EXP'            => 'Saisir les ID des sujets séparés par : « , » (exemple : 7, 9).<br />Pour ne pas exclure de sujet saisir simplement 0.',
 	'RT_MIN_TOPIC_LEVEL'            => 'Niveau minimum du type de sujet',
@@ -67,6 +65,8 @@ $lang = array_merge(
 
 	'RT_VIEW_ON'                    => 'Afficher les « sujets récents » sur :',
 
+	'RT_LOCATION'                    => 'Display location',
+	'RT_LOCATION_EXP'                => 'Select location to display recent topics. (prosilver)<br /> (pbWoW3 & pbTech have fixed display locations on the side)',
 	'RT_TOP'                         => 'Show on top',
 	'RT_BOTTOM'                      => 'Show on bottom',
 	'RT_SIDE'                        => 'Show on side',

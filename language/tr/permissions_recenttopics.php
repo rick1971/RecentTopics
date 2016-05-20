@@ -23,7 +23,7 @@ $lang = array_merge(
 	$lang, array(
 	'ACL_U_RT_VIEW'            => 'Son Konular: görüntüler (master)',
 	'ACL_U_RT_ENABLE'          => 'Son Konular: etkinleştir veya devre dışı bırak',
-	'ACL_U_RT_ALT_LOCATION'    => 'Son Konular: farklı yerlerde göster',
+	'ACL_U_RT_LOCATION'        => 'Recent Topics: select display location',
 	'ACL_U_RT_SORT_START_TIME' => 'Son Konular: sıralamayı değiştir',
 	'ACL_U_RT_UNREAD_ONLY'     => 'Son Konular: sadece-okunmamış modunu kullan',
 	)

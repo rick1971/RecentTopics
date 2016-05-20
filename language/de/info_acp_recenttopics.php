@@ -28,8 +28,6 @@ $lang = array_merge(
 	'RECENT_TOPICS_LIST_EXPLAIN'    => 'Sollen Themen aus diesem Forum in „aktuelle Themen“ angezeigt werden?',
 
 	'RT_CONFIG'                        => 'Konfiguration von aktuelle Themen',
-	'RT_ALT_LOCATION'                => 'Display in alternative location',
-	'RT_ALT_LOCATION_EXP'            => 'Use alternative location to display recent topics.<br />Not all styles will support this, for prosilver it will be moved to the bottom of the page.',
 	'RT_ANTI_TOPICS'                => 'Ausgeschlossene Themen',
 	'RT_ANTI_TOPICS_EXP'            => 'Mit „, “ trennen (Beispiel: 7, 9)<br />Wenn kein Thema ausgeschlossen werden soll „1“ eingeben. Wenn du „0“ eingibst, werden so viele Seiten angezeigt, wie benötigt werden, um alle Themen auszugeben.',
 	'RT_MIN_TOPIC_LEVEL'            => 'Minimaler Thementyp',
@@ -47,6 +45,8 @@ $lang = array_merge(
 
 	'RT_VIEW_ON'                    => 'Recent topics anzeigen:',
 
+	'RT_LOCATION'                    => 'Display location',
+	'RT_LOCATION_EXP'                => 'Select location to display recent topics. (prosilver)<br /> (pbWoW3 & pbTech have fixed display locations on the side)',
 	'RT_TOP'                         => 'Show on top',
 	'RT_BOTTOM'                      => 'Show on bottom',
 	'RT_SIDE'                        => 'Show on side',

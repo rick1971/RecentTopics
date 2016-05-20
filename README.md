@@ -27,7 +27,7 @@ Based on NV Recent Topics for phpBB 3.0, by Joas Schilling ([nickvergessen](http
   - we_universal
 
 #### Version
-v2.0.7 (19-5-2016)
+v2.1.0 (xx-5-2016)
 [![Build Status](https://api.travis-ci.org/Sajaki/RecentTopics.svg)](https://travis-ci.org/Sajaki/RecentTopics)
 
 #### Requirements

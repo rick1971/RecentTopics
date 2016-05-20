@@ -185,7 +185,7 @@ class recenttopics
 		 * Set some internal needed variables
 		 */
 
-		$alt_location = $this->config['rt_alt_location'];
+		$location = $this->config['rt_location'];
 		$display_parent_forums = $this->config['rt_parents'];
 		$sort_topics = ($this->config['rt_sort_start_time']) ? 'topic_time' : 'topic_last_post_time';
 		$this->unread_only = $this->config['rt_unread_only'];
@@ -211,9 +211,9 @@ class recenttopics
 				return;
 			}
 
-			if ($this->auth->acl_get('u_rt_alt_location') && isset($this->user->data['user_rt_alt_location']))
+			if ($this->auth->acl_get('u_rt_location') && isset($this->user->data['user_rt_location']))
 			{
-				$alt_location = $this->user->data['user_rt_alt_location'];
+				$location = $this->user->data['user_rt_location'];
 			}
 
 			if ($this->auth->acl_get('u_rt_sort_start_time') && isset($this->user->data['user_rt_sort_start_time']))
@@ -526,14 +526,14 @@ class recenttopics
 			}
 		}
 
-		// Some styles simply aren't compatible with alternative display locations
+		// Some styles simply aren't compatible with top/down display locations
 		$alt_loc_incomp_list = array('pbtech','pbwow3','pbwow3_battlecry','pbwow3_diablo','pbwow3_garrison',
 		'pbwow3_heroes','pbwow3_pandaria','pbwow3_tbc','pbwow3_tech','pbwow3_tribute','pbwow3_warlords',
 		'pbwow3_wildstar','pbwow3_wotlk','pbwow3_xmas');
 
 		if (in_array($this->user->style['style_path'], $alt_loc_incomp_list))
 		{
-			$alt_location = false;
+			$location = 'RT_SIDE';
 		}
 
 		$pagination_url = append_sid($this->root_path . $this->user->page['page_name'], $append_params);
@@ -542,7 +542,7 @@ class recenttopics
 		$this->template->assign_vars(
 			array(
 			'RT_SORT_START_TIME'                   => ($sort_topics === 'topic_time') ? true : false,
-			'RT_ALT_LOCATION'                      => $alt_location,
+			'RT_LOCATION'                          => $location,
 			'S_TOPIC_ICONS'                        => (sizeof($topic_icons)) ? true : false,
 			'NEWEST_POST_IMG'                      => $this->user->img('icon_topic_newest', 'VIEW_NEWEST_POST'),
 			'LAST_POST_IMG'                        => $this->user->img('icon_topic_latest', 'VIEW_LATEST_POST'),

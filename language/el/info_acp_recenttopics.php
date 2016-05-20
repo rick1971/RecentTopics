@@ -28,8 +28,6 @@ $lang = array_merge(
 	'RECENT_TOPICS_LIST_EXPLAIN'    => 'Να εμφανίζονται τα θέματα αυτής της συζήτησης στα "πρόσφατα θέματα".',
 
 	'RT_CONFIG'                        => 'Ρυθμίσεις',
-	'RT_ALT_LOCATION'                => 'Display in alternative location',
-	'RT_ALT_LOCATION_EXP'            => 'Use alternative location to display recent topics.<br />Not all styles will support this, for prosilver it will be moved to the bottom of the page.',
 	'RT_ANTI_TOPICS'                => 'Εξαιρούμενα θέματα',
 	'RT_ANTI_TOPICS_EXP'            => 'Χωρισμένα με ", " (Παράδειγμα: 7, 9)<br />Εάν δεν θέλετε να εξαιρέσετε κάποιο θέμα, απλώς εισάγετε 0.',
 	'RT_MIN_TOPIC_LEVEL'            => 'Ελάχιστο επίπεδο τύπου θέματος',
@@ -47,6 +45,8 @@ $lang = array_merge(
 
 	'RT_VIEW_ON'                    => 'Εμφάνιση προσφάτων θεμάτων σε:',
 
+	'RT_LOCATION'                    => 'Display location',
+	'RT_LOCATION_EXP'                => 'Select location to display recent topics. (prosilver)<br /> (pbWoW3 & pbTech have fixed display locations on the side)',
 	'RT_TOP'                         => 'Show on top',
 	'RT_BOTTOM'                      => 'Show on bottom',
 	'RT_SIDE'                        => 'Show on side',

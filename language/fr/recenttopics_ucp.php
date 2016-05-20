@@ -42,8 +42,8 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge(
 	$lang, array(
 	'RT_ENABLE'              => 'Afficher les « sujets récents »',
-	'RT_ALT_LOCATION'        => 'Afficher sur un emplacement alternatif',
-	'RT_ALT_LOCATION_EXP'    => 'Déplace les « sujets récents » vers un emplacement différent (généralement bas, mais cela dépend du style utilisé).',
+	'RT_LOCATION'            => 'Select location to display recent topics',
+	'RT_LOCATION_EXP'        => 'For prosilver styles.',
 	'RT_SORT_START_TIME'     => 'Trier les « sujets récents » selon la date de création du sujet',
 	'RT_SORT_START_TIME_EXP' => 'Trie selon la date de création du sujet, en lieu et place de la date du dernier message.',
 	'RT_UNREAD_ONLY'         => 'Afficher uniquement les sujets non lus dans les « sujets récents »',

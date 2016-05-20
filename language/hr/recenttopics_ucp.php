@@ -22,8 +22,8 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge(
 	$lang, array(
 	'RT_ENABLE'              => 'Prikaz Aktualne tema',
-	'RT_ALT_LOCATION'        => 'Koristite alternativni položaj za prikaz',
-	'RT_ALT_LOCATION_EXP'    => 'Premještanje nedavne teme na drugo mjesto (obično na dnu , ali to ovisi o stilu koji se koristi).',
+	'RT_LOCATION'            => 'Select location to display recent topics',
+	'RT_LOCATION_EXP'        => 'For prosilver styles.',
 	'RT_SORT_START_TIME'     => 'Sortiraj Aktualne teme po vremenu pokretanja teme',
 	'RT_SORT_START_TIME_EXP' => 'Umjesto da ih sortiranje po posljednji post vremena.',
 	'RT_UNREAD_ONLY'         => 'Prikazati samo nepročitane teme u posljednjih nekoliko tema',

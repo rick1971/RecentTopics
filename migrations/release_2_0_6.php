@@ -83,17 +83,8 @@ class release_2_0_6 extends \phpbb\db\migration\migration
 	public function revert_data()
 	{
 		return array(
-			array('config.remove', array('rt_version')),
-			array('config.remove', array('rt_number')),
-			array('config.remove', array('rt_page_number')),
-			array('config.remove', array('rt_anti_topics')),
-			array('config.remove', array('rt_parents')),
-			array('config.remove', array('rt_index')),
 			array('config.remove', array('rt_unread_only')),
 			array('config.remove', array('rt_alt_location')),
-			array('config.remove', array('rt_min_topic_level')), //2.0.4
-			array('config.remove', array('rt_on_newspage')),  //2.0.5
-			array('config.remove', array('rt_sort_start_time')), //2.0.5
 
 			array('permission.remove', array('u_rt_view')),
 			array('permission.remove', array('u_rt_enable')),
