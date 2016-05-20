@@ -542,7 +542,9 @@ class recenttopics
 		$this->template->assign_vars(
 			array(
 			'RT_SORT_START_TIME'                   => ($sort_topics === 'topic_time') ? true : false,
-			'RT_LOCATION'                          => $location,
+			'S_LOCATION_TOP'                       => $location == 'RT_TOP',
+			'S_LOCATION_BOTTOM'                    => $location == 'RT_BOTTOM',
+			'S_LOCATION_SIDE'                      => $location == 'RT_SIDE',
 			'S_TOPIC_ICONS'                        => (sizeof($topic_icons)) ? true : false,
 			'NEWEST_POST_IMG'                      => $this->user->img('icon_topic_newest', 'VIEW_NEWEST_POST'),
 			'LAST_POST_IMG'                        => $this->user->img('icon_topic_latest', 'VIEW_LATEST_POST'),

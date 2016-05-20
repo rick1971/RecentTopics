@@ -1,4 +1,15 @@
-<!-- IF RECENT_TOPICS_DISPLAY and RT_LOCATION and recent_topics_included neq true -->
-<!-- INCLUDE recent_topics_body.html -->
+<!-- IF RECENT_TOPICS_DISPLAY and recent_topics_included neq true -->
 <!-- DEFINE recent_topics_included = true -->
+<!-- IF S_LOCATION_BOTTOM -->
+<DIV id="recenttopicsbottom">
+<!-- INCLUDE recent_topics_wide_body.html -->
+</DIV>
+<!-- ELSEIF S_LOCATION_SIDE -->
+</DIV>
+<DIV id="recenttopicsside">
+<!-- INCLUDE recent_topics_small_body.html -->
+</DIV>
+</section>
 <!-- ENDIF -->
+<!-- ENDIF -->
+

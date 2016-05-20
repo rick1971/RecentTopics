@@ -1,6 +1,11 @@
 <!-- IF RECENT_TOPICS_DISPLAY and recent_topics_included neq true -->
 <!-- DEFINE recent_topics_included = true -->
-<!-- IF S_LOCATION_TOP || S_LOCATION_BOTTOM -->
+<!-- IF S_LOCATION_TOP -->
+<DIV id="recenttopicstop">
 <!-- INCLUDE recent_topics_wide_body.html -->
+</DIV>
+<!-- ELSEIF S_LOCATION_SIDE -->
+<section id="phpbbsection">
+<DIV id="phpbbleftside">
 <!-- ENDIF -->
 <!-- ENDIF -->

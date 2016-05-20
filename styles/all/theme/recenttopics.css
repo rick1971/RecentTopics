@@ -1,0 +1,58 @@
+section#phpbbsection. {
+    margin:0;
+}
+
+@media screen and (min-width: 800px) {
+    div#recenttopicsside {
+        margin: 10px 0;
+        float:right;
+        width:25%;
+        overflow:hidden;
+        padding: 0;
+    }
+
+    div#phpbbleftside {
+        float:left;
+        min-width:74%;
+        overflow:hidden;
+    }
+}
+
+@media screen and (max-width: 800px)
+{
+    div#phpbbleftside {
+        float:left;
+        width:100%;
+        overflow:hidden;
+    }
+
+    div#recenttopicsside {
+        display: none;
+    }
+}
+
+.rt_title
+{
+    padding: 0px 0px 5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    white-space: nowrap;
+}
+
+dl dd.recenttopics
+{
+    background-repeat: no-repeat;
+    padding-bottom: 6px;
+    padding-left: 6px;
+    padding-right: 0;
+    width: 90%; !important;
+}
+
+dl dt.recenttopics
+{
+    background-repeat: no-repeat;
+    padding-bottom: 6px;
+    padding-left: 6px;
+    padding-right: 0;
+    width: 90%; !important;
+}
