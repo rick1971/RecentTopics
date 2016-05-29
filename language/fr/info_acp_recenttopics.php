@@ -2,7 +2,7 @@
 /**
  *
  * @package Recent Topics Extension
- * French translation by ForumsFaciles (http://www.forumsfaciles.fr) &  Galixte (http://www.galixte.com)
+ * French translation by ForumsFaciles (http://www.forumsfaciles.fr) &  Galixte (http://www.galixte.com) & Sajaki (http://www.avathar.be)
  *
  * @copyright (c) 2015 PayBas
  * @license GNU General Public License, version 2 (GPL-2.0)
@@ -10,14 +10,10 @@
  * Based on the original NV Recent Topics by Joas Schilling (nickvergessen)
  */
 
-/**
-* DO NOT CHANGE
-*/
 if (!defined('IN_PHPBB'))
 {
 	exit;
 }
-
 if (empty($lang) || !is_array($lang))
 {
 	$lang = array();
@@ -45,7 +41,7 @@ $lang = array_merge(
 	'RECENT_TOPICS_LIST'            => 'Afficher les « sujets récents »',
 	'RECENT_TOPICS_LIST_EXPLAIN'    => 'Affiche les sujets de ce forum au moyen de l’extension « Sujets récents ».',
 
-		//acp title
+	//acp title
 	'RECENT_TOPICS'                    => 'Sujets récents',
 	'RT_CONFIG'                        => 'Configuration',
 	'RECENT_TOPICS_EXPLAIN'            => 'Sur cette page vous pouvez modifier les paramètres de l’extension «Sujets récents».<br /><br />Des forums spécifiques peuvent être inclus ou exclus en modifiant les paramètres des forums respectifs depuis le PCA.<br />Il est recommandé de vérifier les autorisations des utilisateurs, leur permettant de modifier par eux-mêmes certains paramètres présents ci-dessous.',
@@ -53,8 +49,8 @@ $lang = array_merge(
 	//Overridable settings
 	'RT_OVERRIDABLE'                => 'Paramètres individualisables',
 	'RT_DISPLAY_INDEX'              => 'Afficher sur page index',
-	'RT_LOCATION'                    => 'Emplacement',
-	'RT_LOCATION_EXP'                => 'Choisir le lieu pour afficher les sujets récents (d’application sur les styles dérivés de prosilver)<br /> (pour les styles pbWoW3 & pbTech, l’emplacement est figé à droite.)',
+	'RT_LOCATION'                   => 'Emplacement',
+	'RT_LOCATION_EXP'               => 'Choisir le lieu pour afficher les sujets récents (d’application sur les styles dérivés de prosilver)<br /> (pour les styles pbWoW3 & pbTech, l’emplacement est figé à droite.)',
 	'RT_SORT_START_TIME'            => 'Trier selon la date de création du sujet',
 	'RT_SORT_START_TIME_EXP'        => 'Trie selon la date de création du sujet, en lieu et place de la date du dernier message.',
 	'RT_UNREAD_ONLY'                => 'Afficher uniquement les sujets non lus',

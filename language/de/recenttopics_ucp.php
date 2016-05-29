@@ -21,11 +21,14 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge(
 	$lang, array(
-	'RT_ENABLE'              => 'Display recent topics',
-	'RT_LOCATION'            => 'Select location to display recent topics',
-	'RT_LOCATION_EXP'        => 'For prosilver styles.',
-	'RT_SORT_START_TIME'     => 'Sort recent topics by topic start time',
-	'RT_SORT_START_TIME_EXP' => 'Instead of sorting them by last post time.',
-	'RT_UNREAD_ONLY'         => 'Only display unread topics in recent topics',
+		'RT_ENABLE'              => '«Aktuelle Themen» anzeigen',
+		'RT_LOCATION'            => 'Anzeigelage einstellen der «Aktuelle Themen»',
+		'RT_LOCATION_EXP'        => 'Ausgeschlossene Themen : pbTech/pbWoW3 (nur angezeigbar auf der Rechten Seite)',
+		'RT_SORT_START_TIME'     => 'Nach Themen Startzeit sortieren',
+		'RT_SORT_START_TIME_EXP' => 'Wenn diese Option aktiviert ist, werden die Themen nach dem Datum des ersten Beitrags anstelle des letzten Beitrags sortiert.',
+		'RT_UNREAD_ONLY'         => 'Nur ungelesene Themen anzeigen',
+		'RT_TOP'                 => 'Ansicht oben',
+		'RT_BOTTOM'              => 'Ansicht unten',
+		'RT_SIDE'                => 'Ansicht auf die Seite',
 	)
 );
