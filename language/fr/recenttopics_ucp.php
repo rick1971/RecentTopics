@@ -2,7 +2,7 @@
 /**
  *
  * @package Recent Topics Extension
- * French translation by Galixte (http://www.galixte.com)
+ * French translation by Galixte (http://www.galixte.com), Sajaki (http://www.avathar.be)
  *
  * @copyright (c) 2015 PayBas
  * @license GNU General Public License, version 2 (GPL-2.0)
@@ -10,14 +10,10 @@
  * Based on the original NV Recent Topics by Joas Schilling (nickvergessen)
  */
 
-/**
-* DO NOT CHANGE
-*/
 if (!defined('IN_PHPBB'))
 {
 	exit;
 }
-
 if (empty($lang) || !is_array($lang))
 {
 	$lang = array();
@@ -41,11 +37,14 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge(
 	$lang, array(
-	'RT_ENABLE'              => 'Afficher les « sujets récents »',
-	'RT_LOCATION'            => 'Select location to display recent topics',
-	'RT_LOCATION_EXP'        => 'For prosilver styles.',
-	'RT_SORT_START_TIME'     => 'Trier les « sujets récents » selon la date de création du sujet',
-	'RT_SORT_START_TIME_EXP' => 'Trie selon la date de création du sujet, en lieu et place de la date du dernier message.',
+	'RT_ENABLE'              => 'Afficher les «sujets récents»',
+	'RT_LOCATION'            => 'Sélectionner emplacement des «sujets récents»',
+	'RT_LOCATION_EXP'        => 'Styles exclus : pbTech/pbWoW3 (car ils ont un emplacement figé)',
+	'RT_SORT_START_TIME'     => 'Trier les «sujets récents» selon la date de création du sujet',
+	'RT_SORT_START_TIME_EXP' => 'Trie selon date de création du sujet, (sinon au lieu la date du dernier message).',
 	'RT_UNREAD_ONLY'         => 'Afficher uniquement les sujets non lus dans les « sujets récents »',
+	'RT_TOP'                 => 'Afficher en tête',
+	'RT_BOTTOM'              => 'Afficher en bas',
+	'RT_SIDE'                => 'Afficher sur le coté',
 	)
 );

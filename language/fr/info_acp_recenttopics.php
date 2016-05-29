@@ -41,34 +41,43 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge(
 	$lang, array(
-	'RECENT_TOPICS'                    => 'Sujets récents',
-	'RECENT_TOPICS_EXPLAIN'            => 'Sur cette page il est possible de modifier les paramètres spécifiques de l’extension « Sujets récents ».<br /><br />Des forums spécifiques peuvent être inclus ou exclus en modifiant les paramètres des forums respectifs depuis le PCA.<br />Il est recommandé de vérifier les autorisations des utilisateurs, leur permettant de modifier par eux-mêmes certains paramètres présents ci-dessous.',
-
+	//forum acp
 	'RECENT_TOPICS_LIST'            => 'Afficher les « sujets récents »',
 	'RECENT_TOPICS_LIST_EXPLAIN'    => 'Affiche les sujets de ce forum au moyen de l’extension « Sujets récents ».',
 
+		//acp title
+	'RECENT_TOPICS'                    => 'Sujets récents',
 	'RT_CONFIG'                        => 'Configuration',
-	'RT_ANTI_TOPICS'                => 'Sujets exclus',
-	'RT_ANTI_TOPICS_EXP'            => 'Saisir les ID des sujets séparés par : « , » (exemple : 7,9).<br />Pour ne pas exclure de sujet saisir simplement 0.',
-	'RT_MIN_TOPIC_LEVEL'            => 'Niveau minimum du type de sujet',
-	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Détermine le niveau minimum du type de sujet à afficher. Cela affichera les sujets correspondants au niveau paramétré et aux niveaux supérieurs.<br />(0 = Normal, 1 = Post-it, 2 = Annonce, 3 = Annonce globale)',
-	'RT_NUMBER'                        => 'Sujets récents',
-	'RT_NUMBER_EXP'                    => 'Nombre de sujets à afficher sur l’index.',
-	'RT_PAGE_NUMBER'                => 'Nombre de pages pour les « sujets récents »',
-	'RT_PAGE_NUMBER_EXP'            => 'Affiche davantage de « sujets récents » en utilisant la pagination. Saisir la valeur 1 pour désactiver cette option. Si la valeur 0 est saisie, il y aura autant de pages que nécessaire pour afficher tous les sujets de votre forum (non recommandé).',
-	'RT_PARENTS'                    => 'Afficher les forums parents',
-	'RT_PARENTS_EXP'                => 'Affiche les forums parents dans la liste des « sujets récents ».',
+	'RECENT_TOPICS_EXPLAIN'            => 'Sur cette page vous pouvez modifier les paramètres de l’extension «Sujets récents».<br /><br />Des forums spécifiques peuvent être inclus ou exclus en modifiant les paramètres des forums respectifs depuis le PCA.<br />Il est recommandé de vérifier les autorisations des utilisateurs, leur permettant de modifier par eux-mêmes certains paramètres présents ci-dessous.',
+
+	//Overridable settings
+	'RT_OVERRIDABLE'                => 'Paramètres individualisables',
+	'RT_DISPLAY_INDEX'              => 'Afficher sur page index',
+	'RT_LOCATION'                    => 'Emplacement',
+	'RT_LOCATION_EXP'                => 'Choisir le lieu pour afficher les sujets récents (d’application sur les styles dérivés de prosilver)<br /> (pour les styles pbWoW3 & pbTech, l’emplacement est figé à droite.)',
 	'RT_SORT_START_TIME'            => 'Trier selon la date de création du sujet',
 	'RT_SORT_START_TIME_EXP'        => 'Trie selon la date de création du sujet, en lieu et place de la date du dernier message.',
 	'RT_UNREAD_ONLY'                => 'Afficher uniquement les sujets non lus',
 	'RT_UNREAD_ONLY_EXP'            => 'Affiche uniquement les sujets non lus (qu’ils soient « récents » ou non). Cette fonctionnalité utilise les mêmes paramètres que le mode normal (en excluant les forums / sujets, etc…). Note : Cela fonctionne uniquement pour les utilisateurs connectés; les invités verront la liste normale.',
 
+	//global settings
+	'RT_GLOBAL_SETTINGS'            => 'Paramètres globaux',
+	'RT_NUMBER'                     => 'Sujets récents',
+	'RT_NUMBER_EXP'                 => 'Nombre de sujets à afficher sur l’index.',
+	'RT_PAGE_NUMBER'                => 'Nombre de pages pour les « sujets récents »',
+	'RT_PAGE_NUMBER_EXP'            => 'Affiche davantage de « sujets récents » en utilisant la pagination. Saisir la valeur 1 pour désactiver cette option. Si la valeur 0 est saisie, il y aura autant de pages que nécessaire pour afficher tous les sujets de votre forum (non recommandé).',
+	'RT_MIN_TOPIC_LEVEL'            => 'Niveau minimum du type de sujet',
+	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Détermine le niveau minimum du type de sujet à afficher. Cela affichera les sujets correspondants au niveau paramétré et aux niveaux supérieurs.<br />(0 = Normal, 1 = Post-it, 2 = Annonce, 3 = Annonce globale)',
+	'RT_ANTI_TOPICS'                => 'Sujets exclus',
+	'RT_ANTI_TOPICS_EXP'            => 'Saisir les ID des sujets séparés par : « , » (exemple : 7,9).<br />Pour ne pas exclure de sujet saisir simplement 0.',
+	'RT_PARENTS'                    => 'Afficher les forums parents',
+	'RT_PARENTS_EXP'                => 'Affiche les forums parents dans la liste des « sujets récents ».',
+
+	//Enable for extensions
 	'RT_VIEW_ON'                    => 'Afficher les « sujets récents » sur :',
 
-	'RT_LOCATION'                    => 'Display location',
-	'RT_LOCATION_EXP'                => 'Select location to display recent topics. (prosilver)<br /> (pbWoW3 & pbTech have fixed display locations on the side)',
-	'RT_TOP'                         => 'Show on top',
-	'RT_BOTTOM'                      => 'Show on bottom',
-	'RT_SIDE'                        => 'Show on side',
+	'RT_TOP'                         => 'Afficher en tête',
+	'RT_BOTTOM'                      => 'Afficher en bas',
+	'RT_SIDE'                        => 'Afficher sur le coté',
 	)
 );
