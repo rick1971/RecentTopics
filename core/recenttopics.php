@@ -608,7 +608,7 @@ class recenttopics
 		$this->forums = $this->topic_list = array();
 		$topics_count = 0;
 		$this->obtain_icons = false;
-		$excluded_topics = explode(', ', $this->config['rt_anti_topics']);
+		$excluded_topics = explode(',', $this->config['rt_anti_topics']);
 		$min_topic_level = $this->config['rt_min_topic_level'];
 
 		// Either use the phpBB core function to get unread topics, or the custom function for default behavior
@@ -632,7 +632,7 @@ class recenttopics
 		{
 			// Get the allowed topics
 			$sql_array = array(
-				'SELECT'    => 't.forum_id, t.topic_id, t.topic_type, t.icon_id, tt.mark_time, ft.mark_time as f_mark_time',
+				'SELECT'    => 't.forum_id, t.topic_id, t.topic_type, t.icon_id, tt.mark_time, ft.mark_time as f_mark_time, FROM_UNIXTIME(t.' . $sort_topics . ') as sortcr ',
 				'FROM'      => array(TOPICS_TABLE => 't'),
 				'LEFT_JOIN' => array(
 					array(

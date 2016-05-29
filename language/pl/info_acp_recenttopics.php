@@ -29,7 +29,7 @@ $lang = array_merge(
 
 	'RT_CONFIG'                        => 'Ustawienia',
 	'RT_ANTI_TOPICS'                => 'Pomiń tematy',
-	'RT_ANTI_TOPICS_EXP'            => 'Podaj identyfikatory tematów do pominięcia, oddzielając je przecinkiem np. <samp>7, 9</samp>. Wartość zero (0) wyłącza tę funkcję.',
+	'RT_ANTI_TOPICS_EXP'            => 'Podaj identyfikatory tematów do pominięcia, oddzielając je przecinkiem np. <samp>7,9</samp>. Wartość zero (0) wyłącza tę funkcję.',
 	'RT_MIN_TOPIC_LEVEL'            => 'Minimalny typ tematu',
 	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Tylko tematy o podanym i większym typie będą wyświetlane na liście najnowszych tematów (<samp>0</samp> – zwykły temat, <samp>1</samp> – przyklejony temat, <samp>2</samp> – ogłoszenie, <samp>3</samp> – ogłoszenie globalne).',
 	'RT_NUMBER'                        => 'Liczba najnowszych tematów na stronie',

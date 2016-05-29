@@ -26,7 +26,7 @@ $lang = array_merge(
 	'RECENT_TOPICS_LIST_EXPLAIN'=>'Ukoliko izabereš “Da”, teme postane u [ovaj] forum bit će prikazane na listi aktualnih tema.',
 	'RT_CONFIG'=>'Postavke',
 	'RT_ANTI_TOPICS'=>'Izuzete teme',
-	'RT_ANTI_TOPICS_EXP'=>'IDovi tema koje će biti izuzete, odvojeni [sa] ", " (npr: 7, 9)<br /> [0=niti jedna tema neće biti izuzeta].',
+	'RT_ANTI_TOPICS_EXP'=>'IDovi tema koje će biti izuzete, odvojeni [sa] "," (npr: 7,9)<br /> [0=niti jedna tema neće biti izuzeta].',
 	'RT_MIN_TOPIC_LEVEL'=>'Minimalna razina tipa tema',
 	'RT_MIN_TOPIC_LEVEL_EXP'=>'Određuje minimalnu razinu tipa tema koje će biti prikazane na popisu aktualnih tema [bit će prikazane (samo) teme postavljene razine i više razine tipa tema].<br />[0=Normalno, 1=Važno, 2=Obavijest te (je) 3=Globalno].',
 	'RT_NUMBER'=>'Aktualne teme',

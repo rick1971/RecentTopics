@@ -29,7 +29,7 @@ $lang = array_merge(
 
 	'RT_CONFIG'                        => 'Configurare',
 	'RT_ANTI_TOPICS'                => 'Excludere subiecte',
-	'RT_ANTI_TOPICS_EXP'            => 'ID-ul subiectelor ce vor fi excluse, separate prin ", " (Exemplu: 7, 9)<br />Dacă nu vreţi să excludeţi subiecte, introduceţi 0.',
+	'RT_ANTI_TOPICS_EXP'            => 'ID-ul subiectelor ce vor fi excluse, separate prin "," (Exemplu: 7,9)<br />Dacă nu vreţi să excludeţi subiecte, introduceţi 0.',
 	'RT_MIN_TOPIC_LEVEL'            => 'Nivel minim subiect',
 	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Determină nivelul minim al tipurilor de subiecte afişate. Această opţiune va determina afişarea doar a subiectelor de nivelul introdus si mai mare.<br />(0 = normal, 1 = lipicios, 2 = anunţuri, 3 = anunţuri globale)',
 	'RT_NUMBER'                        => 'Subiecte recente',

@@ -32,7 +32,7 @@ $lang = array_merge(
 
 	'RT_CONFIG'                        => 'Configurazione',
 	'RT_ANTI_TOPICS'                => 'Argomenti esclusi',
-	'RT_ANTI_TOPICS_EXP'            => 'Gli ID degli argomenti da escludere, separati da una virgola (es.: 7, 9)<br />Per non escudere alcun argomento, digitare 0.',
+	'RT_ANTI_TOPICS_EXP'            => 'Gli ID degli argomenti da escludere, separati da una virgola (es.: 7,9)<br />Per non escudere alcun argomento, digitare 0.',
 	'RT_MIN_TOPIC_LEVEL'            => 'Livello minimo argomenti',
 	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Determina il livello minimo di argomenti da mostrare: saranno mostrati gli argomenti del livello specificato e superiori.<br />(0 = argomento semplice, 1 = importante, 2 = annuncio, 3 = annuncio globale)',
 	'RT_NUMBER'                        => 'Argomenti recenti',

@@ -29,7 +29,7 @@ $lang = array_merge(
 
 	'RT_CONFIG'                        => 'Inställningar',
 	'RT_ANTI_TOPICS'                => 'Uteslutna ämnen',
-	'RT_ANTI_TOPICS_EXP'            => 'Separerade med ", " (exampel: 7, 9)<br />Ange 0 om du ej vill utesluta ämnen.',
+	'RT_ANTI_TOPICS_EXP'            => 'Separerade med "," (exampel: 7,9)<br />Ange 0 om du ej vill utesluta ämnen.',
 	'RT_MIN_TOPIC_LEVEL'            => 'Minsta nivå av ämnestyp',
 	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Anger minsta nivå av ämnestyp som skall visas. Den inställda nivån och högre kommer att visas.<br />(0 = normal, 1 = klistrat, 2 = anslag, 3 = globalt anslag)',
 	'RT_NUMBER'                        => 'Antal ämnen',

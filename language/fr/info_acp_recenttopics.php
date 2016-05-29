@@ -49,7 +49,7 @@ $lang = array_merge(
 
 	'RT_CONFIG'                        => 'Configuration',
 	'RT_ANTI_TOPICS'                => 'Sujets exclus',
-	'RT_ANTI_TOPICS_EXP'            => 'Saisir les ID des sujets séparés par : « , » (exemple : 7, 9).<br />Pour ne pas exclure de sujet saisir simplement 0.',
+	'RT_ANTI_TOPICS_EXP'            => 'Saisir les ID des sujets séparés par : « , » (exemple : 7,9).<br />Pour ne pas exclure de sujet saisir simplement 0.',
 	'RT_MIN_TOPIC_LEVEL'            => 'Niveau minimum du type de sujet',
 	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Détermine le niveau minimum du type de sujet à afficher. Cela affichera les sujets correspondants au niveau paramétré et aux niveaux supérieurs.<br />(0 = Normal, 1 = Post-it, 2 = Annonce, 3 = Annonce globale)',
 	'RT_NUMBER'                        => 'Sujets récents',

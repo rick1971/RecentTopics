@@ -29,7 +29,7 @@ $lang = array_merge(
 
 	'RT_CONFIG'                        => 'Configuratie',
 	'RT_ANTI_TOPICS'                => 'Uitgesloten onderwerpen',
-	'RT_ANTI_TOPICS_EXP'            => 'Gescheiden door een ", " (Voorbeeld: 7, 9)<br />Als je geen onderwerpen wilt uitsluiten, vul een 0 in.',
+	'RT_ANTI_TOPICS_EXP'            => 'Gescheiden door een "," (Voorbeeld: 7,9)<br />Als je geen onderwerpen wilt uitsluiten, vul een 0 in.',
 	'RT_MIN_TOPIC_LEVEL'            => 'Minimum topic type level',
 	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Determines the minimum level of the topic type to display. It will display topics of the set level, and higher.<br />(0 = normal, 1 = sticky, 2 = announcement, 3 = global announcement)',
 	'RT_NUMBER'                        => 'Aantal recente onderwerpen',

@@ -29,7 +29,7 @@ $lang = array_merge(
 
 	'RT_CONFIG'                        => 'Configuracón',
 	'RT_ANTI_TOPICS'                => 'Temas excluidos',
-	'RT_ANTI_TOPICS_EXP'            => 'Separados por ", " (Por ejemplo: 7, 9)<br />Si no quiere excluir un tema, simplemente introduzca 0.',
+	'RT_ANTI_TOPICS_EXP'            => 'Separados por "," (Por ejemplo: 7,9)<br />Si no quiere excluir un tema, simplemente introduzca 0.',
 	'RT_MIN_TOPIC_LEVEL'            => 'Tipo de nivel mínimo del tema',
 	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Determina el tipo de nivel mínimo del tema a mostrar. Se mostrará temas del nivel establecido, y superior.<br />(0 = normal, 1 = nota, 2 = anuncio, 3 = anuncio global).',
 	'RT_NUMBER'                        => 'Temas recientes',

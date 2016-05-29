@@ -29,7 +29,7 @@ $lang = array_merge(
 
 	'RT_CONFIG'                        => 'Konfiguration von aktuelle Themen',
 	'RT_ANTI_TOPICS'                => 'Ausgeschlossene Themen',
-	'RT_ANTI_TOPICS_EXP'            => 'Mit „, “ trennen (Beispiel: 7, 9)<br />Wenn kein Thema ausgeschlossen werden soll „1“ eingeben. Wenn du „0“ eingibst, werden so viele Seiten angezeigt, wie benötigt werden, um alle Themen auszugeben.',
+	'RT_ANTI_TOPICS_EXP'            => 'Mit „, “ trennen (Beispiel: 7,9)<br />Wenn kein Thema ausgeschlossen werden soll „1“ eingeben. Wenn du „0“ eingibst, werden so viele Seiten angezeigt, wie benötigt werden, um alle Themen auszugeben.',
 	'RT_MIN_TOPIC_LEVEL'            => 'Minimaler Thementyp',
 	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Definiert das Minimum eines Thementyps, der angezeigt wird. Wenn du ein Thementyp angibst, werden nur Themen dieses oder eines höheren Typs angezeigt.<br />(0 = Normal, 1 = Wichtig, 2 = Ankündigung, 3 = Globale Ankündigung)',
 	'RT_NUMBER'                        => 'Aktuelle Themen',
