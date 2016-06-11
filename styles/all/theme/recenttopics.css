@@ -1,35 +1,40 @@
+/***** div layout *******/
+
 section#phpbbsection. {
-    margin:0;
+    overflow: hidden;
 }
 
-@media screen and (min-width: 800px) {
-    div#recenttopicsside {
-        margin: 10px 0;
-        float:right;
-        width:25%;
-        overflow:hidden;
-        padding: 0;
-    }
-
+@media screen and (min-width: 951px) {
     div#phpbbleftside {
-        float:left;
-        min-width:74%;
-        overflow:hidden;
+        width: auto;
+        overflow: hidden;
     }
-}
 
-@media screen and (max-width: 800px)
+    div#recenttopicsside {
+        float: right;
+        margin-left: 10px;
+        width: 302px;
+    }
+
+
+}
+@media screen and (max-width: 951px)
 {
     div#phpbbleftside {
-        float:left;
-        width:100%;
-        overflow:hidden;
+        width: auto;
+        overflow: hidden;
     }
 
     div#recenttopicsside {
-        display: none;
+        float: right;
+        margin-left: 10px;
+        width: 302px;
+        display:none;
     }
+
 }
+
+/************/
 
 .rt_title
 {
