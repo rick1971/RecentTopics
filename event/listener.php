@@ -36,11 +36,9 @@ class listener implements EventSubscriberInterface
 		return array(
 			'core.index_modify_page_title'           => 'display_rt',
 			'nickvergessen.newspage.newspage'        => 'display_rt_newspage',
-
 			'core.acp_manage_forums_request_data'    => 'acp_manage_forums_request_data',
 			'core.acp_manage_forums_initialise_data' => 'acp_manage_forums_initialise_data',
 			'core.acp_manage_forums_display_form'    => 'acp_manage_forums_display_form',
-
 			'core.permissions'                       => 'add_permission',
 		);
 	}
