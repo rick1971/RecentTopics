@@ -26,7 +26,7 @@ $lang = array_merge(
 
 	//PCA título
 	'RECENT_TOPICS'                 => 'Fórum Topicos recentes',
-	'RECENT_TOPICS_EXPLAIN'         => "Aqui você pode alterar as configurações de Topicos recentes. <br /> <br /> fórum individuais podem ser incluídos ou excluídos, alterando as respectivas definições no PCA. <br /> Além disso, através das definições nesta página, você pode permitir que os usuários editem os aspectos de auto certo ponto",
+	'RECENT_TOPICS_EXPLAIN'         => 'Aqui você pode alterar as configurações de Topicos recentes. <br /> <br /> fórum individuais podem ser incluídos ou excluídos, alterando as respectivas definições no PCA. <br /> Além disso, através das definições nesta página, você pode permitir que os usuários editem os aspectos de auto certo ponto',
 	'RT_CONFIG'                     => 'configuración',
 
 	//configuração geral para usuários anônimos

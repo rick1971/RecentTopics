@@ -10,6 +10,13 @@
 
 namespace paybas\recenttopics\migrations;
 
+/**
+ * Abstract base class for database migrations
+ *
+ * Each migration consists of a set of schema and data changes to be implemented
+ * in a subclass. This class provides various utility methods to simplify editing
+ * a phpBB.
+ */
 class release_2_1_0 extends \phpbb\db\migration\migration
 {
 
@@ -101,6 +108,14 @@ class release_2_1_0 extends \phpbb\db\migration\migration
 		);
 	}
 
+	/**
+	 * Reverts data by returning a list of instructions to be executed
+	 *
+	 * @return array Array of data instructions that will be performed on revert
+	 *    NOTE: calls to tools (such as config.add) are automatically reverted when
+	 *        possible, so you should not attempt to revert those, this is mostly for
+	 *        otherwise unrevertable calls (custom functions for example)
+	 */
 	public function revert_data()
 	{
 		return array(

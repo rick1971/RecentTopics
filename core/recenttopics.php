@@ -20,6 +20,11 @@ use phpbb\pagination;
 use phpbb\request\request_interface;
 use phpbb\template\template;
 
+/**
+ * Class recenttopics
+ *
+ * @package paybas\recenttopics\core
+ */
 class recenttopics
 {
 	/**
@@ -181,13 +186,10 @@ class recenttopics
 	{
 		$this->user->add_lang_ext('paybas/recenttopics', 'recenttopics');
 
-		/**
-		 * Set some internal needed variables
-		 */
-
+		// Set some internal needed variables
 		$location = $this->config['rt_location'];
 		$display_parent_forums = $this->config['rt_parents'];
-		$sort_topics = ($this->config['rt_sort_start_time']) ? 'topic_time' : 'topic_last_post_time';
+		$sort_topics = $this->config['rt_sort_start_time'] ? 'topic_time' : 'topic_last_post_time';
 		$this->unread_only = $this->config['rt_unread_only'];
 
 		$start = $this->request->variable($tpl_loopname . '_start', 0);
@@ -218,7 +220,7 @@ class recenttopics
 
 			if ($this->auth->acl_get('u_rt_sort_start_time') && isset($this->user->data['user_rt_sort_start_time']))
 			{
-				$sort_topics = ($this->user->data['user_rt_sort_start_time']) ? 'topic_time' : 'topic_last_post_time';
+				$sort_topics = $this->user->data['user_rt_sort_start_time'] ? 'topic_time' : 'topic_last_post_time';
 			}
 
 			if ($this->auth->acl_get('u_rt_unread_only') && isset($this->user->data['user_rt_unread_only']))
@@ -227,15 +229,15 @@ class recenttopics
 			}
 		}
 
-		$this->GetForumlist();
+		$this->getforumlist();
 
 		// No forums to display
-		if (count($this->forum_ids) == 0)
+		if (sizeof($this->forum_ids) == 0)
 		{
 			return;
 		}
 
-		$topics_count = $this->GetTopicList($start, $topics_per_page, $total_topics_limit, $sort_topics);
+		$topics_count = $this->gettopiclist($start, $topics_per_page, $total_topics_limit, $sort_topics);
 
 		// No topics to display
 		if (!sizeof($this->topic_list))
@@ -258,18 +260,18 @@ class recenttopics
 		{
 			if ($this->user->data['is_registered'] && $this->config['load_db_lastread'])
 			{
-				$topic_tracking_info[$forum_id] = get_topic_tracking($forum_id, $forum['topic_list'], $forum['rowset'], array($forum_id => $forum['mark_time']), ($forum_id) ? false : $forum['topic_list']);
+				$topic_tracking_info[$forum_id] = get_topic_tracking($forum_id, $forum['topic_list'], $forum['rowset'], array($forum_id => $forum['mark_time']), $forum_id ? false : $forum['topic_list']);
 			}
 			else if ($this->config['load_anon_lastread'] || $this->user->data['is_registered'])
 			{
 				$tracking_topics = $this->request->variable($this->config['cookie_name'] . '_track', '', true, request_interface::COOKIE);
-				$tracking_topics = ($tracking_topics) ? tracking_unserialize($tracking_topics) : array();
+				$tracking_topics = $tracking_topics ? tracking_unserialize($tracking_topics) : array();
 
-				$topic_tracking_info[$forum_id] = get_complete_topic_tracking($forum_id, $forum['topic_list'], ($forum_id) ? false : $forum['topic_list']);
+				$topic_tracking_info[$forum_id] = get_complete_topic_tracking($forum_id, $forum['topic_list'], $forum_id ? false : $forum['topic_list']);
 
 				if (!$this->user->data['is_registered'])
 				{
-					if ((isset($tracking_topics['l'])))
+					if (isset($tracking_topics['l']))
 					{
 						$this->user->data['user_lastmark'] = (int) (base_convert($tracking_topics['l'], 36, 10) + $this->config['board_startdate']);
 					}
@@ -370,7 +372,7 @@ class recenttopics
 			}
 			else
 			{
-				if ((isset($topic_tracking_info[$forum_id][$row['topic_id']]) && $row['topic_last_post_time'] > $topic_tracking_info[$forum_id][$row['topic_id']]))
+				if (isset($topic_tracking_info[$forum_id][$row['topic_id']]) && $row['topic_last_post_time'] > $topic_tracking_info[$forum_id][$row['topic_id']])
 				{
 					topic_status($row, $replies, true, $folder_img, $folder_alt, $topic_type);
 				}
@@ -379,7 +381,7 @@ class recenttopics
 					topic_status($row, $replies, false, $folder_img, $folder_alt, $topic_type);
 				}
 
-				if ((isset($topic_tracking_info[$forum_id][$row['topic_id']]) && $row['topic_last_post_time'] > $topic_tracking_info[$forum_id][$row['topic_id']]))
+				if (isset($topic_tracking_info[$forum_id][$row['topic_id']]) && $row['topic_last_post_time'] > $topic_tracking_info[$forum_id][$row['topic_id']])
 				{
 					$unread_topic = true;
 				}
@@ -395,7 +397,7 @@ class recenttopics
 			$topic_unapproved = ($row['topic_visibility'] == ITEM_UNAPPROVED && $this->auth->acl_get('m_approve', $forum_id));
 			$posts_unapproved = ($row['topic_visibility'] == ITEM_APPROVED && $row['topic_posts_unapproved'] && $this->auth->acl_get('m_approve', $forum_id));
 
-			$u_mcp_queue = ($topic_unapproved || $posts_unapproved) ? append_sid("{$this->root_path}mcp.$this->phpEx", 'i=queue&amp;mode=' . (($topic_unapproved) ? 'approve_details' : 'unapproved_posts') . "&amp;t=$topic_id", true, $this->user->session_id) : '';
+			$u_mcp_queue = ($topic_unapproved || $posts_unapproved) ? append_sid("{$this->root_path}mcp.$this->phpEx", 'i=queue&amp;mode=' . ($topic_unapproved ? 'approve_details' : 'unapproved_posts') . "&amp;t=$topic_id", true, $this->user->session_id) : '';
 			$s_type_switch = ($row['topic_type'] == POST_ANNOUNCE || $row['topic_type'] == POST_GLOBAL) ? 1 : 0;
 
 			if (!empty($icons[$row['icon_id']]))
@@ -445,21 +447,21 @@ class recenttopics
 				'TOPIC_ICON_IMG_WIDTH'    => (!empty($icons[$row['icon_id']])) ? $icons[$row['icon_id']]['width'] : '',
 				'TOPIC_ICON_IMG_HEIGHT'   => (!empty($icons[$row['icon_id']])) ? $icons[$row['icon_id']]['height'] : '',
 				'ATTACH_ICON_IMG'         => ($this->auth->acl_get('u_download') && $this->auth->acl_get('f_download', $forum_id) && $row['topic_attachment']) ? $this->user->img('icon_topic_attach', $this->user->lang['TOTAL_ATTACHMENTS']) : '',
-				'UNAPPROVED_IMG'          => ($topic_unapproved || $posts_unapproved) ? $this->user->img('icon_topic_unapproved', ($topic_unapproved) ? 'TOPIC_UNAPPROVED' : 'POSTS_UNAPPROVED') : '',
+				'UNAPPROVED_IMG'          => ($topic_unapproved || $posts_unapproved) ? $this->user->img('icon_topic_unapproved', $topic_unapproved ? 'TOPIC_UNAPPROVED' : 'POSTS_UNAPPROVED') : '',
 				'REPORTED_IMG'            => ($row['topic_reported'] && $this->auth->acl_get('m_report', $forum_id)) ? $this->user->img('icon_topic_reported', 'TOPIC_REPORTED') : '',
-				'S_HAS_POLL'              => ($row['poll_start']) ? true : false,
+				'S_HAS_POLL'              => $row['poll_start'] ? true : false,
 
 				'S_TOPIC_TYPE'            => $row['topic_type'],
-				'S_USER_POSTED'           => (isset($row['topic_posted']) && $row['topic_posted']) ? true : false,
+				'S_USER_POSTED'           => isset($row['topic_posted']) && $row['topic_posted'],
 				'S_UNREAD_TOPIC'          => $unread_topic,
-				'S_TOPIC_REPORTED'        => ($row['topic_reported'] && $this->auth->acl_get('m_report', $forum_id)) ? true : false,
+				'S_TOPIC_REPORTED'        => $row['topic_reported'] && $this->auth->acl_get('m_report', $forum_id),
 				'S_TOPIC_UNAPPROVED'      => $topic_unapproved,
 				'S_POSTS_UNAPPROVED'      => $posts_unapproved,
-				'S_POST_ANNOUNCE'         => ($row['topic_type'] == POST_ANNOUNCE) ? true : false,
-				'S_POST_GLOBAL'           => ($row['topic_type'] == POST_GLOBAL) ? true : false,
-				'S_POST_STICKY'           => ($row['topic_type'] == POST_STICKY) ? true : false,
-				'S_TOPIC_LOCKED'          => ($row['topic_status'] == ITEM_LOCKED) ? true : false,
-				'S_TOPIC_MOVED'           => ($row['topic_status'] == ITEM_MOVED) ? true : false,
+				'S_POST_ANNOUNCE'         => $row['topic_type'] == POST_ANNOUNCE,
+				'S_POST_GLOBAL'           => $row['topic_type'] == POST_GLOBAL,
+				'S_POST_STICKY'           => $row['topic_type'] == POST_STICKY,
+				'S_TOPIC_LOCKED'          => $row['topic_status'] == ITEM_LOCKED,
+				'S_TOPIC_MOVED'           => $row['topic_status'] == ITEM_MOVED,
 				'S_TOPIC_TYPE_SWITCH'     => ($s_type_switch == $s_type_switch_test) ? -1 : $s_type_switch_test,
 
 				'U_NEWEST_POST'           => $view_topic_url . '&amp;view=unread#unread',
@@ -531,11 +533,11 @@ class recenttopics
 
 		$this->template->assign_vars(
 			array(
-				'RT_SORT_START_TIME'                   => ($sort_topics === 'topic_time') ? true : false,
+				'RT_SORT_START_TIME'                   => $sort_topics === 'topic_time',
 				'S_LOCATION_TOP'                       => $location == 'RT_TOP',
 				'S_LOCATION_BOTTOM'                    => $location == 'RT_BOTTOM',
 				'S_LOCATION_SIDE'                      => $location == 'RT_SIDE',
-				'S_TOPIC_ICONS'                        => (sizeof($topic_icons)) ? true : false,
+				'S_TOPIC_ICONS'                        => sizeof($topic_icons) ? true : false,
 				'NEWEST_POST_IMG'                      => $this->user->img('icon_topic_newest', 'VIEW_NEWEST_POST'),
 				'LAST_POST_IMG'                        => $this->user->img('icon_topic_latest', 'VIEW_LATEST_POST'),
 				'POLL_IMG'                             => $this->user->img('icon_topic_poll', 'TOPIC_POLL'),
@@ -548,7 +550,7 @@ class recenttopics
 	/**
 	 * Get the forums we take our topics from
 	 */
-	private function GetForumlist()
+	private function getforumlist()
 	{
 		// Get the allowed forums
 		$forum_ary = array();
@@ -562,14 +564,13 @@ class recenttopics
 		}
 		$this->forum_ids = array_unique($forum_ary);
 
-		if (count($this->forum_ids) > 1)
+		if (sizeof($this->forum_ids) > 1)
 		{
 
-			$sql_forum_include_val = 1;
 			$sql = 'SELECT forum_id
 					FROM ' . FORUMS_TABLE . '
 					WHERE ' . $this->db->sql_in_set('forum_id', $this->forum_ids) . '
-					AND forum_recent_topics = ' . $sql_forum_include_val;
+					AND forum_recent_topics = 1';
 
 			$result = $this->db->sql_query($sql);
 
@@ -593,7 +594,7 @@ class recenttopics
 	 * @param  $sort_topics
 	 * @return int
 	 */
-	private function GetTopicList($start, $topics_per_page, $total_topics_limit, $sort_topics)
+	private function gettopiclist($start, $topics_per_page, $total_topics_limit, $sort_topics)
 	{
 		$this->forums = $this->topic_list = array();
 		$topics_count = 0;

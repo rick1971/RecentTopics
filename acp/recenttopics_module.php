@@ -10,11 +10,20 @@
 
 namespace paybas\recenttopics\acp;
 
+/**
+ * Class recenttopics_module
+ *
+ * @package paybas\recenttopics\acp
+ */
 class recenttopics_module
 {
 	public $u_action;
 
-	function main($id, $mode)
+	/**
+	 * @param $id
+	 * @param $mode
+	 */
+	public function main($id, $mode)
 	{
 		global $config, $phpbb_extension_manager, $request, $template, $user;
 

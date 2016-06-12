@@ -27,7 +27,7 @@ $lang = array_merge(
 
 	//PCA título
 	'RECENT_TOPICS'                 => 'Temas Recientes',
-	'RECENT_TOPICS_EXPLAIN'         => "Aquí puede cambiar la configuración de temas recientes. <br /> <br /> Foro individual puede ser incluido o excluido cambiando su configuración en el PCA. <br /> Además, a través de la configuración de esta página, se puede permiten a los usuarios editar el propio cierta medida los aspectos",
+	'RECENT_TOPICS_EXPLAIN'         => 'Aquí puede cambiar la configuración de temas recientes. <br /> <br /> Foro individual puede ser incluido o excluido cambiando su configuración en el PCA. <br /> Además, a través de la configuración de esta página, se puede permiten a los usuarios editar el propio cierta medida los aspectos',
 	'RT_CONFIG'                     => 'configuración',
 
 	//configuración general para los usuarios anónimos

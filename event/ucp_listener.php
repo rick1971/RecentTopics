@@ -12,6 +12,17 @@ namespace paybas\recenttopics\event;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
+/**
+ * An EventSubscriber knows himself what events he is interested in.
+ * If an EventSubscriber is added to an EventDispatcherInterface, the manager invokes
+ * {@link getSubscribedEvents} and registers the subscriber as a listener for all
+ * returned events.
+ *
+ * @author Guilherme Blanco <guilhermeblanco@hotmail.com>
+ * @author Jonathan Wage <jonwage@gmail.com>
+ * @author Roman Borschel <roman@code-factory.org>
+ * @author Bernhard Schussek <bschussek@gmail.com>
+ */
 class ucp_listener implements EventSubscriberInterface
 {
 	/**
@@ -39,6 +50,15 @@ class ucp_listener implements EventSubscriberInterface
 */
 	protected $user;
 
+	/**
+	 * ucp_listener constructor.
+	 *
+	 * @param \phpbb\auth\auth         $auth
+	 * @param \phpbb\config\config     $config
+	 * @param \phpbb\request\request   $request
+	 * @param \phpbb\template\template $template
+	 * @param \phpbb\user              $user
+	 */
 	public function __construct(\phpbb\auth\auth $auth, \phpbb\config\config $config, \phpbb\request\request $request, \phpbb\template\template $template, \phpbb\user $user)
 	{
 		$this->auth = $auth;

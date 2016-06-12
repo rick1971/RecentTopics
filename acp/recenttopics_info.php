@@ -10,9 +10,17 @@
 
 namespace paybas\recenttopics\acp;
 
+/**
+ * Class recenttopics_info
+ *
+ * @package paybas\recenttopics\acp
+ */
 class recenttopics_info
 {
-	function module()
+	/**
+	 * @return array
+	 */
+	public function module()
 	{
 		return array(
 		'filename'    => '\paybas\recenttopics\recenttopics_module',
