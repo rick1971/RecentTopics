@@ -31,7 +31,7 @@ $lang = array_merge(
 	'RECENT_TOPICS_EXPLAIN'         => 'Hier kan je de instellingen aanpassen voor de Recente Onderwerpen Extensie.<br />
 	<br />Activatie van Individuele forums kan ingesteld worden in het Forum beheerderspaneel.<br />Ga ook uw gebruikerspaneel na dat voorrang heeft op beheerderspaneelinstellingen',
 
-	//Overridable settings
+	//algemene instellingen voor anonieme gebruikers
 	'RT_OVERRIDABLE'                => 'Instellingen waarvoor gebruikerspaneel voorrang heeft',
 	'RT_DISPLAY_INDEX'              => 'Toon op index pagina',
 	'RT_LOCATION'                   => 'Plaatsinstelling',

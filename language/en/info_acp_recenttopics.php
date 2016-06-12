@@ -30,8 +30,8 @@ $lang = array_merge(
 	'RT_CONFIG'                     => 'Configuration',
 	'RECENT_TOPICS_EXPLAIN'         => 'On this page you can change the settings specific for the Recent Topics extension.<br /><br />Specific forums can be included or excluded by editing the respective forums in your ACP.<br />Also be sure to check your user permissions, which allow users to change some of the settings found below for themselves.',
 
-	//User Overridable settings
-	'RT_OVERRIDABLE'                => 'Overridable Settings',
+	//User Overridable settings. these apply for anon users and can be overridden by UCP
+	'RT_OVERRIDABLE'                => 'UCP overridable Settings',
 	'RT_DISPLAY_INDEX'              => 'Display on Index page',
 	'RT_LOCATION'                   => 'Display location',
 	'RT_LOCATION_EXP'               => 'Select location to display recent topics. (prosilver)<br /> (pbWoW3 & pbTech have fixed display locations on the side)',

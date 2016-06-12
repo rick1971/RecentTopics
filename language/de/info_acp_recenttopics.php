@@ -46,7 +46,7 @@ $lang = array_merge(
 	'RT_CONFIG'                     => 'Konfiguration von aktuelle Themen',
 	'RECENT_TOPICS_EXPLAIN'         => 'Auf dieser Seite können Sie die Erweiterung Einstellungen „Aktuelle Themen“ bearbeiten.<br /><br />Spezifische Foren können durch ändern der Einstellungen der jeweiligen Foren eingeschlossen oder ausgeschlossen werden<br />Es wird empfohlen, die Berechtigungen von Benutzern zu überprüfen, so dass sie sich einige Parameter ändern können.',
 
-	//Overridable settings
+	//Overridable settings in ucp
 	'RT_OVERRIDABLE'                => 'individualisierbare Einstellungen',
 	'RT_DISPLAY_INDEX'              => 'Anzeigen auf der Index-Seite',
 	'RT_LOCATION'                   => 'Anzeigelage',
