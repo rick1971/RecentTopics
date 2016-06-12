@@ -10,10 +10,12 @@
  * Based on the original NV Recent Topics by Joas Schilling (nickvergessen)
  */
 
-if (!defined('IN_PHPBB')) {
+if (!defined('IN_PHPBB'))
+{
 	exit;
 }
-if (empty($lang) || !is_array($lang)) {
+if (empty($lang) || !is_array($lang))
+{
 	$lang = array();
 }
 
@@ -24,7 +26,7 @@ $lang = array_merge(
 	'RECENT_TOPICS_LIST_EXPLAIN'=>'Ukoliko izabereš “Da”, teme postane u [ovaj] forum bit će prikazane na listi aktualnih tema.',
 	'RT_CONFIG'=>'Postavke',
 	'RT_ANTI_TOPICS'=>'Izuzete teme',
-	'RT_ANTI_TOPICS_EXP'=>'IDovi tema koje će biti izuzete, odvojeni [sa] ", " (npr: 7, 9)<br /> [0=niti jedna tema neće biti izuzeta].',
+	'RT_ANTI_TOPICS_EXP'=>'IDovi tema koje će biti izuzete, odvojeni [sa] "," (npr: 7,9)<br /> [0=niti jedna tema neće biti izuzeta].',
 	'RT_MIN_TOPIC_LEVEL'=>'Minimalna razina tipa tema',
 	'RT_MIN_TOPIC_LEVEL_EXP'=>'Određuje minimalnu razinu tipa tema koje će biti prikazane na popisu aktualnih tema [bit će prikazane (samo) teme postavljene razine i više razine tipa tema].<br />[0=Normalno, 1=Važno, 2=Obavijest te (je) 3=Globalno].',
 	'RT_NUMBER'=>'Aktualne teme',
@@ -38,5 +40,11 @@ $lang = array_merge(
 	'RT_UNREADONLY'=>'Prikaži samo nepročitane teme',
 	'RT_UNREADONLY_EXP'=>'Ukoliko izabereš “Da”, bit će prikazane [samo] nepročitane teme - neovisno o tome jesu li ili nisu aktualne [(ova) funkcija koristi iste postavke kao normalan način rada (izuzimanje  foruma/tema i sl.) i odnosi se samo na prijavljene korisnike/ce što će reći da će samo njima biti prikazane (samo) nepročitane teme dok će gostima biti prikazane sve (aktualne) teme].',
 	'RT_VIEW_ON'=>'Prikaži "Aktualne teme" na:',
+
+	'RT_LOCATION'                    => 'Display location',
+	'RT_LOCATION_EXP'                => 'Select location to display recent topics. (prosilver)<br /> (pbWoW3 & pbTech have fixed display locations on the side)',
+	'RT_TOP'                         => 'Show on top',
+	'RT_BOTTOM'                      => 'Show on bottom',
+	'RT_SIDE'                        => 'Show on side',
 	)
 );

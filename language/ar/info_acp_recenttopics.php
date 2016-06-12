@@ -10,10 +10,12 @@
  * Based on the original NV Recent Topics by Joas Schilling (nickvergessen)
  */
 
-if (!defined('IN_PHPBB')) {
+if (!defined('IN_PHPBB'))
+{
 	exit;
 }
-if (empty($lang) || !is_array($lang)) {
+if (empty($lang) || !is_array($lang))
+{
 	$lang = array();
 }
 
@@ -25,7 +27,7 @@ $lang = array_merge(
 
 	'RT_CONFIG'                        => 'الإعدادات',
 	'RT_ANTI_TOPICS'                => 'المواضيع المُستبعدة ',
-	'RT_ANTI_TOPICS_EXP'            => 'اكتب علامة الفاصلة ", " بين أرقام المواضيع التي تريد عدم ظهورها في "أحدث المواضيع" (مثال : "7, 9")<br />اكتب القيمة "صفر" لتعطيل هذا الخيار.',
+	'RT_ANTI_TOPICS_EXP'            => 'اكتب علامة الفاصلة ", " بين أرقام المواضيع التي تريد عدم ظهورها في "أحدث المواضيع" (مثال : "7,9")<br />اكتب القيمة "صفر" لتعطيل هذا الخيار.',
 	'RT_MIN_TOPIC_LEVEL'            => 'نوع المواضيع ',
 	'RT_MIN_TOPIC_LEVEL_EXP'        => 'تحديد نوع المواضيع التي تريد عرضها. سيتم العرض من الأقل إلى الأكثر. <br />( اكتب القيمة صفر لعرض المواضيع العادية / 1 للمُثبتة / 2 للإعلانات / 3 للإعلانات العامة )',
 	'RT_NUMBER'                        => 'عدد المواضيع ',
@@ -40,5 +42,11 @@ $lang = array_merge(
 	'RT_UNREADONLY_EXP'                => 'تفعيل هذا الخيار يعني اظهار المواضيع الغير مقروءة فقط ( بغض النظر لو هذه المواضيع حديثة أو قديمة ). هذا الخيار يستخدم نفس اعدادات الطريقة العادية ( استبعاد المنتدىات/المواضيع..الخ ).<br />ملاحظة : هذا الخيار يظهر فقط للأعضاء المسجلين دخولهم للمنتدى. الزائرين سيُشاهدون القائمة العادية.',
 
 	'RT_VIEW_ON'                    => 'إظهار أحدث المواضيع في :',
+
+	'RT_LOCATION'                    => 'Display location',
+	'RT_LOCATION_EXP'                => 'Select location to display recent topics. (prosilver)<br /> (pbWoW3 & pbTech have fixed display locations on the side)',
+	'RT_TOP'                         => 'Show on top',
+	'RT_BOTTOM'                      => 'Show on bottom',
+	'RT_SIDE'                        => 'Show on side',
 	)
 );

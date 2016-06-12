@@ -36,11 +36,9 @@ class listener implements EventSubscriberInterface
 		return array(
 			'core.index_modify_page_title'           => 'display_rt',
 			'nickvergessen.newspage.newspage'        => 'display_rt_newspage',
-
 			'core.acp_manage_forums_request_data'    => 'acp_manage_forums_request_data',
 			'core.acp_manage_forums_initialise_data' => 'acp_manage_forums_initialise_data',
 			'core.acp_manage_forums_display_form'    => 'acp_manage_forums_display_form',
-
 			'core.permissions'                       => 'add_permission',
 		);
 	}
@@ -48,7 +46,8 @@ class listener implements EventSubscriberInterface
 	// The main magic
 	public function display_rt()
 	{
-		if (isset($this->config['rt_index']) && $this->config['rt_index']) {
+		if (isset($this->config['rt_index']) && $this->config['rt_index'])
+		{
 		$this->rt_functions->display_recent_topics(); }
 	}
 
@@ -100,7 +99,7 @@ class listener implements EventSubscriberInterface
 		$permissions = $event['permissions'];
 		$permissions['u_rt_view'] = array('lang' => 'ACL_U_RT_VIEW', 'cat' => 'misc');
 		$permissions['u_rt_enable'] = array('lang' => 'ACL_U_RT_ENABLE', 'cat' => 'misc');
-		$permissions['u_rt_alt_location'] = array('lang' => 'ACL_U_RT_ALT_LOCATION', 'cat' => 'misc');
+		$permissions['u_rt_location'] = array('lang' => 'ACL_U_RT_LOCATION', 'cat' => 'misc');
 		$permissions['u_rt_sort_start_time'] = array('lang' => 'ACL_U_RT_SORT_START_TIME', 'cat' => 'misc');
 		$permissions['u_rt_unread_only'] = array('lang' => 'ACL_U_RT_UNREAD_ONLY', 'cat' => 'misc');
 		$event['permissions'] = $permissions;

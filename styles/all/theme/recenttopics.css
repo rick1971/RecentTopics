@@ -1,0 +1,63 @@
+/***** div layout *******/
+
+section#phpbbsection. {
+    overflow: hidden;
+}
+
+@media screen and (min-width: 951px) {
+    div#phpbbleftside {
+        width: auto;
+        overflow: hidden;
+    }
+
+    div#recenttopicsside {
+        float: right;
+        margin-left: 10px;
+        width: 302px;
+    }
+
+
+}
+@media screen and (max-width: 951px)
+{
+    div#phpbbleftside {
+        width: auto;
+        overflow: hidden;
+    }
+
+    div#recenttopicsside {
+        float: right;
+        margin-left: 10px;
+        width: 302px;
+        display:none;
+    }
+
+}
+
+/************/
+
+.rt_title
+{
+    padding: 0px 0px 5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    white-space: nowrap;
+}
+
+dl dd.recenttopics
+{
+    background-repeat: no-repeat;
+    padding-bottom: 6px;
+    padding-left: 6px;
+    padding-right: 0;
+    width: 90%; !important;
+}
+
+dl dt.recenttopics
+{
+    background-repeat: no-repeat;
+    padding-bottom: 6px;
+    padding-left: 6px;
+    padding-right: 0;
+    width: 90%; !important;
+}

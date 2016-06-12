@@ -13,10 +13,12 @@
  * ’ » “ ” …
  */
 
-if (!defined('IN_PHPBB')) {
+if (!defined('IN_PHPBB'))
+{
 	exit;
 }
-if (empty($lang) || !is_array($lang)) {
+if (empty($lang) || !is_array($lang))
+{
 	$lang = array();
 }
 
@@ -29,10 +31,8 @@ $lang = array_merge(
 	'RECENT_TOPICS_LIST_EXPLAIN'    => 'Gli argomenti di questo forum saranno mostrati nell’elenco “Argomenti recenti”.',
 
 	'RT_CONFIG'                        => 'Configurazione',
-	'RT_ALT_LOCATION'                => 'Mostra nella posizione alternativa',
-	'RT_ALT_LOCATION_EXP'            => 'Mostra l’elenco degli argomenti recenti in una posizione diversa.<br />Non funziona per tutti gli stili; nel caso di prosilver, l’elenco viene spostato in fondo alla pagina.',
 	'RT_ANTI_TOPICS'                => 'Argomenti esclusi',
-	'RT_ANTI_TOPICS_EXP'            => 'Gli ID degli argomenti da escludere, separati da una virgola (es.: 7, 9)<br />Per non escudere alcun argomento, digitare 0.',
+	'RT_ANTI_TOPICS_EXP'            => 'Gli ID degli argomenti da escludere, separati da una virgola (es.: 7,9)<br />Per non escudere alcun argomento, digitare 0.',
 	'RT_MIN_TOPIC_LEVEL'            => 'Livello minimo argomenti',
 	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Determina il livello minimo di argomenti da mostrare: saranno mostrati gli argomenti del livello specificato e superiori.<br />(0 = argomento semplice, 1 = importante, 2 = annuncio, 3 = annuncio globale)',
 	'RT_NUMBER'                        => 'Argomenti recenti',
@@ -47,5 +47,11 @@ $lang = array_merge(
 	'RT_UNREAD_ONLY_EXP'            => 'Abilita per mostrare solo gli argomenti non letti, recenti o meno; questa funzione usa le stesse impostazioni (esclusione di forum, topic eccetera) della modalità normale.<br />Nota: funziona solo per gli utenti registrati; gli ospiti vedranno l’elenco normale.',
 
 	'RT_VIEW_ON'                    => 'Mostra gli argomenti recenti in:',
+
+	'RT_LOCATION'                    => 'Display location',
+	'RT_LOCATION_EXP'                => 'Select location to display recent topics. (prosilver)<br /> (pbWoW3 & pbTech have fixed display locations on the side)',
+	'RT_TOP'                         => 'Show on top',
+	'RT_BOTTOM'                      => 'Show on bottom',
+	'RT_SIDE'                        => 'Show on side',
 	)
 );

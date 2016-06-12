@@ -10,10 +10,12 @@
  * Based on the original NV Recent Topics by Joas Schilling (nickvergessen)
  */
 
-if (!defined('IN_PHPBB')) {
+if (!defined('IN_PHPBB'))
+{
 	exit;
 }
-if (empty($lang) || !is_array($lang)) {
+if (empty($lang) || !is_array($lang))
+{
 	$lang = array();
 }
 
@@ -26,10 +28,8 @@ $lang = array_merge(
 	'RECENT_TOPICS_LIST_EXPLAIN'    => 'Jeśli wybrano <samp>Tak</samp>, tematy zamieszczone na tym forum będą wyświetlane na liście najnowszych tematów.',
 
 	'RT_CONFIG'                        => 'Ustawienia',
-	'RT_ALT_LOCATION'                => 'Display in alternative location',
-	'RT_ALT_LOCATION_EXP'            => 'Use alternative location to display recent topics.<br />Not all styles will support this, for prosilver it will be moved to the bottom of the page.',
 	'RT_ANTI_TOPICS'                => 'Pomiń tematy',
-	'RT_ANTI_TOPICS_EXP'            => 'Podaj identyfikatory tematów do pominięcia, oddzielając je przecinkiem np. <samp>7, 9</samp>. Wartość zero (0) wyłącza tę funkcję.',
+	'RT_ANTI_TOPICS_EXP'            => 'Podaj identyfikatory tematów do pominięcia, oddzielając je przecinkiem np. <samp>7,9</samp>. Wartość zero (0) wyłącza tę funkcję.',
 	'RT_MIN_TOPIC_LEVEL'            => 'Minimalny typ tematu',
 	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Tylko tematy o podanym i większym typie będą wyświetlane na liście najnowszych tematów (<samp>0</samp> – zwykły temat, <samp>1</samp> – przyklejony temat, <samp>2</samp> – ogłoszenie, <samp>3</samp> – ogłoszenie globalne).',
 	'RT_NUMBER'                        => 'Liczba najnowszych tematów na stronie',
@@ -44,5 +44,10 @@ $lang = array_merge(
 	'RT_UNREAD_ONLY_EXP'            => 'Włączenie tej funkcji spowoduje wyświetlanie na liście tylko nieprzeczytanych tematów. Ta opcja wykorzystuje te same ustawienia co tryb najnowszych tematów. Informacja: Opcja działa tylko dla zalogowanych użytkowników. Dla gości nadal jest wyświetlana lista najnowszych tematów.',
 
 	'RT_VIEW_ON'                    => 'Wyświetlanie najnowszych tematów',
+	'RT_LOCATION'                    => 'Display location',
+	'RT_LOCATION_EXP'                => 'Select location to display recent topics. (prosilver)<br /> (pbWoW3 & pbTech have fixed display locations on the side)',
+	'RT_TOP'                         => 'Show on top',
+	'RT_BOTTOM'                      => 'Show on bottom',
+	'RT_SIDE'                        => 'Show on side',
 	)
 );

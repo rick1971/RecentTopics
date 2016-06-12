@@ -10,10 +10,12 @@
  * Based on the original NV Recent Topics by Joas Schilling (nickvergessen)
  */
 
-if (!defined('IN_PHPBB')) {
+if (!defined('IN_PHPBB'))
+{
 	exit;
 }
-if (empty($lang) || !is_array($lang)) {
+if (empty($lang) || !is_array($lang))
+{
 	$lang = array();
 }
 
@@ -25,7 +27,7 @@ $lang = array_merge(
 
 	'RT_CONFIG'                        => 'Konfiguráció',
 	'RT_ANTI_TOPICS'                => 'Kizárt témák',
-	'RT_ANTI_TOPICS_EXP'            => 'A kizárandó témák azonosítói ", "-vel elválasztva (pl.: 7, 9)<br />Ha nem akarsz témát kizárni, írj be 0-t.',
+	'RT_ANTI_TOPICS_EXP'            => 'A kizárandó témák azonosítói ", "-vel elválasztva (pl.: 7,9)<br />Ha nem akarsz témát kizárni, írj be 0-t.',
 	'RT_MIN_TOPIC_LEVEL'            => 'Minimális tématípus-szint',
 	'RT_MIN_TOPIC_LEVEL_EXP'        => 'A megjelenítendő tématípusok minimális szintjét határozza meg. Csak a megadott és annál magasabb szintű témák jelennek meg.<br />(0 = normál, 1 = kiemelt, 2 = közlemény, 3 = globális közlemény)',
 	'RT_NUMBER'                        => 'Friss téma',
@@ -40,5 +42,11 @@ $lang = array_merge(
 	'RT_UNREADONLY_EXP'                => 'Csak az olvasatlan témákat jelenítse meg, függetlenül attól, "frissek"-e. Ez a funkció ugyanazokat a beállításokat használja (fórumok/témák kizárása, stb.), mint a normál mód. Megjegyzés: ez csak a bejelentkezett felhasználóknak működik, a vendégek a normál listát kapják.',
 
 	'RT_VIEW_ON'                    => 'Friss témák megjelenítése itt:',
+
+	'RT_LOCATION'                    => 'Display location',
+	'RT_LOCATION_EXP'                => 'Select location to display recent topics. (prosilver)<br /> (pbWoW3 & pbTech have fixed display locations on the side)',
+	'RT_TOP'                         => 'Show on top',
+	'RT_BOTTOM'                      => 'Show on bottom',
+	'RT_SIDE'                        => 'Show on side',
 	)
 );

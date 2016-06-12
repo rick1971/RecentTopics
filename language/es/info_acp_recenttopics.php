@@ -10,10 +10,12 @@
  * Based on the original NV Recent Topics by Joas Schilling (nickvergessen)
  */
 
-if (!defined('IN_PHPBB')) {
+if (!defined('IN_PHPBB'))
+{
 	exit;
 }
-if (empty($lang) || !is_array($lang)) {
+if (empty($lang) || !is_array($lang))
+{
 	$lang = array();
 }
 
@@ -26,10 +28,8 @@ $lang = array_merge(
 	'RECENT_TOPICS_LIST_EXPLAIN'    => 'Serán los temas de este foro los que se mostrarán en el índice de "temas recientes"?',
 
 	'RT_CONFIG'                        => 'Configuracón',
-	'RT_ALT_LOCATION'                => 'Display in alternative location',
-	'RT_ALT_LOCATION_EXP'            => 'Use alternative location to display recent topics.<br />Not all styles will support this, for prosilver it will be moved to the bottom of the page.',
 	'RT_ANTI_TOPICS'                => 'Temas excluidos',
-	'RT_ANTI_TOPICS_EXP'            => 'Separados por ", " (Por ejemplo: 7, 9)<br />Si no quiere excluir un tema, simplemente introduzca 0.',
+	'RT_ANTI_TOPICS_EXP'            => 'Separados por "," (Por ejemplo: 7,9)<br />Si no quiere excluir un tema, simplemente introduzca 0.',
 	'RT_MIN_TOPIC_LEVEL'            => 'Tipo de nivel mínimo del tema',
 	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Determina el tipo de nivel mínimo del tema a mostrar. Se mostrará temas del nivel establecido, y superior.<br />(0 = normal, 1 = nota, 2 = anuncio, 3 = anuncio global).',
 	'RT_NUMBER'                        => 'Temas recientes',
@@ -44,5 +44,11 @@ $lang = array_merge(
 	'RT_UNREAD_ONLY_EXP'            => 'Esta opción sólo mostrará temas no leídos (tanto si son "recientes" o no). Esta función utiliza la misma configuración (excluyendo forums/topics etc.) que el modo normal. Nota: esto sólo funciona para usuarios registrados e identificados; los invitados podrán obtener la lista normal.',
 
 	'RT_VIEW_ON'                    => 'Ver temas recientes en:',
+
+	'RT_LOCATION'                    => 'Display location',
+	'RT_LOCATION_EXP'                => 'Select location to display recent topics. (prosilver)<br /> (pbWoW3 & pbTech have fixed display locations on the side)',
+	'RT_TOP'                         => 'Show on top',
+	'RT_BOTTOM'                      => 'Show on bottom',
+	'RT_SIDE'                        => 'Show on side',
 	)
 );

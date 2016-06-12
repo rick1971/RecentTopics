@@ -10,10 +10,12 @@
  * Based on the original NV Recent Topics by Joas Schilling (nickvergessen)
  */
 
-if (!defined('IN_PHPBB')) {
+if (!defined('IN_PHPBB'))
+{
 	exit;
 }
-if (empty($lang) || !is_array($lang)) {
+if (empty($lang) || !is_array($lang))
+{
 	$lang = array();
 }
 
@@ -26,10 +28,8 @@ $lang = array_merge(
 	'RECENT_TOPICS_LIST_EXPLAIN'    => 'Если включено, то темы этого форума будут отображаться в списке последних тем.',
 
 	'RT_CONFIG'                        => 'Настройка',
-	'RT_ALT_LOCATION'                => 'Display in alternative location',
-	'RT_ALT_LOCATION_EXP'            => 'Use alternative location to display recent topics.<br />Not all styles will support this, for prosilver it will be moved to the bottom of the page.',
 	'RT_ANTI_TOPICS'                => 'Исключённые темы',
-	'RT_ANTI_TOPICS_EXP'            => 'Разделённый запятыми список идентификаторов тем, которые не должны отображаться в списке последних тем (например: 7, 9)<br />Установите 0 для отключения данной функции.',
+	'RT_ANTI_TOPICS_EXP'            => 'Разделённый запятыми список идентификаторов тем, которые не должны отображаться в списке последних тем (например: 7,9)<br />Установите 0 для отключения данной функции.',
 	'RT_MIN_TOPIC_LEVEL'            => 'Минимальный статус темы',
 	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Минимальный статус темы для отображения. В списке последних тем будут отображены темы, имеющие указанный статус, и выше.<br />(0 = обычная, 1 = прилепленная, 2 = объявление, 3 = важная)',
 	'RT_NUMBER'                        => 'Число тем в списке',
@@ -44,5 +44,11 @@ $lang = array_merge(
 	'RT_UNREAD_ONLY_EXP'            => 'Если включено, в списке последних тем будут отображены только темы с непрочтёнными сообщениями, независимо от того, являются они последними или нет. При этом будут использованы те же настройки (исключённые темы, форумы и т.д.), что и в обычном режиме. Учтите, что данная функция работает только для зарегистрированных пользователей. Для гостей будет отображён обычный список.',
 
 	'RT_VIEW_ON'                    => 'Размещение списка последних тем:',
+
+	'RT_LOCATION'                    => 'Display location',
+	'RT_LOCATION_EXP'                => 'Select location to display recent topics. (prosilver)<br /> (pbWoW3 & pbTech have fixed display locations on the side)',
+	'RT_TOP'                         => 'Show on top',
+	'RT_BOTTOM'                      => 'Show on bottom',
+	'RT_SIDE'                        => 'Show on side',
 	)
 );

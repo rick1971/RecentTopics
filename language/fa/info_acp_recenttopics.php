@@ -10,10 +10,12 @@
  * Based on the original NV Recent Topics by Joas Schilling (nickvergessen)
  */
 
-if (!defined('IN_PHPBB')) {
+if (!defined('IN_PHPBB'))
+{
 	exit;
 }
-if (empty($lang) || !is_array($lang)) {
+if (empty($lang) || !is_array($lang))
+{
 	$lang = array();
 }
 
@@ -26,8 +28,6 @@ $lang = array_merge(
 	'RECENT_TOPICS_LIST_EXPLAIN'    => 'فعال سازی نمایش موضوعات این انجمن در افزونه " موضوعات اخیر"',
 
 	'RT_CONFIG'                        => 'پیکربندی',
-	'RT_ALT_LOCATION'                => 'Display in alternative location',
-	'RT_ALT_LOCATION_EXP'            => 'Use alternative location to display recent topics.<br />Not all styles will support this, for prosilver it will be moved to the bottom of the page.',
 	'RT_ANTI_TOPICS'                 => 'موضوعات چشم پوشی شده',
 	'RT_ANTI_TOPICS_EXP'            => 'جداسازی" توسط کاما ", ” (به عنوان مثال: “7,9”)<br />اگر تمایل به چشم پوشی موضوعی ندارید عدد 0 را وارد کنید.',
 	'RT_MIN_TOPIC_LEVEL'            => 'حداقل سطح نوع موضوعات',
@@ -44,5 +44,11 @@ $lang = array_merge(
 	'RT_UNREAD_ONLY_EXP'            => 'فعال سازی جهت نمایش تنها موضوعات خوانده نشده (حتی اگر جدید یا اخیر هم نباشد). این عملکرد شامل تنظیمات مشابه نیز میباشد (چشم پوشی کردن از انجمن ها و موضوعات) در حالت معمولی. توجه: این امکان تنها برای کاربران وارد شده قابل استفاده میباشد; و مهمانان لیست معمولی را خواهند داشت',
 
 	'RT_VIEW_ON'                    => 'نمایش موضوعات مشابه روی:',
+
+	'RT_LOCATION'                    => 'Display location',
+	'RT_LOCATION_EXP'                => 'Select location to display recent topics. (prosilver)<br /> (pbWoW3 & pbTech have fixed display locations on the side)',
+	'RT_TOP'                         => 'Show on top',
+	'RT_BOTTOM'                      => 'Show on bottom',
+	'RT_SIDE'                        => 'Show on side',
 	)
 );

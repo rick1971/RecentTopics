@@ -10,10 +10,12 @@
  * Based on the original NV Recent Topics by Joas Schilling (nickvergessen)
  */
 
-if (!defined('IN_PHPBB')) {
+if (!defined('IN_PHPBB'))
+{
 	exit;
 }
-if (empty($lang) || !is_array($lang)) {
+if (empty($lang) || !is_array($lang))
+{
 	$lang = array();
 }
 
@@ -29,7 +31,7 @@ $lang = array_merge(
 	'RT_ALT_LOCATION'                => 'Vis i alternativ lokation',
 	'RT_ALT_LOCATION_EXP'            => 'Brug alternativ lokation til at vise seneste emner.<br />Ikke alle temaer understøtter dette. I prosilver, vil det blive flyttet ned i bunden.',
 	'RT_ANTI_TOPICS'                => 'Eksluder indlæg',
-	'RT_ANTI_TOPICS_EXP'            => 'ID\'et på det emner der skal udelukkes, sepereret med ", " (Eksempel: 7, 9)<br />Hvis du ikke ønsker at udelukke noget, skal du skrive 0.',
+	'RT_ANTI_TOPICS_EXP'            => 'ID\'et på det emner der skal udelukkes, sepereret med "," (Eksempel: 7,9)<br />Hvis du ikke ønsker at udelukke noget, skal du skrive 0.',
 	'RT_MIN_TOPIC_LEVEL'            => 'Minimum emne type',
 	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Bestemmer minimumsniveauet for emne type til at vise. Det vil kun vise emner af det indstillede niveau, og højere.<br />(0 = normal, 1 = sticky, 2 = bekendtgørelsen, 3 = global bekendtgørelse)',
 	'RT_NUMBER'                        => 'Seneste emner',
@@ -44,5 +46,11 @@ $lang = array_merge(
 	'RT_UNREAD_ONLY_EXP'            => 'Aktive "vis kun ulæste emner"  (uanset om det er de seneste eller ej). Denne funktion bruger de samme indstillinger (ekskl. fora / emner osv) som normal tilstand. Bemærk: Dette virker kun for registrerede brugere; gæster vil få den normale liste.',
 
 	'RT_VIEW_ON'                    => 'Vis seneste emner på:',
+
+	'RT_LOCATION'                    => 'Display location',
+	'RT_LOCATION_EXP'                => 'Select location to display recent topics. (prosilver)<br /> (pbWoW3 & pbTech have fixed display locations on the side)',
+	'RT_TOP'                         => 'Show on top',
+	'RT_BOTTOM'                      => 'Show on bottom',
+	'RT_SIDE'                        => 'Show on side',
 	)
 );

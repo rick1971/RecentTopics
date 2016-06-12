@@ -10,10 +10,12 @@
  * Based on the original NV Recent Topics by Joas Schilling (nickvergessen)
  */
 
-if (!defined('IN_PHPBB')) {
+if (!defined('IN_PHPBB'))
+{
 	exit;
 }
-if (empty($lang) || !is_array($lang)) {
+if (empty($lang) || !is_array($lang))
+{
 	$lang = array();
 }
 
@@ -26,10 +28,8 @@ $lang = array_merge(
 	'RECENT_TOPICS_LIST_EXPLAIN'    => 'Eğer etkinleştirilmiş ise, bu forum da "son konular" eklentisi görüntülenir.',
 
 	'RT_CONFIG'                        => 'Ayarlar',
-	'RT_ALT_LOCATION'                => 'Farklı yerlerde göster',
-	'RT_ALT_LOCATION_EXP'            => '"Son konuları" farklı yerlerde gösterebilmek için kullanabilirsiniz.<br />Bütün stiller bunu desteklemeyebilir, prosilver\'da sayfanın altına taşınacaktır.',
 	'RT_ANTI_TOPICS'                => 'Dışlanan konular',
-	'RT_ANTI_TOPICS_EXP'            => 'Ayraç ", " (Örnek: 7, 9)<br />Sıfır "0" değeri bu özelliği devre dışı bırakır.',
+	'RT_ANTI_TOPICS_EXP'            => 'Ayraç "," (Örnek: 7,9)<br />Sıfır "0" değeri bu özelliği devre dışı bırakır.',
 	'RT_MIN_TOPIC_LEVEL'            => 'Konu türü',
 	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Gösterilecek konu türünü belirler.<br />(0 = Normal, 1 = Sabit, 2 = Duyuru, 3 = Genel Duyuru)',
 	'RT_NUMBER'                        => 'Son Konular',
@@ -43,6 +43,12 @@ $lang = array_merge(
 	'RT_UNREAD_ONLY'                => 'Sadece okunmamış konuları göster',
 	'RT_UNREAD_ONLY_EXP'            => 'Bu seçeneğin etkinleştirilmesi sadece okunmamış konuların görüntülenmesini sağlar. Konu türü ayrımı olmayacaktır.<br /><strong>NOT:</strong> Bu özellik giriş yapmış kullanıcılar için geçerlidir; Misafirler normal "Son Konular" listesini görecektir.',
 
-	'RT_VIEW_ON'                    => 'Son Konuları göster:',
+	'RT_VIEW_ON'                     => 'Son Konuları göster:',
+
+	'RT_LOCATION'                    => 'Display location',
+	'RT_LOCATION_EXP'                => 'Select location to display recent topics. (prosilver)<br /> (pbWoW3 & pbTech have fixed display locations on the side)',
+	'RT_TOP'                         => 'Show on top',
+	'RT_BOTTOM'                      => 'Show on bottom',
+	'RT_SIDE'                        => 'Show on side',
 	)
 );
