@@ -42,18 +42,18 @@ $lang = array_merge(
 	'RECENT_TOPICS_LIST_EXPLAIN'    => 'Affiche les sujets de ce forum au moyen de l’extension « Sujets récents ».',
 
 	//acp title
-	'RECENT_TOPICS'                    => 'Sujets récents',
-	'RT_CONFIG'                        => 'Configuration',
-	'RECENT_TOPICS_EXPLAIN'            => 'Sur cette page vous pouvez modifier les paramètres de l’extension «Sujets récents».<br /><br />Des forums spécifiques peuvent être inclus ou exclus en modifiant les paramètres des forums respectifs depuis le PCA.<br />Il est recommandé de vérifier les autorisations des utilisateurs, leur permettant de modifier par eux-mêmes certains paramètres présents ci-dessous.',
+	'RECENT_TOPICS'                 => 'Sujets récents',
+	'RT_CONFIG'                     => 'Configuration',
+	'RECENT_TOPICS_EXPLAIN'         => 'Sur cette page vous pouvez modifier les paramètres de l’extension «Sujets récents».<br /><br />Des forums spécifiques peuvent être inclus ou exclus en modifiant les paramètres des forums respectifs depuis le PCA.<br />Il est recommandé de vérifier les autorisations des utilisateurs, leur permettant de modifier par eux-mêmes certains paramètres présents ci-dessous.',
 
 	//Overridable settings
 	'RT_OVERRIDABLE'                => 'Paramètres individualisables',
 	'RT_DISPLAY_INDEX'              => 'Afficher sur page index',
 	'RT_LOCATION'                   => 'Emplacement',
-	'RT_LOCATION_EXP'               => 'Choisir le lieu pour afficher les sujets récents (d’application sur les styles dérivés de prosilver)<br /> (pour les styles pbWoW3 & pbTech, l’emplacement est figé à droite.)',
-	'RT_TOP'                         => 'Afficher en tête',
-	'RT_BOTTOM'                      => 'Afficher en bas',
-	'RT_SIDE'                        => 'Afficher sur le coté',
+	'RT_LOCATION_EXP'               => 'Choisir le lieu pour afficher les sujets récents (d’application sur les styles dérivés de prosilver)',
+	'RT_TOP'                        => 'Afficher en tête',
+	'RT_BOTTOM'                     => 'Afficher en bas',
+	'RT_SIDE'                       => 'Afficher sur le coté',
 	'RT_SORT_START_TIME'            => 'Trier selon la date de création du sujet',
 	'RT_SORT_START_TIME_EXP'        => 'Trie selon la date de création du sujet, en lieu et place de la date du dernier message.',
 	'RT_UNREAD_ONLY'                => 'Afficher uniquement les sujets non lus',
@@ -68,7 +68,7 @@ $lang = array_merge(
 	'RT_MIN_TOPIC_LEVEL'            => 'Niveau minimum du type de sujet',
 	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Détermine le niveau minimum du type de sujet à afficher. Cela affichera les sujets correspondants au niveau paramétré et aux niveaux supérieurs.<br />(0 = Normal, 1 = Post-it, 2 = Annonce, 3 = Annonce globale)',
 	'RT_ANTI_TOPICS'                => 'Sujets exclus',
-	'RT_ANTI_TOPICS_EXP'            => 'Saisir les ID des sujets séparés par : « , » (exemple : 7,9).<br />Pour ne pas exclure de sujet saisir simplement 0.',
+	'RT_ANTI_TOPICS_EXP'            => 'Saisir les ID des sujets séparés par virgule (exemple : 7,9).<br />Pour ne pas exclure de sujet saisir simplement 0.',
 	'RT_PARENTS'                    => 'Afficher les forums parents',
 	'RT_PARENTS_EXP'                => 'Affiche les forums parents dans la liste des « sujets récents ».',
 

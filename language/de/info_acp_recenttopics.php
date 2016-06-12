@@ -42,15 +42,15 @@ $lang = array_merge(
 	'RECENT_TOPICS_LIST_EXPLAIN'    => 'Sollen Themen aus diesem Forum in „aktuelle Themen“ angezeigt werden?',
 
 	//acp title
-	'RECENT_TOPICS'                    => 'Aktuelle Themen',
-	'RT_CONFIG'                        => 'Konfiguration von aktuelle Themen',
-	'RECENT_TOPICS_EXPLAIN'            => 'Auf dieser Seite können Sie die Erweiterung Einstellungen „Aktuelle Themen“ bearbeiten.<br /><br />Spezifische Foren können durch ändern der Einstellungen der jeweiligen Foren eingeschlossen oder ausgeschlossen werden<br />Es wird empfohlen, die Berechtigungen von Benutzern zu überprüfen, so dass sie sich einige Parameter ändern können.',
+	'RECENT_TOPICS'                 => 'Aktuelle Themen',
+	'RT_CONFIG'                     => 'Konfiguration von aktuelle Themen',
+	'RECENT_TOPICS_EXPLAIN'         => 'Auf dieser Seite können Sie die Erweiterung Einstellungen „Aktuelle Themen“ bearbeiten.<br /><br />Spezifische Foren können durch ändern der Einstellungen der jeweiligen Foren eingeschlossen oder ausgeschlossen werden<br />Es wird empfohlen, die Berechtigungen von Benutzern zu überprüfen, so dass sie sich einige Parameter ändern können.',
 
 	//Overridable settings
 	'RT_OVERRIDABLE'                => 'individualisierbare Einstellungen',
 	'RT_DISPLAY_INDEX'              => 'Anzeigen auf der Index-Seite',
 	'RT_LOCATION'                   => 'Anzeigelage',
-	'RT_LOCATION_EXP'               => 'Wähle den Anzeigeort der aktuellen Themen.<br /> (für pbWoW3 & pbTech Arten, ist die Lage auf der rechten Seite festgelegt.)',
+	'RT_LOCATION_EXP'               => 'Wähle den Anzeigeort der aktuellen Themen.',
 	'RT_TOP'                        => 'Ansicht oben',
 	'RT_BOTTOM'                     => 'Ansicht unten',
 	'RT_SIDE'                       => 'Ansicht auf die Seite',
@@ -68,7 +68,7 @@ $lang = array_merge(
 	'RT_MIN_TOPIC_LEVEL'            => 'Minimaler Thementyp',
 	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Definiert das Minimum eines Thementyps, der angezeigt wird. Wenn du ein Thementyp angibst, werden nur Themen dieses oder eines höheren Typs angezeigt.<br />(0 = Normal, 1 = Wichtig, 2 = Ankündigung, 3 = Globale Ankündigung)',
 	'RT_ANTI_TOPICS'                => 'Ausgeschlossene Themen',
-	'RT_ANTI_TOPICS_EXP'            => 'Mit „, “ trennen (Beispiel: 7,9)<br />Wenn kein Thema ausgeschlossen werden soll „1“ eingeben. Wenn du „0“ eingibst, werden so viele Seiten angezeigt, wie benötigt werden, um alle Themen auszugeben.',
+	'RT_ANTI_TOPICS_EXP'            => 'Mit Komma trennen (Beispiel: 7,9)<br />Wenn kein Thema ausgeschlossen werden soll „1“ eingeben. Wenn du „0“ eingibst, werden so viele Seiten angezeigt, wie benötigt werden, um alle Themen auszugeben.',
 	'RT_PARENTS'                    => 'Übergeordnete Foren anzeigen',
 	'RT_PARENTS_EXP'                => 'Übergeordnete Foren in der Liste der aktuellen Themen anzeigen.',
 
