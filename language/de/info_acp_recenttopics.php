@@ -66,7 +66,7 @@ $lang = array_merge(
 	'RT_PAGE_NUMBER'                => 'Seitenanzahl „Aktuelle Themen“',
 	'RT_PAGE_NUMBER_EXP'            => 'Du kannst weitere aktuelle Themen mit einer kleinen Seitennavigation anzeigen lassen. Um das Feature zu deaktivieren einfach „0“ eintragen.',
 	'RT_MIN_TOPIC_LEVEL'            => 'Minimaler Thementyp',
-	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Definiert das Minimum eines Thementyps, der angezeigt wird. Wenn du ein Thementyp angibst, werden nur Themen dieses oder eines höheren Typs angezeigt.<br />(0 = Normal, 1 = Wichtig, 2 = Ankündigung, 3 = Globale Ankündigung)',
+	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Definiert das Minimum eines Thementyps, der angezeigt wird. Wenn du ein Thementyp angibst, werden nur Themen dieses oder eines höheren Typs angezeigt.',
 	'RT_ANTI_TOPICS'                => 'Ausgeschlossene Themen',
 	'RT_ANTI_TOPICS_EXP'            => 'Mit Komma trennen (Beispiel: 7,9)<br />Wenn kein Thema ausgeschlossen werden soll „1“ eingeben. Wenn du „0“ eingibst, werden so viele Seiten angezeigt, wie benötigt werden, um alle Themen auszugeben.',
 	'RT_PARENTS'                    => 'Übergeordnete Foren anzeigen',

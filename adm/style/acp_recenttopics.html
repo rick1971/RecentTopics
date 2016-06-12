@@ -48,7 +48,13 @@
 		</dl>
 		<dl>
 			<dt><label for="rt_min_topic_level">{L_RT_MIN_TOPIC_LEVEL}{L_COLON}</label><br /><span>{L_RT_MIN_TOPIC_LEVEL_EXP}</span></dt>
-			<dd><input type="number" id="rt_min_topic_level" name="rt_min_topic_level" size="3" min="0" max="3" maxlength="1" value="{RT_MIN_TOPIC_LEVEL}" /></dd>
+			<dd>
+				<select name="rt_min_topic_level" class="input" id="rt_min_topic_level">
+					<!-- BEGIN topiclevel_row -->
+					<option value="{topiclevel_row.VALUE}"{topiclevel_row.SELECTED}>{topiclevel_row.OPTION}</option>
+					<!-- END topiclevel_row -->
+				</select>
+			</dd>
 		</dl>
 		<dl>
 			<dt><label for="rt_anti_topics">{L_RT_ANTI_TOPICS}{L_COLON}</label><br /><span>{L_RT_ANTI_TOPICS_EXP}</span></dt>

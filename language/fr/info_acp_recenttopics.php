@@ -66,7 +66,7 @@ $lang = array_merge(
 	'RT_PAGE_NUMBER'                => 'Nombre de pages pour les « sujets récents »',
 	'RT_PAGE_NUMBER_EXP'            => 'Affiche davantage de « sujets récents » en utilisant la pagination. Saisir la valeur 1 pour désactiver cette option. Si la valeur 0 est saisie, il y aura autant de pages que nécessaire pour afficher tous les sujets de votre forum (non recommandé).',
 	'RT_MIN_TOPIC_LEVEL'            => 'Niveau minimum du type de sujet',
-	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Détermine le niveau minimum du type de sujet à afficher. Cela affichera les sujets correspondants au niveau paramétré et aux niveaux supérieurs.<br />(0 = Normal, 1 = Post-it, 2 = Annonce, 3 = Annonce globale)',
+	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Détermine le niveau minimum du type de sujet à afficher. Cela affichera les sujets correspondants au niveau paramétré et aux niveaux supérieurs.',
 	'RT_ANTI_TOPICS'                => 'Sujets exclus',
 	'RT_ANTI_TOPICS_EXP'            => 'Saisir les ID des sujets séparés par virgule (exemple : 7,9).<br />Pour ne pas exclure de sujet saisir simplement 0.',
 	'RT_PARENTS'                    => 'Afficher les forums parents',

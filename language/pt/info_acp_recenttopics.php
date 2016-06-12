@@ -49,7 +49,7 @@ $lang = array_merge(
 	'RT_PAGE_NUMBER'                => 'Tópicos recentes Páginas',
 	'RT_PAGE_NUMBER_EXP'            => 'Você pode exibir tópicos mais recentes usando um pequeno paginação. Simplesmente digite 1 para desativar esse recurso. Se você digitar 0, não haverá muitas páginas que forem necessárias para mostrar todas as disciplinas.',
 	'RT_MIN_TOPIC_LEVEL'            => 'Tema tipo nível mínimo',
-	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Determina o tipo de nível mínimo do sujeito ao show. temas definir o nível e acima será exibido <br /> (0 = normal, 1 = nota, 2 = ad, 3 = Anúncio global.).',
+	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Determina o tipo de nível mínimo do sujeito ao show. temas definir o nível e acima será exibido.',
 	'RT_ANTI_TOPICS'                => 'Topicos excluídos',
 	'RT_ANTI_TOPICS_EXP'            => 'Separados por "," (Por exemplo: 7,9) </ b> Se você não quiser excluir um tópico, basta digitar 0.',
 	'RT_PARENTS'                    => 'Mostrar Fórum Pai',

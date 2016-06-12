@@ -54,7 +54,7 @@ $lang = array_merge(
 	'RT_PAGE_NUMBER'               => 'Pagine di argomenti recenti',
 	'RT_PAGE_NUMBER_EXP'           => 'È possibile mostrare più pagine di argomenti recenti; per disabilitare questa funzione, digitare 1. Impostando il valore a 0, saranno create tante pagine quante ne servono per mostrare tutti gli argomenti del forum (non consigliato).',
 	'RT_MIN_TOPIC_LEVEL'           => 'Livello minimo argomenti',
-	'RT_MIN_TOPIC_LEVEL_EXP'       => 'Determina il livello minimo di argomenti da mostrare: saranno mostrati gli argomenti del livello specificato e superiori.<br />(0 = argomento semplice, 1 = importante, 2 = annuncio, 3 = annuncio globale)',
+	'RT_MIN_TOPIC_LEVEL_EXP'       => 'Determina il livello minimo di argomenti da mostrare: saranno mostrati gli argomenti del livello specificato e superiori.',
 	'RT_ANTI_TOPICS'               => 'Argomenti esclusi',
 	'RT_ANTI_TOPICS_EXP'           => 'Gli ID degli argomenti da escludere, separati da una virgola (es.: 7,9)<br />Per non escudere alcun argomento, digitare 0.',
 	'RT_PARENTS'                   => 'Mostra forum genitore',

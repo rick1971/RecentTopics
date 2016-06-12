@@ -37,7 +37,7 @@ v2.1.0 (12-6-2016)
 - PHP 5.3.3 or higher
 
 #### Languages supported
-- English, German, French, Dutch, Spanish, Italian, Swedish, Danish       
+- English, German, French, Dutch, Spanish, Italian, Portuguese, Swedish, Danish       
   
 ### Installation
 1. [Download the latest release](https://github.com/sajaki/RecentTopics/releases) and unzip it.

@@ -51,7 +51,7 @@ Gå også dit bruger-panel har indstillinger administrator panel efter denne pri
 	'RT_PAGE_NUMBER'                => 'Seneste emner sider',
 	'RT_PAGE_NUMBER_EXP'            => 'Set pagineringsniveau i de seneste spørgsmål. Indtast en at deaktivere denne funktion. Hvis du indtaster 0, er der så mange sider, der anvendes efter behov for at vise alle emner.',
 	'RT_MIN_TOPIC_LEVEL'            => 'Minimum emne type',
-	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Bestemmer minimumsniveauet for emne type til at vise. Det vil kun vise emner af det indstillede niveau, og højere.<br />(0 = normal, 1 = sticky, 2 = bekendtgørelsen, 3 = global bekendtgørelse)',
+	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Bestemmer minimumsniveauet for emne type til at vise. Det vil kun vise emner af det indstillede niveau, og højere.',
 	'RT_ANTI_TOPICS'                => 'Eksluder indlæg',
 	'RT_ANTI_TOPICS_EXP'            => 'Adskilt af et komma (eksempel: 7,9). Hvis du ønsker at ekskludere nogen emner, kan du bruge en 0.',
 	'RT_PARENTS'                    => 'Vis over fora',

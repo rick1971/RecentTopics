@@ -51,7 +51,7 @@ Gå också användarpanelenhar inställningar admin panel för denna prioriterin
 	'RT_PAGE_NUMBER'                => 'Recent Topics sidor',
 	'RT_PAGE_NUMBER_EXP'            => 'Ställ pagineringsniveau i senaste numren . Enter för att stänga av denna funktion . Om du anger 0 , det finns så många sidor som används som behövs för att visa alla artiklar.',
 	'RT_MIN_TOPIC_LEVEL'            => 'Minsta ämne typ',
-	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Bestämmer miniminivån för den typ av objekt att visa. Det kommer endast att visa objekt till inställd nivå och högre. <br /> (0 = normal , 1 = klibbig , 2 = Order , 3 = Global Order)' ,
+	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Bestämmer miniminivån för den typ av objekt att visa. Det kommer endast att visa objekt till inställd nivå och högre.' ,
 	'RT_ANTI_TOPICS'                => 'Uteslut inlägg',
 	'RT_ANTI_TOPICS_EXP'            => 'Separerade med ett kommatecken (exempel : 7,9). Om du vill utesluta någon produkt som du kan använda en 0',
 	'RT_PARENTS'                    => 'visa förälder forum',
