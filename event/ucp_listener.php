@@ -80,7 +80,8 @@ class ucp_listener implements EventSubscriberInterface
 			$this->user->add_lang_ext('paybas/recenttopics', 'recenttopics_ucp');
 			$template_vars = array();
 
-			if ($this->auth->acl_get('u_rt_enable') || $this->auth->acl_get('u_rt_location') || $this->auth->acl_get('u_rt_sort_start_time') || $this->auth->acl_get('u_rt_unread_only')) {
+			if ($this->auth->acl_get('u_rt_enable') || $this->auth->acl_get('u_rt_location') || $this->auth->acl_get('u_rt_sort_start_time') || $this->auth->acl_get('u_rt_unread_only'))
+			{
 				$template_vars += array(
 				'S_RT_SHOW' => true,
 				);
@@ -137,8 +138,6 @@ class ucp_listener implements EventSubscriberInterface
 			}
 
 			$this->template->assign_vars($template_vars);
-
-
 		}
 	}
 

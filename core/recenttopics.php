@@ -23,62 +23,62 @@ use phpbb\template\template;
 class recenttopics
 {
 	/**
-    * @var auth
+	* @var auth
 	*/
 	protected $auth;
 
 	/**
-    * @var config
+	* @var config
 	*/
 	protected $config;
 
 	/**
-    * @var \phpbb\cache\service
+	* @var \phpbb\cache\service
 	*/
 	protected $cache;
 
 	/**
-    * @var content_visibility
+	* @var content_visibility
 	*/
 	protected $content_visibility;
 
 	/**
-    * @var driver_interface
+	* @var driver_interface
 	*/
 	protected $db;
 
 	/**
-    * @var dispatcher_interface
+	* @var dispatcher_interface
 	*/
 	protected $dispatcher;
 
 	/**
-    * @var pagination
+	* @var pagination
 	*/
 	protected $pagination;
 
 	/**
-    * @var request_interface
+	* @var request_interface
 	*/
 	protected $request;
 
 	/**
-    * @var template
+	* @var template
 	*/
 	protected $template;
 
 	/**
-    * @var \phpbb\user
+	* @var \phpbb\user
 	*/
 	protected $user;
 
 	/**
-    * @var string phpBB root path
+	* @var string phpBB root path
 	*/
 	protected $root_path;
 
 	/**
-    * @var string PHP extension
+	* @var string PHP extension
 	*/
 	protected $phpEx;
 
@@ -141,18 +141,18 @@ class recenttopics
 	 * @param topicprefixes|NULL   $topicprefixes
 	 */
 	public function __construct(auth $auth,
-		\phpbb\cache\service $cache,
-		config $config,
-		content_visibility $content_visibility,
-		driver_interface $db,
-		dispatcher_interface $dispatcher,
-		pagination $pagination,
-		request_interface $request,
-		template $template,
-		\phpbb\user $user,
-		$root_path,
-		$phpEx,
-		topicprefixes $topicprefixes = null
+	                            \phpbb\cache\service $cache,
+	                            config $config,
+	                            content_visibility $content_visibility,
+	                            driver_interface $db,
+	                            dispatcher_interface $dispatcher,
+	                            pagination $pagination,
+	                            request_interface $request,
+	                            template $template,
+	                            \phpbb\user $user,
+	                            $root_path,
+	                            $phpEx,
+	                            topicprefixes $topicprefixes = null
 	)
 	{
 
@@ -347,7 +347,7 @@ class recenttopics
 			$this->dispatcher->trigger_event(
 				'paybas.recenttopics.modify_topics_list',
 				array( 'topic_list' => $this->topic_list,
-				'rowset' => $rowset)
+				       'rowset' => $rowset)
 			)
 		);
 
@@ -416,60 +416,60 @@ class recenttopics
 			}
 
 			$tpl_ary = array(
-			'FORUM_ID'                => $forum_id,
-			'TOPIC_ID'                => $topic_id,
-			'TOPIC_AUTHOR'            => get_username_string('username', $row['topic_poster'], $row['topic_first_poster_name'], $row['topic_first_poster_colour']),
-			'TOPIC_AUTHOR_COLOUR'     => get_username_string('colour', $row['topic_poster'], $row['topic_first_poster_name'], $row['topic_first_poster_colour']),
-			'TOPIC_AUTHOR_FULL'       => get_username_string('full', $row['topic_poster'], $row['topic_first_poster_name'], $row['topic_first_poster_colour']),
-			'FIRST_POST_TIME'         => $this->user->format_date($row['topic_time']),
+				'FORUM_ID'                => $forum_id,
+				'TOPIC_ID'                => $topic_id,
+				'TOPIC_AUTHOR'            => get_username_string('username', $row['topic_poster'], $row['topic_first_poster_name'], $row['topic_first_poster_colour']),
+				'TOPIC_AUTHOR_COLOUR'     => get_username_string('colour', $row['topic_poster'], $row['topic_first_poster_name'], $row['topic_first_poster_colour']),
+				'TOPIC_AUTHOR_FULL'       => get_username_string('full', $row['topic_poster'], $row['topic_first_poster_name'], $row['topic_first_poster_colour']),
+				'FIRST_POST_TIME'         => $this->user->format_date($row['topic_time']),
 
-			'LAST_POST_SUBJECT'       => censor_text($row['topic_last_post_subject']),
-			'LAST_POST_TIME'          => $this->user->format_date($row['topic_last_post_time']),
-			'LAST_VIEW_TIME'          => $this->user->format_date($row['topic_last_view_time']),
-			'LAST_POST_AUTHOR'        => get_username_string('username', $row['topic_last_poster_id'], $row['topic_last_poster_name'], $row['topic_last_poster_colour']),
-			'LAST_POST_AUTHOR_COLOUR' => get_username_string('colour', $row['topic_last_poster_id'], $row['topic_last_poster_name'], $row['topic_last_poster_colour']),
-			'LAST_POST_AUTHOR_FULL'   => get_username_string('full', $row['topic_last_poster_id'], $row['topic_last_poster_name'], $row['topic_last_poster_colour']),
+				'LAST_POST_SUBJECT'       => censor_text($row['topic_last_post_subject']),
+				'LAST_POST_TIME'          => $this->user->format_date($row['topic_last_post_time']),
+				'LAST_VIEW_TIME'          => $this->user->format_date($row['topic_last_view_time']),
+				'LAST_POST_AUTHOR'        => get_username_string('username', $row['topic_last_poster_id'], $row['topic_last_poster_name'], $row['topic_last_poster_colour']),
+				'LAST_POST_AUTHOR_COLOUR' => get_username_string('colour', $row['topic_last_poster_id'], $row['topic_last_poster_name'], $row['topic_last_poster_colour']),
+				'LAST_POST_AUTHOR_FULL'   => get_username_string('full', $row['topic_last_poster_id'], $row['topic_last_poster_name'], $row['topic_last_poster_colour']),
 
-			'REPLIES'                 => $replies,
-			'VIEWS'                   => $row['topic_views'],
-			'TOPIC_TITLE'             => $topic_title,
-			'FORUM_NAME'              => $row['forum_name'],
+				'REPLIES'                 => $replies,
+				'VIEWS'                   => $row['topic_views'],
+				'TOPIC_TITLE'             => $topic_title,
+				'FORUM_NAME'              => $row['forum_name'],
 
-			'TOPIC_TYPE'              => $topic_type,
-			'TOPIC_IMG_STYLE'         => $folder_img,
-			'TOPIC_FOLDER_IMG'        => $this->user->img($folder_img, $folder_alt),
-			'TOPIC_FOLDER_IMG_ALT'    => $this->user->lang[$folder_alt],
+				'TOPIC_TYPE'              => $topic_type,
+				'TOPIC_IMG_STYLE'         => $folder_img,
+				'TOPIC_FOLDER_IMG'        => $this->user->img($folder_img, $folder_alt),
+				'TOPIC_FOLDER_IMG_ALT'    => $this->user->lang[$folder_alt],
 
-			//'NEWEST_POST_IMG'		=> $this->user->img('icon_topic_newest', 'VIEW_NEWEST_POST'), // dupe?
-			'TOPIC_ICON_IMG'          => (!empty($icons[$row['icon_id']])) ? $icons[$row['icon_id']]['img'] : '',
-			'TOPIC_ICON_IMG_WIDTH'    => (!empty($icons[$row['icon_id']])) ? $icons[$row['icon_id']]['width'] : '',
-			'TOPIC_ICON_IMG_HEIGHT'   => (!empty($icons[$row['icon_id']])) ? $icons[$row['icon_id']]['height'] : '',
-			'ATTACH_ICON_IMG'         => ($this->auth->acl_get('u_download') && $this->auth->acl_get('f_download', $forum_id) && $row['topic_attachment']) ? $this->user->img('icon_topic_attach', $this->user->lang['TOTAL_ATTACHMENTS']) : '',
-			'UNAPPROVED_IMG'          => ($topic_unapproved || $posts_unapproved) ? $this->user->img('icon_topic_unapproved', ($topic_unapproved) ? 'TOPIC_UNAPPROVED' : 'POSTS_UNAPPROVED') : '',
-			'REPORTED_IMG'            => ($row['topic_reported'] && $this->auth->acl_get('m_report', $forum_id)) ? $this->user->img('icon_topic_reported', 'TOPIC_REPORTED') : '',
-			'S_HAS_POLL'              => ($row['poll_start']) ? true : false,
+				//'NEWEST_POST_IMG'		=> $this->user->img('icon_topic_newest', 'VIEW_NEWEST_POST'), // dupe?
+				'TOPIC_ICON_IMG'          => (!empty($icons[$row['icon_id']])) ? $icons[$row['icon_id']]['img'] : '',
+				'TOPIC_ICON_IMG_WIDTH'    => (!empty($icons[$row['icon_id']])) ? $icons[$row['icon_id']]['width'] : '',
+				'TOPIC_ICON_IMG_HEIGHT'   => (!empty($icons[$row['icon_id']])) ? $icons[$row['icon_id']]['height'] : '',
+				'ATTACH_ICON_IMG'         => ($this->auth->acl_get('u_download') && $this->auth->acl_get('f_download', $forum_id) && $row['topic_attachment']) ? $this->user->img('icon_topic_attach', $this->user->lang['TOTAL_ATTACHMENTS']) : '',
+				'UNAPPROVED_IMG'          => ($topic_unapproved || $posts_unapproved) ? $this->user->img('icon_topic_unapproved', ($topic_unapproved) ? 'TOPIC_UNAPPROVED' : 'POSTS_UNAPPROVED') : '',
+				'REPORTED_IMG'            => ($row['topic_reported'] && $this->auth->acl_get('m_report', $forum_id)) ? $this->user->img('icon_topic_reported', 'TOPIC_REPORTED') : '',
+				'S_HAS_POLL'              => ($row['poll_start']) ? true : false,
 
-			'S_TOPIC_TYPE'            => $row['topic_type'],
-			'S_USER_POSTED'           => (isset($row['topic_posted']) && $row['topic_posted']) ? true : false,
-			'S_UNREAD_TOPIC'          => $unread_topic,
-			'S_TOPIC_REPORTED'        => ($row['topic_reported'] && $this->auth->acl_get('m_report', $forum_id)) ? true : false,
-			'S_TOPIC_UNAPPROVED'      => $topic_unapproved,
-			'S_POSTS_UNAPPROVED'      => $posts_unapproved,
-			'S_POST_ANNOUNCE'         => ($row['topic_type'] == POST_ANNOUNCE) ? true : false,
-			'S_POST_GLOBAL'           => ($row['topic_type'] == POST_GLOBAL) ? true : false,
-			'S_POST_STICKY'           => ($row['topic_type'] == POST_STICKY) ? true : false,
-			'S_TOPIC_LOCKED'          => ($row['topic_status'] == ITEM_LOCKED) ? true : false,
-			'S_TOPIC_MOVED'           => ($row['topic_status'] == ITEM_MOVED) ? true : false,
-			'S_TOPIC_TYPE_SWITCH'     => ($s_type_switch == $s_type_switch_test) ? -1 : $s_type_switch_test,
+				'S_TOPIC_TYPE'            => $row['topic_type'],
+				'S_USER_POSTED'           => (isset($row['topic_posted']) && $row['topic_posted']) ? true : false,
+				'S_UNREAD_TOPIC'          => $unread_topic,
+				'S_TOPIC_REPORTED'        => ($row['topic_reported'] && $this->auth->acl_get('m_report', $forum_id)) ? true : false,
+				'S_TOPIC_UNAPPROVED'      => $topic_unapproved,
+				'S_POSTS_UNAPPROVED'      => $posts_unapproved,
+				'S_POST_ANNOUNCE'         => ($row['topic_type'] == POST_ANNOUNCE) ? true : false,
+				'S_POST_GLOBAL'           => ($row['topic_type'] == POST_GLOBAL) ? true : false,
+				'S_POST_STICKY'           => ($row['topic_type'] == POST_STICKY) ? true : false,
+				'S_TOPIC_LOCKED'          => ($row['topic_status'] == ITEM_LOCKED) ? true : false,
+				'S_TOPIC_MOVED'           => ($row['topic_status'] == ITEM_MOVED) ? true : false,
+				'S_TOPIC_TYPE_SWITCH'     => ($s_type_switch == $s_type_switch_test) ? -1 : $s_type_switch_test,
 
-			'U_NEWEST_POST'           => $view_topic_url . '&amp;view=unread#unread',
-			'U_LAST_POST'             => $view_topic_url . '&amp;p=' . $row['topic_last_post_id'] . '#p' . $row['topic_last_post_id'],
-			'U_LAST_POST_AUTHOR'      => get_username_string('profile', $row['topic_last_poster_id'], $row['topic_last_poster_name'], $row['topic_last_poster_colour']),
-			'U_TOPIC_AUTHOR'          => get_username_string('profile', $row['topic_poster'], $row['topic_first_poster_name'], $row['topic_first_poster_colour']),
-			'U_VIEW_TOPIC'            => $view_topic_url,
-			'U_VIEW_FORUM'            => $view_forum_url,
-			'U_MCP_REPORT'            => append_sid("{$this->root_path}mcp.$this->phpEx", 'i=reports&amp;mode=reports&amp;f=' . $forum_id . '&amp;t=' . $topic_id, true, $this->user->session_id),
-			'U_MCP_QUEUE'             => $u_mcp_queue,
+				'U_NEWEST_POST'           => $view_topic_url . '&amp;view=unread#unread',
+				'U_LAST_POST'             => $view_topic_url . '&amp;p=' . $row['topic_last_post_id'] . '#p' . $row['topic_last_post_id'],
+				'U_LAST_POST_AUTHOR'      => get_username_string('profile', $row['topic_last_poster_id'], $row['topic_last_poster_name'], $row['topic_last_poster_colour']),
+				'U_TOPIC_AUTHOR'          => get_username_string('profile', $row['topic_poster'], $row['topic_first_poster_name'], $row['topic_first_poster_colour']),
+				'U_VIEW_TOPIC'            => $view_topic_url,
+				'U_VIEW_FORUM'            => $view_forum_url,
+				'U_MCP_REPORT'            => append_sid("{$this->root_path}mcp.$this->phpEx", 'i=reports&amp;mode=reports&amp;f=' . $forum_id . '&amp;t=' . $topic_id, true, $this->user->session_id),
+				'U_MCP_QUEUE'             => $u_mcp_queue,
 			);
 
 			/**
@@ -495,9 +495,9 @@ class recenttopics
 				{
 					$this->template->assign_block_vars(
 						$tpl_loopname . '.parent_forums', array(
-						'FORUM_ID'     => $parent_id,
-						'FORUM_NAME'   => $data[0],
-						'U_VIEW_FORUM' => append_sid("{$this->root_path}viewforum.$this->phpEx", 'f=' . $parent_id),
+							'FORUM_ID'     => $parent_id,
+							'FORUM_NAME'   => $data[0],
+							'U_VIEW_FORUM' => append_sid("{$this->root_path}viewforum.$this->phpEx", 'f=' . $parent_id),
 						)
 					);
 				}
@@ -531,15 +531,15 @@ class recenttopics
 
 		$this->template->assign_vars(
 			array(
-			'RT_SORT_START_TIME'                   => ($sort_topics === 'topic_time') ? true : false,
-			'S_LOCATION_TOP'                       => $location == 'RT_TOP',
-			'S_LOCATION_BOTTOM'                    => $location == 'RT_BOTTOM',
-			'S_LOCATION_SIDE'                      => $location == 'RT_SIDE',
-			'S_TOPIC_ICONS'                        => (sizeof($topic_icons)) ? true : false,
-			'NEWEST_POST_IMG'                      => $this->user->img('icon_topic_newest', 'VIEW_NEWEST_POST'),
-			'LAST_POST_IMG'                        => $this->user->img('icon_topic_latest', 'VIEW_LATEST_POST'),
-			'POLL_IMG'                             => $this->user->img('icon_topic_poll', 'TOPIC_POLL'),
-			strtoupper($tpl_loopname) . '_DISPLAY' => true,
+				'RT_SORT_START_TIME'                   => ($sort_topics === 'topic_time') ? true : false,
+				'S_LOCATION_TOP'                       => $location == 'RT_TOP',
+				'S_LOCATION_BOTTOM'                    => $location == 'RT_BOTTOM',
+				'S_LOCATION_SIDE'                      => $location == 'RT_SIDE',
+				'S_TOPIC_ICONS'                        => (sizeof($topic_icons)) ? true : false,
+				'NEWEST_POST_IMG'                      => $this->user->img('icon_topic_newest', 'VIEW_NEWEST_POST'),
+				'LAST_POST_IMG'                        => $this->user->img('icon_topic_latest', 'VIEW_LATEST_POST'),
+				'POLL_IMG'                             => $this->user->img('icon_topic_poll', 'TOPIC_POLL'),
+				strtoupper($tpl_loopname) . '_DISPLAY' => true,
 			)
 		);
 	}
@@ -586,7 +586,7 @@ class recenttopics
 
 	/**
 	 * Get the topic list
-	*
+	 *
 	 * @param  $start
 	 * @param  $topics_per_page
 	 * @param  $total_topics_limit
@@ -667,7 +667,8 @@ class recenttopics
 					$this->topic_list[] = $row['topic_id'];
 
 					$rowset[$row['topic_id']] = $row;
-					if (!isset($this->forums[$row['forum_id']]) && $this->user->data['is_registered'] && $this->config['load_db_lastread']) {
+					if (!isset($this->forums[$row['forum_id']]) && $this->user->data['is_registered'] && $this->config['load_db_lastread'])
+					{
 						$this->forums[$row['forum_id']]['mark_time'] = $row['f_mark_time'];
 					}
 					$this->forums[$row['forum_id']]['topic_list'][] = $row['topic_id'];
