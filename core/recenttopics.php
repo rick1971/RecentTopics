@@ -93,11 +93,6 @@ class recenttopics
 	private $topicprefixes;
 
 	/**
-	* @var
-	*/
-	private $CanSeeTopics;
-
-	/**
 	* array of allowable forum id's
 	*
 	* @var array
@@ -566,7 +561,6 @@ class recenttopics
 
 		if (sizeof($this->forum_ids) > 1)
 		{
-
 			$sql = 'SELECT forum_id
 					FROM ' . FORUMS_TABLE . '
 					WHERE ' . $this->db->sql_in_set('forum_id', $this->forum_ids) . '
@@ -644,7 +638,7 @@ class recenttopics
 			// Check if we want all topics, or only stickies/announcements/globals
 			if ($min_topic_level > 0)
 			{
-				$sql_array['WHERE'] .= ' AND t.topic_type >= ' . $min_topic_level;
+				$sql_array['WHERE'] .= ' AND t.topic_type >= ' . (int) $min_topic_level;
 			}
 
 			/**
