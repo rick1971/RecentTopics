@@ -35,6 +35,9 @@ $lang = array_merge(
 	'RT_DISPLAY_INDEX'              => 'Display on Index page',
 	'RT_LOCATION'                   => 'Display location',
 	'RT_LOCATION_EXP'               => 'Select location to display recent topics. (prosilver)<br /> (pbWoW3 & pbTech have fixed display locations on the side)',
+	'RT_TOP'                        => 'Show on top',
+	'RT_BOTTOM'                     => 'Show on bottom',
+	'RT_SIDE'                       => 'Show on side',
 	'RT_SORT_START_TIME'            => 'Sort by topic start time',
 	'RT_SORT_START_TIME_EXP'        => 'Enable to sort recent topics by the starting time of the topic, instead of the last post time.',
 	'RT_UNREAD_ONLY'                => 'Only display unread topics',
@@ -56,8 +59,5 @@ $lang = array_merge(
 	//Enable for extensions
 	'RT_VIEW_ON'                     => 'Display recent topics on:',
 
-	'RT_TOP'                         => 'Show on top',
-	'RT_BOTTOM'                      => 'Show on bottom',
-	'RT_SIDE'                        => 'Show on side',
 	)
 );

@@ -51,6 +51,9 @@ $lang = array_merge(
 	'RT_DISPLAY_INDEX'              => 'Afficher sur page index',
 	'RT_LOCATION'                   => 'Emplacement',
 	'RT_LOCATION_EXP'               => 'Choisir le lieu pour afficher les sujets récents (d’application sur les styles dérivés de prosilver)<br /> (pour les styles pbWoW3 & pbTech, l’emplacement est figé à droite.)',
+	'RT_TOP'                         => 'Afficher en tête',
+	'RT_BOTTOM'                      => 'Afficher en bas',
+	'RT_SIDE'                        => 'Afficher sur le coté',
 	'RT_SORT_START_TIME'            => 'Trier selon la date de création du sujet',
 	'RT_SORT_START_TIME_EXP'        => 'Trie selon la date de création du sujet, en lieu et place de la date du dernier message.',
 	'RT_UNREAD_ONLY'                => 'Afficher uniquement les sujets non lus',
@@ -72,8 +75,5 @@ $lang = array_merge(
 	//Enable for extensions
 	'RT_VIEW_ON'                    => 'Afficher les « sujets récents » sur :',
 
-	'RT_TOP'                         => 'Afficher en tête',
-	'RT_BOTTOM'                      => 'Afficher en bas',
-	'RT_SIDE'                        => 'Afficher sur le coté',
 	)
 );

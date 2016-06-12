@@ -51,6 +51,9 @@ $lang = array_merge(
 	'RT_DISPLAY_INDEX'              => 'Anzeigen auf der Index-Seite',
 	'RT_LOCATION'                   => 'Anzeigelage',
 	'RT_LOCATION_EXP'               => 'Wähle den Anzeigeort der aktuellen Themen.<br /> (für pbWoW3 & pbTech Arten, ist die Lage auf der rechten Seite festgelegt.)',
+	'RT_TOP'                        => 'Ansicht oben',
+	'RT_BOTTOM'                     => 'Ansicht unten',
+	'RT_SIDE'                       => 'Ansicht auf die Seite',
 	'RT_SORT_START_TIME'            => 'Nach Themen Startzeit sortieren',
 	'RT_SORT_START_TIME_EXP'        => 'Wenn diese Option aktiviert ist, werden die Themen nach dem Datum des ersten Beitrags anstelle des letzten Beitrags sortiert.',
 	'RT_UNREAD_ONLY'                => 'Nur ungelesene Themen anzeigen',
@@ -72,8 +75,5 @@ $lang = array_merge(
 	//Enable for extensions
 	'RT_VIEW_ON'                    => 'Aktuelle Themen anzeigen auf:',
 
-	'RT_TOP'                         => 'Ansicht oben',
-	'RT_BOTTOM'                      => 'Ansicht unten',
-	'RT_SIDE'                        => 'Ansicht auf die Seite',
 	)
 );

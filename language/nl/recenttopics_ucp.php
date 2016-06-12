@@ -21,11 +21,15 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge(
 	$lang, array(
-	'RT_ENABLE'              => 'Display recent topics',
-	'RT_LOCATION'            => 'Select location to display recent topics',
-	'RT_LOCATION_EXP'        => 'For prosilver styles.',
-	'RT_SORT_START_TIME'     => 'Sort recent topics by topic start time',
-	'RT_SORT_START_TIME_EXP' => 'Instead of sorting them by last post time.',
-	'RT_UNREAD_ONLY'         => 'Only display unread topics in recent topics',
+	'RT_ENABLE'              => 'Toon op on index pagina',
+	'RT_LOCATION'            => 'Plaatsinstelling',
+	'RT_LOCATION_EXP'        => 'Stel plaats van \'recente onderwerpen\' blok in.',
+	'RT_SORT_START_TIME'     => 'Sorteer op plaatsingstijd',
+	'RT_SORT_START_TIME_EXP' => 'dus niet op laatste reactie',
+	'RT_UNREAD_ONLY'         => 'Alleen ongelezen onderwerpen weergeven',
+	'RT_TOP'                 => 'Toon boven',
+	'RT_BOTTOM'              => 'Toon beneden',
+	'RT_SIDE'                => 'Toon rechts',
+
 	)
 );
