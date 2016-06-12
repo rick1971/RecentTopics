@@ -22,8 +22,8 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge(
 	$lang, array(
 		'RT_ENABLE'              => '«Aktuelle Themen» anzeigen',
-		'RT_LOCATION'            => 'Anzeigelage einstellen der «Aktuelle Themen»',
-		'RT_LOCATION_EXP'        => 'Ausgeschlossene Themen : pbTech/pbWoW3 (nur angezeigbar auf der Rechten Seite)',
+		'RT_LOCATION'            => 'Anzeigelage',
+		'RT_LOCATION_EXP'        => 'Anzeigelage des Blocks «aktuellen Themen»',
 		'RT_SORT_START_TIME'     => 'Nach Themen Startzeit sortieren',
 		'RT_SORT_START_TIME_EXP' => 'Wenn diese Option aktiviert ist, werden die Themen nach dem Datum des ersten Beitrags anstelle des letzten Beitrags sortiert.',
 		'RT_UNREAD_ONLY'         => 'Nur ungelesene Themen anzeigen',

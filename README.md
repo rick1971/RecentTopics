@@ -8,15 +8,17 @@ Based on NV Recent Topics for phpBB 3.0, by Joas Schilling ([nickvergessen](http
 
 #### Features
 - Adds a list of recent (or unread) topics to the index page.
-- ACP module to change:
+- UCP permissions and settings so users can choose their own preferences to override ACP.
+- ACP / UCP Options:
+  - Screen location : Top, bottom or Right.
+  - sort by topic start time, instead of last post time
+  - only show unread topics
+- ACP Options  
   - number of topics to show
   - max. number of pages
   - set minimum topic type level to display (normal/sticky/announcement/global)
   - exclusion of topics (by ID)
-  - display parent forums in the row
-  - only show unread topics
-  - sort by topic start time, instead of last post time
-- UCP permissions and settings so users can choose their own preferences
+  - display parent forum name in the row
 - Inherits all styling from regular "viewforum" templates
 - compatible with Topic Prefix Extension from Stathis
 - Tested on:
@@ -27,7 +29,7 @@ Based on NV Recent Topics for phpBB 3.0, by Joas Schilling ([nickvergessen](http
   - we_universal
 
 #### Version
-v2.1.0 (xx-5-2016)
+v2.1.0 (12-6-2016)
 [![Build Status](https://api.travis-ci.org/Sajaki/RecentTopics.svg)](https://travis-ci.org/Sajaki/RecentTopics)
 
 #### Requirements
@@ -35,11 +37,8 @@ v2.1.0 (xx-5-2016)
 - PHP 5.3.3 or higher
 
 #### Languages supported
-- English, German, Spanish, French, Russian, Greek, Dutch, Italian, Japanese, Swedish, Estonian, Persian, Arabic, Turkish, Polish, Romanian, Croatian, Hungarian, Danish       
+- English, German, French, Dutch, Spanish, Italian, Portuguese, Swedish, Danish       
   
-#### To do list
-- Add option to have stickies/announcements at the top
-
 ### Installation
 1. [Download the latest release](https://github.com/sajaki/RecentTopics/releases) and unzip it.
 2. Copy the entire contents from the unzipped folder to `/ext/paybas/recenttopics/`.
@@ -53,6 +52,5 @@ v2.1.0 (xx-5-2016)
 
 ### License
 [GNU General Public License v2](http://opensource.org/licenses/GPL-2.0)
-
 
 © 2015 - PayBas

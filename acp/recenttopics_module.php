@@ -18,7 +18,7 @@ class recenttopics_module
 	{
 		global $config, $phpbb_extension_manager, $request, $template, $user;
 
-		$user->add_lang('acp/common');
+		$user->add_lang(array('acp/common', 'ucp', 'viewforum'));
 		$this->tpl_name = 'acp_recenttopics';
 		$this->page_title = $user->lang('RECENT_TOPICS');
 
@@ -73,6 +73,25 @@ class recenttopics_module
 			trigger_error($user->lang['CONFIG_UPDATED'] . adm_back_link($this->u_action));
 		}
 
+		$topic_types = array (
+			0 => $user->lang['POST'],
+			1 => $user->lang['POST_STICKY'],
+			2 => $user->lang['ANNOUNCEMENTS'],
+			3 => $user->lang['GLOBAL_ANNOUNCEMENT'],
+		);
+
+		foreach ($topic_types as $key => $topic_type)
+		{
+			$template->assign_block_vars(
+				'topiclevel_row',
+				array(
+					'VALUE'    => $key,
+					'SELECTED' => ($config['rt_min_topic_level'] == $key) ? 'selected="selected"' : '',
+					'OPTION'   => $topic_type,
+				)
+			);
+		}
+
 		$display_types = array (
 			'RT_TOP'    => $user->lang['RT_TOP'],
 			'RT_BOTTOM' => $user->lang['RT_BOTTOM'],
@@ -93,18 +112,18 @@ class recenttopics_module
 
 		$template->assign_vars(
 			array(
-			'RT_ALT_LOCATION'    => isset($config['rt_location']) ? $config['rt_location'] : false,
-			'RT_ANTI_TOPICS'     => isset($config['rt_anti_topics']) ? $config['rt_anti_topics'] : '',
-			'RT_MIN_TOPIC_LEVEL' => isset($config['rt_min_topic_level']) ? $config['rt_min_topic_level'] : '',
-			'RT_NUMBER'          => isset($config['rt_number']) ? $config['rt_number'] : '',
-			'RT_PAGE_NUMBER'     => isset($config['rt_page_number']) ? $config['rt_page_number'] : '',
-			'RT_PARENTS'         => isset($config['rt_parents']) ? $config['rt_parents'] : false,
-			'RT_UNREAD_ONLY'     => isset($config['rt_unread_only']) ? $config['rt_unread_only'] : false,
-			'RT_SORT_START_TIME' => isset($config['rt_sort_start_time']) ? $config['rt_sort_start_time'] : false,
-			'RT_INDEX'           => isset($config['rt_index']) ? $config['rt_index'] : false,
-			'RT_ON_NEWSPAGE'     => isset($config['rt_on_newspage']) ? $config['rt_on_newspage'] : false,
-			'S_RT_NEWSPAGE'      => $phpbb_extension_manager->is_enabled('nickvergessen/newspage'),
-			'U_ACTION'           => $this->u_action,
+				'RT_ALT_LOCATION'    => isset($config['rt_location']) ? $config['rt_location'] : false,
+				'RT_ANTI_TOPICS'     => isset($config['rt_anti_topics']) ? $config['rt_anti_topics'] : '',
+				'RT_MIN_TOPIC_LEVEL' => isset($config['rt_min_topic_level']) ? $config['rt_min_topic_level'] : '',
+				'RT_NUMBER'          => isset($config['rt_number']) ? $config['rt_number'] : '',
+				'RT_PAGE_NUMBER'     => isset($config['rt_page_number']) ? $config['rt_page_number'] : '',
+				'RT_PARENTS'         => isset($config['rt_parents']) ? $config['rt_parents'] : false,
+				'RT_UNREAD_ONLY'     => isset($config['rt_unread_only']) ? $config['rt_unread_only'] : false,
+				'RT_SORT_START_TIME' => isset($config['rt_sort_start_time']) ? $config['rt_sort_start_time'] : false,
+				'RT_INDEX'           => isset($config['rt_index']) ? $config['rt_index'] : false,
+				'RT_ON_NEWSPAGE'     => isset($config['rt_on_newspage']) ? $config['rt_on_newspage'] : false,
+				'S_RT_NEWSPAGE'      => $phpbb_extension_manager->is_enabled('nickvergessen/newspage'),
+				'U_ACTION'           => $this->u_action,
 			)
 		);
 	}

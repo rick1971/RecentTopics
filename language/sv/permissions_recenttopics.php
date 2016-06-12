@@ -2,7 +2,6 @@
 /**
  *
  * @package Recent Topics Extension
- * English translation by PayBas
  *
  * @copyright (c) 2015 PayBas
  * @license GNU General Public License, version 2 (GPL-2.0)
@@ -21,10 +20,11 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge(
 	$lang, array(
-	'ACL_U_RT_VIEW'            => 'Recent Topics: view (master)',
-	'ACL_U_RT_ENABLE'          => 'Recent Topics: enable or disable',
-	'ACL_U_RT_LOCATION'        => 'Recent Topics: select display location',
-	'ACL_U_RT_SORT_START_TIME' => 'Recent Topics: change sort order',
-	'ACL_U_RT_UNREAD_ONLY'     => 'Recent Topics: use unread-only mode',
+		'ACL_U_RT_VIEW'            => 'Nya ämnen : kan se senaste ämnen',
+		'ACL_U_RT_ENABLE'          => 'Nya ämnen : aktivera eller inaktivera',
+		'ACL_U_RT_LOCATION'        => 'Nya ämnen : Välj visnings plats',
+		'ACL_U_RT_SORT_START_TIME' => 'Nya ämnen : förändring sorteringsordning',
+		'ACL_U_RT_UNREAD_ONLY'     => 'Nya ämnen : använd olästa skyddat läge',
+
 	)
 );

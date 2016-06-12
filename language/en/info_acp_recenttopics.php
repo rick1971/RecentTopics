@@ -30,8 +30,8 @@ $lang = array_merge(
 	'RT_CONFIG'                     => 'Configuration',
 	'RECENT_TOPICS_EXPLAIN'         => 'On this page you can change the settings specific for the Recent Topics extension.<br /><br />Specific forums can be included or excluded by editing the respective forums in your ACP.<br />Also be sure to check your user permissions, which allow users to change some of the settings found below for themselves.',
 
-	//User Overridable settings
-	'RT_OVERRIDABLE'                => 'Overridable Settings',
+	//User Overridable settings. these apply for anon users and can be overridden by UCP
+	'RT_OVERRIDABLE'                => 'UCP overridable Settings',
 	'RT_DISPLAY_INDEX'              => 'Display on Index page',
 	'RT_LOCATION'                   => 'Display location',
 	'RT_LOCATION_EXP'               => 'Select location to display recent topics. (prosilver)<br /> (pbWoW3 & pbTech have fixed display locations on the side)',
@@ -50,7 +50,7 @@ $lang = array_merge(
 	'RT_PAGE_NUMBER'                => 'Recent topics pages',
 	'RT_PAGE_NUMBER_EXP'            => 'Enter 1 to disable recent topics pagination.',
 	'RT_MIN_TOPIC_LEVEL'            => 'Minimum topic type level',
-	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Determines the minimum level of the topic-type to display. It will only display topics of the set level, and higher.<br />(0 = normal, 1 = sticky, 2 = announcement, 3 = global announcement)',
+	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Determines the minimum level of the topic-type to display. It will only display topics of the set level, and higher.',
 	'RT_ANTI_TOPICS'                => 'Excluded topics',
 	'RT_ANTI_TOPICS_EXP'            => 'The IDs of topics to exclude, seperated by "," (Example: 7,9)<br />',
 	'RT_PARENTS'                    => 'Display parent forums',

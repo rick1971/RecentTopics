@@ -31,7 +31,7 @@ $lang = array_merge(
 	'RECENT_TOPICS_EXPLAIN'         => 'Hier kan je de instellingen aanpassen voor de Recente Onderwerpen Extensie.<br />
 	<br />Activatie van Individuele forums kan ingesteld worden in het Forum beheerderspaneel.<br />Ga ook uw gebruikerspaneel na dat voorrang heeft op beheerderspaneelinstellingen',
 
-	//Overridable settings
+	//algemene instellingen voor anonieme gebruikers
 	'RT_OVERRIDABLE'                => 'Instellingen waarvoor gebruikerspaneel voorrang heeft',
 	'RT_DISPLAY_INDEX'              => 'Toon op index pagina',
 	'RT_LOCATION'                   => 'Plaatsinstelling',
@@ -52,7 +52,7 @@ $lang = array_merge(
 	'RT_PAGE_NUMBER'                => 'Aantal recente onderwerpen pagina&#39;s',
 	'RT_PAGE_NUMBER_EXP'            => 'Stel het pagineringsniveau in van recente onderwerpen. Vul 1 in om deze functie uit te schakelen. Als je een 0 invoert worden er net zoveel pagina&#39;s gebruikt als nodig om alle onderwerpen weer te geven.',
 	'RT_MIN_TOPIC_LEVEL'            => 'Onderwerptype',
-	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Stel het minimum weer te geven onderwerptype in.<br />(0 = Standaard, 1 = Sticky, 2 = Aankondiging, 3 = Globale aankondiging)',
+	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Stel het minimum weer te geven onderwerptype in.',
 	'RT_ANTI_TOPICS'                => 'Uitgesloten onderwerpen',
 	'RT_ANTI_TOPICS_EXP'            => 'Gescheiden door een komma (Voorbeeld: 7,9)<br />Als je geen onderwerpen wil uitsluiten, vul dan een 0 in.',
 	'RT_PARENTS'                    => 'Weergeven van hoofdforums',

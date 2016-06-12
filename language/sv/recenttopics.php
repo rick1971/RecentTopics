@@ -2,7 +2,6 @@
 /**
  *
  * @package Recent Topics Extension
- * Swedish translation by Holger (http://www.maskinisten.net)
  *
  * @copyright (c) 2015 PayBas
  * @license GNU General Public License, version 2 (GPL-2.0)
