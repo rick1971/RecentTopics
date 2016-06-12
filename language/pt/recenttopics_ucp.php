@@ -2,7 +2,6 @@
 /**
  *
  * @package Recent Topics Extension
- * English translation by PayBas
  *
  * @copyright (c) 2015 PayBas
  * @license GNU General Public License, version 2 (GPL-2.0)
@@ -21,14 +20,14 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge(
 	$lang, array(
-	'RT_ENABLE'              => 'Visualizar los temas recientes',
-	'RT_LOCATION'            => 'ubicación de la pantalla',
-	'RT_LOCATION_EXP'        => 'Elegir un lugar para mostrar los últimos temas.',
-	'RT_SORT_START_TIME'     => 'Ordenar los últimos temas de tiempo inicial del tema',
-	'RT_SORT_START_TIME_EXP' => 'Los temas están ordenados de acuerdo con su respectiva di\'apertura fecha y no de acuerdo a la del último mensaje',
-	'RT_UNREAD_ONLY'         => 'mostrar sólo los temas no leídos en los últimos temas',
-	'RT_TOP'                 => 'Mostrar en la parte superior',
-	'RT_BOTTOM'              => 'Mostrar en el fondo',
-	'RT_SIDE'                => 'Mostrar en el lado derecho',
+	'RT_ENABLE'              => 'Exibir tópicos recentes',
+	'RT_LOCATION'            => 'local da tela',
+	'RT_LOCATION_EXP'        => 'escolher um lugar para mostrar os tópicos mais recentes.',
+	'RT_SORT_START_TIME'     => 'Organizar os tópicos mais recentes tempo inicial de emissão',
+	'RT_SORT_START_TIME_EXP' => 'Os tópicos são organizados de acordo com sua respectiva data di abertura e não de acordo com a última mensagem',
+	'RT_UNREAD_ONLY'         => 'Mostrar apenas itens não lidos em edições recentes',
+	'RT_TOP'                 => 'Mostrar no topo',
+	'RT_BOTTOM'              => 'Mostrar no fundo',
+	'RT_SIDE'                => 'Mostrar no lado direito',
 	)
 );
