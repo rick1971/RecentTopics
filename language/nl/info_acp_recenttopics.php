@@ -33,7 +33,7 @@ $lang = array_merge(
 
 	//Overridable settings
 	'RT_OVERRIDABLE'                => 'Instellingen waarvoor gebruikerspaneel voorrang heeft',
-	'RT_DISPLAY_INDEX'              => 'Toon op on index pagina',
+	'RT_DISPLAY_INDEX'              => 'Toon op index pagina',
 	'RT_LOCATION'                   => 'Plaatsinstelling',
 	'RT_LOCATION_EXP'               => 'Stel plaats van \'recente onderwerpen\' blok in.',
 	'RT_TOP'                        => 'Toon boven',

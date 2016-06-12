@@ -22,10 +22,13 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge(
 	$lang, array(
 	'RT_ENABLE'              => 'Vis seneste emner',
-	'RT_LOCATION'            => 'Select location to display recent topics',
-	'RT_LOCATION_EXP'        => 'For prosilver styles.',
+	'RT_LOCATION'            => 'sted indstilling',
+	'RT_LOCATION_EXP'        => 'Depot af de seneste emner "blok.',
 	'RT_SORT_START_TIME'     => 'Sorter seneste emner efter emnets indsendelses tid.',
 	'RT_SORT_START_TIME_EXP' => 'I stedet for at sortere dem efter seneste sendte emne.',
 	'RT_UNREAD_ONLY'         => 'Vis kun ulæste emner i seneste emner',
+	'RT_TOP'                 => 'Vis på toppen',
+	'RT_BOTTOM'              => 'Vis på bunden',
+	'RT_SIDE'                => 'Vis på højre side',
 	)
 );
