@@ -60,7 +60,7 @@ $lang = array_merge(
 	'RT_PARENTS'                   => 'Mostra forum genitore',
 	'RT_PARENTS_EXP'               => 'Mostra il forum genitore nella riga dell’argomento dell’elenco dei topic recenti',
 
-	//voor estensioni
+	//estensioni
 	'RT_VIEW_ON'                   => 'Abilita visualizzazione di argomenti recenti per le seguenti estensioni:',
 
 	)

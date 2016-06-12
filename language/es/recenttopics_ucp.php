@@ -21,11 +21,14 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge(
 	$lang, array(
-	'RT_ENABLE'              => 'Display recent topics',
-	'RT_LOCATION'            => 'Select location to display recent topics',
-	'RT_LOCATION_EXP'        => 'For prosilver styles.',
-	'RT_SORT_START_TIME'     => 'Sort recent topics by topic start time',
-	'RT_SORT_START_TIME_EXP' => 'Instead of sorting them by last post time.',
-	'RT_UNREAD_ONLY'         => 'Only display unread topics in recent topics',
+	'RT_ENABLE'              => 'Visualizar los temas recientes',
+	'RT_LOCATION'            => 'ubicación de la pantalla',
+	'RT_LOCATION_EXP'        => 'Elegir un lugar para mostrar los últimos temas.',
+	'RT_SORT_START_TIME'     => 'Ordenar los últimos temas de tiempo inicial del tema',
+	'RT_SORT_START_TIME_EXP' => 'Los temas están ordenados de acuerdo con su respectiva di\'apertura fecha y no de acuerdo a la del último mensaje',
+	'RT_UNREAD_ONLY'         => 'mostrar sólo los temas no leídos en los últimos temas',
+	'RT_TOP'                 => 'Mostrar en la parte superior',
+	'RT_BOTTOM'              => 'Mostrar en el fondo',
+	'RT_SIDE'                => 'Mostrar en el lado derecho',
 	)
 );
