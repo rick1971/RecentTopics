@@ -21,36 +21,44 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge(
 	$lang, array(
-	'RECENT_TOPICS'                    => 'Seneste emner',
-	'RECENT_TOPICS_EXPLAIN'            => 'På denne side kan du ændre indstillinger for udvidelsen.<br /><br />Specifikke fora kan inkluderes eller exkluderes, ved at redigere dem i ACP.<br />Husk også at tjekke tilladelser, som tillader brugere at ændre nogle af indstilingerne fundet under deres profil.',
-
+	//forum acp
 	'RECENT_TOPICS_LIST'            => 'Vis på "Seneste emner"',
 	'RECENT_TOPICS_LIST_EXPLAIN'    => 'Slå til, for at vise emner fra dette forum, i seneste emner.',
 
+	//acp title
+	'RECENT_TOPICS'                    => 'Seneste emner',
 	'RT_CONFIG'                        => 'Opsætning',
-	'RT_ALT_LOCATION'                => 'Vis i alternativ lokation',
-	'RT_ALT_LOCATION_EXP'            => 'Brug alternativ lokation til at vise seneste emner.<br />Ikke alle temaer understøtter dette. I prosilver, vil det blive flyttet ned i bunden.',
-	'RT_ANTI_TOPICS'                => 'Eksluder indlæg',
-	'RT_ANTI_TOPICS_EXP'            => 'ID\'et på det emner der skal udelukkes, sepereret med "," (Eksempel: 7,9)<br />Hvis du ikke ønsker at udelukke noget, skal du skrive 0.',
-	'RT_MIN_TOPIC_LEVEL'            => 'Minimum emne type',
-	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Bestemmer minimumsniveauet for emne type til at vise. Det vil kun vise emner af det indstillede niveau, og højere.<br />(0 = normal, 1 = sticky, 2 = bekendtgørelsen, 3 = global bekendtgørelse)',
-	'RT_NUMBER'                        => 'Seneste emner',
-	'RT_NUMBER_EXP'                    => 'Antallet af emner der skal vises.',
-	'RT_PAGE_NUMBER'                => 'Seneste emner sider',
-	'RT_PAGE_NUMBER_EXP'            => 'Du kan få vist nyere emner ved hjælp paginering. Du skal bare indtaste 1 for at deaktivere denne funktion. Hvis du indtaster 0 vil der være så mange sider som nødvendigt, for at vise alle emner af dit forum (ikke anbefalet).',
-	'RT_PARENTS'                    => 'Vis over fora',
-	'RT_PARENTS_EXP'                => 'Vis over fora',
+	'RECENT_TOPICS_EXPLAIN'            => 'Her kan du justere indstillingerne for Seneste Emner Extension. <br/>Aktivering af Individuelle fora kan sættes op i Forum administrator panelet. <br/>
+Gå også dit bruger-panel har indstillinger administrator panel efter denne prioritering',
+
+	//Bruger Overridable indstillinger
+	'RT_OVERRIDABLE'                => 'Institutioner, som panelet brugere har prioritet',
+	'RT_DISPLAY_INDEX'              => 'Mød op på index side',
+	'RT_LOCATION'                   => 'Display placering',
+	'RT_LOCATION_EXP'               => 'Angiv placering af de seneste spørgsmål.',
+	'RT_TOP'                        => 'Vis på toppen',
+	'RT_BOTTOM'                     => 'Vis på bunden',
+	'RT_SIDE'                       => 'Vis på højre side',
 	'RT_SORT_START_TIME'            => 'Sorter efter emnets starttidspunkt',
 	'RT_SORT_START_TIME_EXP'        => 'Gøre det muligt at sortere de seneste emner ved starttidspunktet af emner, i stedet for efter nyeste emner.',
 	'RT_UNREAD_ONLY'                => 'Vis kun ulæste emner',
-	'RT_UNREAD_ONLY_EXP'            => 'Aktive "vis kun ulæste emner"  (uanset om det er de seneste eller ej). Denne funktion bruger de samme indstillinger (ekskl. fora / emner osv) som normal tilstand. Bemærk: Dette virker kun for registrerede brugere; gæster vil få den normale liste.',
+	'RT_UNREAD_ONLY_EXP'            => 'Aktive "vis kun ulæste emner" (uanset om det er de seneste eller ej). Denne funktion bruger de samme indstillinger (ekskl. fora / emner osv) som normal tilstand. Bemærk: Dette virker kun for registrerede brugere; gæster vil få den normale liste.',
 
+	//global settings	//global settings
+	'RT_GLOBAL_SETTINGS'            => 'globale indstillinger',
+	'RT_NUMBER'                     => 'Seneste emner',
+	'RT_NUMBER_EXP'                 => 'Antallet af emner der skal vises.',
+	'RT_PAGE_NUMBER'                => 'Seneste emner sider',
+	'RT_PAGE_NUMBER_EXP'            => 'Set pagineringsniveau i de seneste spørgsmål. Indtast en at deaktivere denne funktion. Hvis du indtaster 0, er der så mange sider, der anvendes efter behov for at vise alle emner.',
+	'RT_MIN_TOPIC_LEVEL'            => 'Minimum emne type',
+	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Bestemmer minimumsniveauet for emne type til at vise. Det vil kun vise emner af det indstillede niveau, og højere.<br />(0 = normal, 1 = sticky, 2 = bekendtgørelsen, 3 = global bekendtgørelse)',
+	'RT_ANTI_TOPICS'                => 'Eksluder indlæg',
+	'RT_ANTI_TOPICS_EXP'            => 'Adskilt af et komma (eksempel: 7,9). Hvis du ønsker at ekskludere nogen emner, kan du bruge en 0.',
+	'RT_PARENTS'                    => 'Vis over fora',
+	'RT_PARENTS_EXP'                => 'Vis over fora',
+
+	//udvidelser
 	'RT_VIEW_ON'                    => 'Vis seneste emner på:',
 
-	'RT_LOCATION'                    => 'Display location',
-	'RT_LOCATION_EXP'                => 'Select location to display recent topics. (prosilver)<br /> (pbWoW3 & pbTech have fixed display locations on the side)',
-	'RT_TOP'                         => 'Show on top',
-	'RT_BOTTOM'                      => 'Show on bottom',
-	'RT_SIDE'                        => 'Show on side',
 	)
 );
