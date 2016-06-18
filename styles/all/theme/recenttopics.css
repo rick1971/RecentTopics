@@ -4,21 +4,18 @@ section#phpbbsection. {
     overflow: hidden;
 }
 
-@media screen and (min-width: 951px) {
+@media only screen and (max-width: 800px), only screen and (max-device-width: 800px) {
     .index-left {
         width: auto;
         overflow: hidden;
     }
-
     .index-right {
         float: right;
         margin-left: 10px;
         width: 302px;
     }
 }
-
-@media screen and (max-width: 951px)
-{
+@media only screen and (max-width: 500px), only screen and (max-device-width: 500px) {
     .index-left {
         width: auto;
         overflow: hidden;
@@ -28,7 +25,7 @@ section#phpbbsection. {
     .index-right {
         float: right;
         margin-left: 10px;
-        width: 302px;
+        width: 100%;
     }
 }
 
