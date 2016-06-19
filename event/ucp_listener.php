@@ -88,7 +88,7 @@ class ucp_listener implements EventSubscriberInterface
 		$event['data'] = array_merge(
 			$event['data'], array(
 			'rt_enable'          => $this->request->variable('rt_enable', (int) $this->user->data['user_rt_enable']),
-			'rt_location'    => $this->request->variable('rt_location', $this->user->data['user_rt_location']),
+			'rt_location'        => $this->request->variable('rt_location', $this->user->data['user_rt_location']),
 			'rt_sort_start_time' => $this->request->variable('rt_sort_start_time', (int) $this->user->data['user_rt_sort_start_time']),
 			'rt_unread_only'     => $this->request->variable('rt_unread_only', (int) $this->user->data['user_rt_unread_only']),
 			)
@@ -169,7 +169,7 @@ class ucp_listener implements EventSubscriberInterface
 		$event['sql_ary'] = array_merge(
 			$event['sql_ary'], array(
 			'user_rt_enable'          => $event['data']['rt_enable'],
-			'user_rt_location'    => $event['data']['rt_location'],
+			'user_rt_location'        => $event['data']['rt_location'],
 			'user_rt_sort_start_time' => $event['data']['rt_sort_start_time'],
 			'user_rt_unread_only'     => $event['data']['rt_unread_only'],
 			)

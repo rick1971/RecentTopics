@@ -85,7 +85,8 @@ class listener implements EventSubscriberInterface
 	{
 		if (isset($this->config['rt_index']) && $this->config['rt_index'])
 		{
-		$this->rt_functions->display_recent_topics(); }
+			$this->rt_functions->display_recent_topics();
+		}
 	}
 
 	// nickvergessen's newspage ext
@@ -135,8 +136,7 @@ class listener implements EventSubscriberInterface
 
 	/**
 	 * Add permissions
-	 *
-	 * @param object $event The event object
+	 * @param array $event
 	 * @return null
 	 * @access public
 	 */

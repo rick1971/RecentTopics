@@ -4,7 +4,7 @@
   - [NEW] alternative locations changed to 3-option dropdown to enable 3 display locations (top, bottom, right side) which depends on events, and isn’t hardcoded in the style. 
   - [NEW] Removed custom code for pbWoW & pbTech as all styles now follow the same standard.     
   - [CHG] ACP topic level changed to pulldown menu. 
-  - [FIX] Other imprevements and fixes.
+  - [FIX] Other improvements and fixes.
   - [CHG] Feature release, so version number increased.
   - [CHG] Language added: Portuguese. 
   - [DEL] Languages I couldn't complete were removed. please submit your language packs.       

@@ -63,7 +63,7 @@ class release_2_1_0 extends \phpbb\db\migration\migration
 
 			'add_columns'    => array(
 				$this->table_prefix . 'users' => array(
-					'user_rt_location'    => array('VCHAR:10', ''),
+					'user_rt_location'    => array('VCHAR:10', 'RT_TOP'),
 				),
 			),
 		);

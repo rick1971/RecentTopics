@@ -268,7 +268,7 @@ class recenttopics
 				{
 					if (isset($tracking_topics['l']))
 					{
-						$this->user->data['user_lastmark'] = (int) (base_convert($tracking_topics['l'], 36, 10) + $this->config['board_startdate']);
+						$this->user->data['user_lastmark'] =  ( (int) base_convert($tracking_topics['l'], 36, 10) + (int) $this->config['board_startdate']);
 					}
 					else
 					{
@@ -312,7 +312,7 @@ class recenttopics
 			$this->dispatcher->trigger_event(
 				'paybas.recenttopics.sql_pull_topics_data',
 				array('sql_array' => $sql_array )
-			)
+			), EXTR_OVERWRITE
 		);
 
 		$sql = $this->db->sql_build_query('SELECT', $sql_array);
@@ -345,7 +345,7 @@ class recenttopics
 				'paybas.recenttopics.modify_topics_list',
 				array( 'topic_list' => $this->topic_list,
 				       'rowset' => $rowset)
-			)
+			), EXTR_OVERWRITE
 		);
 
 		foreach ($rowset as $row)
@@ -412,20 +412,24 @@ class recenttopics
 				}
 			}
 
+			list($topic_author, $topic_author_color, $topic_author_full, $u_topic_author, $last_post_author, $last_post_author_colour, $last_post_author_full, $u_last_post_author) = $this->getusernamestrings($row);
+
 			$tpl_ary = array(
 				'FORUM_ID'                => $forum_id,
 				'TOPIC_ID'                => $topic_id,
-				'TOPIC_AUTHOR'            => get_username_string('username', $row['topic_poster'], $row['topic_first_poster_name'], $row['topic_first_poster_colour']),
-				'TOPIC_AUTHOR_COLOUR'     => get_username_string('colour', $row['topic_poster'], $row['topic_first_poster_name'], $row['topic_first_poster_colour']),
-				'TOPIC_AUTHOR_FULL'       => get_username_string('full', $row['topic_poster'], $row['topic_first_poster_name'], $row['topic_first_poster_colour']),
+				'TOPIC_AUTHOR'            => $topic_author,
+				'TOPIC_AUTHOR_COLOUR'     => $topic_author_color,
+				'TOPIC_AUTHOR_FULL'       => $topic_author_full,
+				'U_TOPIC_AUTHOR'          => $u_topic_author,
 				'FIRST_POST_TIME'         => $this->user->format_date($row['topic_time']),
 
 				'LAST_POST_SUBJECT'       => censor_text($row['topic_last_post_subject']),
 				'LAST_POST_TIME'          => $this->user->format_date($row['topic_last_post_time']),
 				'LAST_VIEW_TIME'          => $this->user->format_date($row['topic_last_view_time']),
-				'LAST_POST_AUTHOR'        => get_username_string('username', $row['topic_last_poster_id'], $row['topic_last_poster_name'], $row['topic_last_poster_colour']),
-				'LAST_POST_AUTHOR_COLOUR' => get_username_string('colour', $row['topic_last_poster_id'], $row['topic_last_poster_name'], $row['topic_last_poster_colour']),
-				'LAST_POST_AUTHOR_FULL'   => get_username_string('full', $row['topic_last_poster_id'], $row['topic_last_poster_name'], $row['topic_last_poster_colour']),
+				'LAST_POST_AUTHOR'        => $last_post_author,
+				'LAST_POST_AUTHOR_COLOUR' => $last_post_author_colour,
+				'LAST_POST_AUTHOR_FULL'   => $last_post_author_full,
+				'U_LAST_POST_AUTHOR'      => $u_last_post_author,
 
 				'REPLIES'                 => $replies,
 				'VIEWS'                   => $row['topic_views'],
@@ -461,8 +465,6 @@ class recenttopics
 
 				'U_NEWEST_POST'           => $view_topic_url . '&amp;view=unread#unread',
 				'U_LAST_POST'             => $view_topic_url . '&amp;p=' . $row['topic_last_post_id'] . '#p' . $row['topic_last_post_id'],
-				'U_LAST_POST_AUTHOR'      => get_username_string('profile', $row['topic_last_poster_id'], $row['topic_last_poster_name'], $row['topic_last_poster_colour']),
-				'U_TOPIC_AUTHOR'          => get_username_string('profile', $row['topic_poster'], $row['topic_first_poster_name'], $row['topic_first_poster_colour']),
 				'U_VIEW_TOPIC'            => $view_topic_url,
 				'U_VIEW_FORUM'            => $view_forum_url,
 				'U_MCP_REPORT'            => append_sid("{$this->root_path}mcp.$this->phpEx", 'i=reports&amp;mode=reports&amp;f=' . $forum_id . '&amp;t=' . $topic_id, true, $this->user->session_id),
@@ -478,7 +480,7 @@ class recenttopics
 			 * @since 2.0.0
 			 */
 			$vars = array('row', 'tpl_ary');
-			extract($this->dispatcher->trigger_event('paybas.recenttopics.modify_tpl_ary', compact($vars)));
+			extract($this->dispatcher->trigger_event('paybas.recenttopics.modify_tpl_ary', compact($vars)) , EXTR_OVERWRITE );
 
 			$this->template->assign_block_vars($tpl_loopname, $tpl_ary);
 
@@ -503,7 +505,7 @@ class recenttopics
 
 		// Get URL-parameters for pagination
 		$url_params = explode('&', $this->user->page['query_string']);
-		$append_params = false;
+		$append_params = array();
 		foreach ($url_params as $param)
 		{
 			if (!$param)
@@ -649,7 +651,7 @@ class recenttopics
 			 * @since 2.0.4
 			 */
 			$vars = array('sql_array');
-			extract($this->dispatcher->trigger_event('paybas.recenttopics.sql_pull_topics_list', compact($vars)));
+			extract($this->dispatcher->trigger_event('paybas.recenttopics.sql_pull_topics_list', compact($vars)), EXTR_OVERWRITE);
 
 			$sql = $this->db->sql_build_query('SELECT', $sql_array);
 			$result = $this->db->sql_query_limit($sql, $total_topics_limit);
@@ -681,6 +683,23 @@ class recenttopics
 
 		return $topics_count;
 
+	}
+
+	/**
+	 * @param $row
+	 * @return array
+	 */
+	private function getusernamestrings($row)
+	{
+		$topic_author       = get_username_string('username', $row['topic_poster'], $row['topic_first_poster_name'], $row['topic_first_poster_colour']);
+		$topic_author_color = get_username_string('colour', $row['topic_poster'], $row['topic_first_poster_name'], $row['topic_first_poster_colour']);
+		$topic_author_full  = get_username_string('full', $row['topic_poster'], $row['topic_first_poster_name'], $row['topic_first_poster_colour']);
+		$u_topic_author     = get_username_string('profile', $row['topic_poster'], $row['topic_first_poster_name'], $row['topic_first_poster_colour']);
+		$last_post_author        = get_username_string('username', $row['topic_last_poster_id'], $row['topic_last_poster_name'], $row['topic_last_poster_colour']);
+		$last_post_author_colour = get_username_string('colour', $row['topic_last_poster_id'], $row['topic_last_poster_name'], $row['topic_last_poster_colour']);
+		$last_post_author_full   = get_username_string('full', $row['topic_last_poster_id'], $row['topic_last_poster_name'], $row['topic_last_poster_colour']);
+		$u_last_post_author      = get_username_string('profile', $row['topic_last_poster_id'], $row['topic_last_poster_name'], $row['topic_last_poster_colour']);
+		return array($topic_author, $topic_author_color, $topic_author_full, $u_topic_author, $last_post_author, $last_post_author_colour, $last_post_author_full, $u_last_post_author);
 	}
 
 }
