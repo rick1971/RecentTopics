@@ -480,7 +480,7 @@ class recenttopics
 			 * @since 2.0.0
 			 */
 			$vars = array('row', 'tpl_ary');
-			extract($this->dispatcher->trigger_event('paybas.recenttopics.modify_tpl_ary', compact($vars))  );
+			extract($this->dispatcher->trigger_event('paybas.recenttopics.modify_tpl_ary', compact($vars)));
 
 			$this->template->assign_block_vars($tpl_loopname, $tpl_ary);
 
