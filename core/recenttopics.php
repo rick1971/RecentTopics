@@ -312,7 +312,7 @@ class recenttopics
 			$this->dispatcher->trigger_event(
 				'paybas.recenttopics.sql_pull_topics_data',
 				array('sql_array' => $sql_array )
-			), EXTR_OVERWRITE
+			)
 		);
 
 		$sql = $this->db->sql_build_query('SELECT', $sql_array);
@@ -345,7 +345,7 @@ class recenttopics
 				'paybas.recenttopics.modify_topics_list',
 				array( 'topic_list' => $this->topic_list,
 				       'rowset' => $rowset)
-			), EXTR_OVERWRITE
+			)
 		);
 
 		foreach ($rowset as $row)
@@ -480,7 +480,7 @@ class recenttopics
 			 * @since 2.0.0
 			 */
 			$vars = array('row', 'tpl_ary');
-			extract($this->dispatcher->trigger_event('paybas.recenttopics.modify_tpl_ary', compact($vars)) , EXTR_OVERWRITE );
+			extract($this->dispatcher->trigger_event('paybas.recenttopics.modify_tpl_ary', compact($vars)));
 
 			$this->template->assign_block_vars($tpl_loopname, $tpl_ary);
 
@@ -651,7 +651,7 @@ class recenttopics
 			 * @since 2.0.4
 			 */
 			$vars = array('sql_array');
-			extract($this->dispatcher->trigger_event('paybas.recenttopics.sql_pull_topics_list', compact($vars)), EXTR_OVERWRITE);
+			extract($this->dispatcher->trigger_event('paybas.recenttopics.sql_pull_topics_list', compact($vars)));
 
 			$sql = $this->db->sql_build_query('SELECT', $sql_array);
 			$result = $this->db->sql_query_limit($sql, $total_topics_limit);
