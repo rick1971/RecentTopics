@@ -24,7 +24,7 @@ Based on NV Recent Topics for phpBB 3.0, by Joas Schilling ([nickvergessen](http
 - Tested on:
   - prosilver
   - subsilver2
-  - PBWoW 3
+  - PBWoW 3.0.8.3
   - PBTech
   - we_universal
 
