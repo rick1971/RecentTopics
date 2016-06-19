@@ -136,8 +136,7 @@ class listener implements EventSubscriberInterface
 
 	/**
 	 * Add permissions
-	 *
-	 * @param object $event The event object
+	 * @param array $event
 	 * @return null
 	 * @access public
 	 */

@@ -268,7 +268,7 @@ class recenttopics
 				{
 					if (isset($tracking_topics['l']))
 					{
-						$this->user->data['user_lastmark'] = (int) (base_convert($tracking_topics['l'], 36, 10) + $this->config['board_startdate']);
+						$this->user->data['user_lastmark'] =  ( (int) base_convert($tracking_topics['l'], 36, 10) + (int) $this->config['board_startdate']);
 					}
 					else
 					{
@@ -312,7 +312,7 @@ class recenttopics
 			$this->dispatcher->trigger_event(
 				'paybas.recenttopics.sql_pull_topics_data',
 				array('sql_array' => $sql_array )
-			)
+			), EXTR_OVERWRITE
 		);
 
 		$sql = $this->db->sql_build_query('SELECT', $sql_array);
@@ -345,7 +345,7 @@ class recenttopics
 				'paybas.recenttopics.modify_topics_list',
 				array( 'topic_list' => $this->topic_list,
 				       'rowset' => $rowset)
-			)
+			), EXTR_OVERWRITE
 		);
 
 		foreach ($rowset as $row)
@@ -480,7 +480,7 @@ class recenttopics
 			 * @since 2.0.0
 			 */
 			$vars = array('row', 'tpl_ary');
-			extract($this->dispatcher->trigger_event('paybas.recenttopics.modify_tpl_ary', compact($vars)));
+			extract($this->dispatcher->trigger_event('paybas.recenttopics.modify_tpl_ary', compact($vars)) , EXTR_OVERWRITE );
 
 			$this->template->assign_block_vars($tpl_loopname, $tpl_ary);
 
@@ -505,7 +505,7 @@ class recenttopics
 
 		// Get URL-parameters for pagination
 		$url_params = explode('&', $this->user->page['query_string']);
-		$append_params = false;
+		$append_params = array();
 		foreach ($url_params as $param)
 		{
 			if (!$param)
@@ -651,7 +651,7 @@ class recenttopics
 			 * @since 2.0.4
 			 */
 			$vars = array('sql_array');
-			extract($this->dispatcher->trigger_event('paybas.recenttopics.sql_pull_topics_list', compact($vars)));
+			extract($this->dispatcher->trigger_event('paybas.recenttopics.sql_pull_topics_list', compact($vars)), EXTR_OVERWRITE);
 
 			$sql = $this->db->sql_build_query('SELECT', $sql_array);
 			$result = $this->db->sql_query_limit($sql, $total_topics_limit);
