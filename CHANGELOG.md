@@ -1,5 +1,9 @@
 
 ### Changelog 
+- 2.1.1 (26/06/2016)
+  - [FIX] sideview responsive css not working in prosilver
+  - [CHG] merge small & wide html
+   
 - 2.1.0 (19/06/2016)
   - [NEW] alternative locations changed to 3-option dropdown to enable 3 display locations (top, bottom, right side) which depends on events, and isn’t hardcoded in the style. 
   - [NEW] Removed custom code for pbWoW & pbTech as all styles now follow the same standard.     

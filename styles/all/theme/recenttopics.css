@@ -4,7 +4,9 @@ section#phpbbsection. {
     overflow: hidden;
 }
 
-@media only screen and (max-width: 800px), only screen and (max-device-width: 800px) {
+/* side view big screen maxed out */
+@media screen and (min-width: 1024px)
+{
     .index-left {
         width: auto;
         overflow: hidden;
@@ -15,16 +17,14 @@ section#phpbbsection. {
         width: 302px;
     }
 }
-@media only screen and (max-width: 500px), only screen and (max-device-width: 500px) {
-    .index-left {
-        width: auto;
-        overflow: hidden;
-        display:none;
-    }
 
-    .index-right {
-        float: right;
-        margin-left: 10px;
+/* smartphones */
+/* put side view as top block anyways */
+@media only screen and (max-width: 1024px) {
+    /*hide the forum index */
+    .index-left, .index-right {
+        width: auto;
+        display: block;
         width: 100%;
     }
 }
