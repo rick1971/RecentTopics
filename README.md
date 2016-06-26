@@ -24,12 +24,12 @@ Based on NV Recent Topics for phpBB 3.0, by Joas Schilling ([nickvergessen](http
 - Tested on:
   - prosilver
   - subsilver2
-  - PBWoW 3
+  - PBWoW 3.0.8.2
   - PBTech
   - we_universal
 
 #### Version
-v2.1.0 (12-6-2016)
+v2.1.0 (19-6-2016)
 [![Build Status](https://api.travis-ci.org/Sajaki/RecentTopics.svg)](https://travis-ci.org/Sajaki/RecentTopics)
 
 #### Requirements
