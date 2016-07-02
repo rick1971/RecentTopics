@@ -1,14 +1,6 @@
 <!-- IF S_LOCATION_BOTTOM || S_LOCATION_TOP -->
 
 <a id="recent_topics"></a>
-<!-- IF .pagination -->
-<div class="action-bar">
-	<div class="pagination">
-		<!-- INCLUDE pagination.html -->
-	</div>
-</div>
-<!-- ENDIF -->
-
 <!-- BEGIN recent_topics -->
 <!-- IF not recent_topics.S_TOPIC_TYPE_SWITCH and not recent_topics.S_FIRST_ROW -->
 </ul>
@@ -98,7 +90,7 @@
 </div>
 <!-- END recent_topics -->
 
-<!-- IF .pagination and RT_LOCATION -->
+<!-- IF .pagination -->
 <div class="action-bar">
 	<div class="pagination">
 		<!-- INCLUDE pagination.html -->
@@ -112,16 +104,9 @@
 
 <a id="recent_topics"></a>
 
-<div id="recent-topics-box" class="forabg">
-	<div id="recent-topics" class="inner">
-		<ul class="topiclist">
-			<li class="header">
-				<dl class="icon">
-					<dt>{L_RECENT_TOPICS}</dt>
-					<dd> </dd>
-				</dl>
-			</li>
-		</ul>
+<div id="recent-topics-box" class="collapse-box">
+	<h2 class="open">{L_RECENT_TOPICS}</h2>
+	<div id="recent-topics">
 
 <!-- BEGIN recent_topics -->
 	<!-- IF not recent_topics.S_TOPIC_TYPE_SWITCH and not recent_topics.S_FIRST_ROW -->
@@ -131,7 +116,7 @@
 	<!-- IF recent_topics.S_FIRST_ROW or not recent_topics.S_TOPIC_TYPE_SWITCH -->
 	<ul>
 	<!-- ENDIF -->
-		<li class="row<!-- IF recent_topics.S_ROW_COUNT is even --> bg1<!-- ELSE --> bg2<!-- ENDIF --><!-- IF recent_topics.S_POST_GLOBAL --> global-announce<!-- ENDIF --><!-- IF recent_topics.S_POST_ANNOUNCE --> announce<!-- ENDIF --><!-- IF recent_topics.S_POST_STICKY --> sticky<!-- ENDIF --><!-- IF recent_topics.S_TOPIC_REPORTED --> reported<!-- ENDIF -->">
+		<li class="row<!-- IF recent_topics.S_POST_GLOBAL --> global-announce<!-- ENDIF --><!-- IF recent_topics.S_POST_ANNOUNCE --> announce<!-- ENDIF --><!-- IF recent_topics.S_POST_STICKY --> sticky<!-- ENDIF --><!-- IF recent_topics.S_TOPIC_REPORTED --> reported<!-- ENDIF -->">
 			<dl class="icon {recent_topics.TOPIC_IMG_STYLE}">
 				<dt<!-- IF recent_topics.TOPIC_ICON_IMG and S_TOPIC_ICONS --> style="background-image: url({T_ICONS_PATH}{recent_topics.TOPIC_ICON_IMG}); background-repeat: no-repeat;"<!-- ENDIF --> title="{recent_topics.TOPIC_FOLDER_IMG_ALT}">
 					<!-- IF recent_topics.S_UNREAD_TOPIC and not S_IS_BOT --><a href="{recent_topics.U_NEWEST_POST}" class="icon-link"></a><!-- ENDIF -->
@@ -174,15 +159,16 @@
 	</div>
 <!-- END recent_topics -->
 
+	<!-- IF .pagination -->
+	<div class="action-bar">
+		<div class="pagination">
+			<!-- INCLUDE pagination.html -->
+		</div>
+	</div>
+	<!-- ENDIF -->
+
 	</div>
 </div>
-<!-- IF .pagination -->
-<div class="action-bar">
-	<div class="pagination">
-		<!-- INCLUDE pagination.html -->
-	</div>
-</div>
-<!-- ENDIF -->
 
 <!-- ENDIF -->
 
