@@ -30,25 +30,6 @@ div.phpbbsection. {
     }
 }
 
-dl dd.recenttopics
-{
-    background-repeat: no-repeat;
-    padding-bottom: 6px;
-    padding-left: 6px;
-    padding-right: 0;
-    width: 90%; !important;
-}
-
-dl dt.recenttopics
-{
-    background-repeat: no-repeat;
-    padding-bottom: 6px;
-    padding-left: 6px;
-    padding-right: 0;
-    width: 90%; !important;
-}
-
-
 #recent-topics ul {
     list-style: none;
 }

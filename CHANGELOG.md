@@ -1,6 +1,6 @@
 
 ### Changelog 
-- 2.1.1 (26/06/2016)
+- 2.1.1 (03/07/2016)
   - [FIX] sideview responsive css not working in prosilver
   - [CHG] merge small & wide html
    
