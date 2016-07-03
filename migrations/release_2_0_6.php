@@ -31,7 +31,7 @@ class release_2_0_6 extends \phpbb\db\migration\migration
 	 */
 	public function effectively_installed()
 	{
-		return $this->db_tools->sql_column_exists($this->table_prefix . 'users', 'user_rt_enable');
+		return isset($this->config['rt_version']) && version_compare($this->config['rt_version'], '2.0.6', '>=');
 	}
 
 	/**

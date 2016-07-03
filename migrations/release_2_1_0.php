@@ -45,7 +45,6 @@ class release_2_1_0 extends \phpbb\db\migration\migration
 		);
 	}
 
-
 	/**
 	 * Add table columns schema to the database:
 	 *
@@ -67,7 +66,6 @@ class release_2_1_0 extends \phpbb\db\migration\migration
 				),
 			),
 		);
-
 	}
 
 	/**
@@ -81,15 +79,10 @@ class release_2_1_0 extends \phpbb\db\migration\migration
 		return array(
 			'drop_columns'		=> array(
 				$this->table_prefix . 'users'		=> array(
-					'user_rt_location',
+					'user_rt_location','user_rt_alt_location',
 				),
 			),
 
-			'add_columns'    => array(
-				$this->table_prefix . 'users' => array(
-					'user_rt_alt_location'    => array('BOOL', 0),
-				),
-			),
 		);
 	}
 
@@ -104,7 +97,7 @@ class release_2_1_0 extends \phpbb\db\migration\migration
 		return array(
 			array('config.update', array('rt_version', '2.1.0')),
 			array('config.remove', array('rt_alt_location')),
-			array('config.add',    array('rt_location', 'RT_SIDE')),
+			array('config.add',    array('rt_location', 'RT_TOP')),
 
 			array('permission.remove', array('u_rt_alt_location')),
 			array('permission.add', array('u_rt_location')),

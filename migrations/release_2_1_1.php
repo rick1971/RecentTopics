@@ -51,59 +51,20 @@ class release_2_1_1 extends \phpbb\db\migration\migration
 	 * @return array Array of table columns schema
 	 * @access public
 	 */
-	public function update_schema()
-	{
-		return array(
-			'drop_columns'    => array(
-				$this->table_prefix . 'users' => array(
-					'user_rt_location',
-				),
-			),
-
-			'add_columns'    => array(
-				$this->table_prefix . 'users' => array(
-					'user_rt_location'    => array('VCHAR:10', 'RT_SIDE'),
-				),
-			),
-		);
-
-	}
-
-	/**
-	 * Drop table columns schema from the database
-	 *
-	 * @return array Array of table columns schema
-	 * @access public
-	 */
-	public function revert_schema()
-	{
-		return array(
-			'drop_columns'		=> array(
-				$this->table_prefix . 'users'		=> array(
-					'user_rt_location',
-				),
-			),
-
-			'add_columns'    => array(
-				$this->table_prefix . 'users' => array(
-					'user_rt_location'    => array('VCHAR:10', 'RT_TOP'),
-				),
-			),
-		);
-	}
-
-	/**
-	 * Add or update data in the database
-	 *
-	 * @return array Array of table data
-	 * @access public
-	 */
 	public function update_data()
 	{
 		return array(
-			array('config.remove', array('rt_location')),
-			array('config.add',    array('rt_location', 'RT_SIDE')),
+			array('config.update', array('rt_version', '2.1.1')),
+			array('config.update', array('rt_location', 'RT_SIDE')),
+			array('custom', array(array($this, 'update_default_loc'))),
 		);
+
+	}
+
+	public function update_default_loc()
+	{
+		$sql = 'UPDATE ' . USERS_TABLE . ' SET user_rt_location = \'RT_SIDE\' ';
+		$this->db->sql_query($sql);
 	}
 
 }
