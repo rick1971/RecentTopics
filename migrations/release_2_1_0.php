@@ -79,7 +79,8 @@ class release_2_1_0 extends \phpbb\db\migration\migration
 		return array(
 			'drop_columns'		=> array(
 				$this->table_prefix . 'users'		=> array(
-					'user_rt_location','user_rt_alt_location',
+					'user_rt_location',
+					'user_rt_alt_location',
 				),
 			),
 
