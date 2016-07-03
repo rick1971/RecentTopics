@@ -17,18 +17,18 @@ namespace paybas\recenttopics\migrations;
  * in a subclass. This class provides various utility methods to simplify editing
  * a phpBB.
  */
-class release_2_1_0 extends \phpbb\db\migration\migration
+class release_2_1_1 extends \phpbb\db\migration\migration
 {
 
 	/**
-	 * Check if recent topics 2.1 is installed.
+	 * Check if recent topics 2.1.1 is installed.
 	 *
 	 * @return bool True if notification type exists, false otherwise
 	 * @access public
 	 */
 	public function effectively_installed()
 	{
-		return isset($this->config['rt_version']) && version_compare($this->config['rt_version'], '2.1.0', '>=');
+		return isset($this->config['rt_version']) && version_compare($this->config['rt_version'], '2.1.1', '>=');
 	}
 
 	/**
@@ -41,10 +41,9 @@ class release_2_1_0 extends \phpbb\db\migration\migration
 	static public function depends_on()
 	{
 		return array(
-			'\paybas\recenttopics\migrations\release_2_0_6',
+			'\paybas\recenttopics\migrations\release_2_1_0',
 		);
 	}
-
 
 	/**
 	 * Add table columns schema to the database:
@@ -57,13 +56,13 @@ class release_2_1_0 extends \phpbb\db\migration\migration
 		return array(
 			'drop_columns'    => array(
 				$this->table_prefix . 'users' => array(
-					'user_rt_alt_location',
+					'user_rt_location',
 				),
 			),
 
 			'add_columns'    => array(
 				$this->table_prefix . 'users' => array(
-					'user_rt_location'    => array('VCHAR:10', 'RT_TOP'),
+					'user_rt_location'    => array('VCHAR:10', 'RT_SIDE'),
 				),
 			),
 		);
@@ -87,7 +86,7 @@ class release_2_1_0 extends \phpbb\db\migration\migration
 
 			'add_columns'    => array(
 				$this->table_prefix . 'users' => array(
-					'user_rt_alt_location'    => array('BOOL', 0),
+					'user_rt_location'    => array('VCHAR:10', 'RT_TOP'),
 				),
 			),
 		);
@@ -102,32 +101,9 @@ class release_2_1_0 extends \phpbb\db\migration\migration
 	public function update_data()
 	{
 		return array(
-			array('config.update', array('rt_version', '2.1.0')),
-			array('config.remove', array('rt_alt_location')),
-			array('config.add',    array('rt_location', 'RT_SIDE')),
-
-			array('permission.remove', array('u_rt_alt_location')),
-			array('permission.add', array('u_rt_location')),
-
-			array('permission.permission_set', array('ROLE_USER_FULL', 'u_rt_location')),
-
-		);
-	}
-
-	/**
-	 * Reverts data by returning a list of instructions to be executed
-	 *
-	 * @return array Array of data instructions that will be performed on revert
-	 *    NOTE: calls to tools (such as config.add) are automatically reverted when
-	 *        possible, so you should not attempt to revert those, this is mostly for
-	 *        otherwise unrevertable calls (custom functions for example)
-	 */
-	public function revert_data()
-	{
-		return array(
 			array('config.remove', array('rt_location')),
-			array('permission.remove', array('u_rt_location')),
-
+			array('config.add',    array('rt_location', 'RT_SIDE')),
 		);
 	}
+
 }
