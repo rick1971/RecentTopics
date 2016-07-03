@@ -1,8 +1,8 @@
 {
 	"stable": {
 		"2.0": {
-			"current": "2.1.0",
-			"announcement": "https://github.com/Sajaki/RecentTopics/releases/tag/v2.1.0",
+			"current": "2.1.1",
+			"announcement": "https://github.com/Sajaki/RecentTopics/releases/tag/v2.1.1",
 			"eol": null,
 			"security": false
 		}
