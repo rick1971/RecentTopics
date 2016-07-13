@@ -8,6 +8,9 @@ Based on NV Recent Topics for phpBB 3.0, by Joas Schilling ([nickvergessen](http
 v2.1.1 (03-7-2016)
 [![Build Status](https://api.travis-ci.org/Sajaki/RecentTopics.svg)](https://travis-ci.org/Sajaki/RecentTopics)
 
+#### Support
+- [Support forum] (http://www.avathar.be/bbdkp/viewforum.php?f=65)
+
 #### Requirements
 - phpBB 3.1.0 or higher
 - PHP 5.3.3 or higher
