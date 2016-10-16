@@ -21,10 +21,10 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge(
 	$lang, array(
-	'ACL_U_RT_VIEW'            => 'Recent Topics: view (master)',
-	'ACL_U_RT_ENABLE'          => 'Recent Topics: enable or disable',
-	'ACL_U_RT_LOCATION'        => 'Recent Topics: select display location',
-	'ACL_U_RT_SORT_START_TIME' => 'Recent Topics: change sort order',
-	'ACL_U_RT_UNREAD_ONLY'     => 'Recent Topics: use unread-only mode',
+	'ACL_U_RT_VIEW'            => 'Recent Topics: can view. ',
+	'ACL_U_RT_ENABLE'          => 'Recent Topics: can enable or disable',
+	'ACL_U_RT_LOCATION'        => 'Recent Topics: can select display location',
+	'ACL_U_RT_SORT_START_TIME' => 'Recent Topics: can change sort order',
+	'ACL_U_RT_UNREAD_ONLY'     => 'Recent Topics: can set unread-only mode',
 	)
 );

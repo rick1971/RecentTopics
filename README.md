@@ -9,6 +9,7 @@ Based on NV Recent Topics for phpBB 3.0, by Joas Schilling ([nickvergessen](http
 #### Features
 - Adds a list of recent (or unread) topics to the index page.
 - UCP permissions and settings so users can choose their own preferences to override ACP.
+    
 - ACP / UCP Options:
   - Screen location : Top, bottom or Right.
   - sort by topic start time, instead of last post time

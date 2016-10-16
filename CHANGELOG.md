@@ -1,5 +1,9 @@
 
 ### Changelog 
+- 2.1.2 (16/10/2016)
+  - [FIX] permission u_rt_view changed to registered users
+
+
 - 2.1.1 (03/07/2016)
   - [FIX] sideview responsive css not working in prosilver
   - [CHG] merged small & wide html
