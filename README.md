@@ -18,6 +18,7 @@ v2.1.1 (03-7-2016)
 #### Features
 - Adds a list of recent (or unread) topics to the index page.
 - UCP permissions and settings so users can choose their own preferences to override ACP.
+    
 - ACP / UCP Options:
   - Screen location : Top, bottom or Right.
   - sort by topic start time, instead of last post time
