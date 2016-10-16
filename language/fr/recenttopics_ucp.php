@@ -38,8 +38,8 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge(
 	$lang, array(
 	'RT_ENABLE'              => 'Afficher les «sujets récents»',
-	'RT_LOCATION'            => 'Sélectionner emplacement des «sujets récents»',
-	'RT_LOCATION_EXP'        => 'Styles exclus : pbTech/pbWoW3 (car ils ont un emplacement figé)',
+	'RT_LOCATION'            => 'Sélectionner emplacement',
+	'RT_LOCATION_EXP'        => 'Sélectionner emplacement des «sujets récents»',
 	'RT_SORT_START_TIME'     => 'Trier les «sujets récents» selon la date de création du sujet',
 	'RT_SORT_START_TIME_EXP' => 'Trie selon date de création du sujet, (sinon au lieu la date du dernier message).',
 	'RT_UNREAD_ONLY'         => 'Afficher uniquement les sujets non lus dans les « sujets récents »',
