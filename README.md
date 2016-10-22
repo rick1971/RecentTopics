@@ -5,7 +5,7 @@ Extension for phpBB 3.1 to display recent topics.
 Based on NV Recent Topics for phpBB 3.0, by Joas Schilling ([nickvergessen](https://github.com/nickvergessen))
 
 #### Version
-v2.1.1 (03-7-2016)
+v2.1.2 (22-10-2016)
 [![Build Status](https://api.travis-ci.org/Sajaki/RecentTopics.svg)](https://travis-ci.org/Sajaki/RecentTopics)
 
 #### Support
@@ -34,14 +34,14 @@ v2.1.1 (03-7-2016)
 - Tested on:
   - prosilver
   - subsilver2
-  - PBWoW 3.0.8.2
+  - PBWoW
   - PBTech
   - we_universal
 
 ![Screenshot](screenshot.png)
 
 #### Languages supported
-- English, German, French, Dutch, Spanish, Italian, Portuguese, Swedish, Danish       
+- English, German, French, Dutch, Spanish, Italian, Portuguese, Swedish, Danish, Czech
   
 ### Installation
 1. [Download the latest release](https://github.com/sajaki/RecentTopics/releases) and unzip it.

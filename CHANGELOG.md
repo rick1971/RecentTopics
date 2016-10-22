@@ -3,6 +3,7 @@
 - 2.1.2 (22/10/2016)
   - [FIX] Permission u_rt_view changed to registered users
   - [FIX] Migration file Recent topics 2.0.0 fixed. as of 3.1.10, root path must exist in module.exists. see PHPBB3-14703 and commit https://github.com/phpbb/phpbb/commit/5eb493fa86
+  - [NEW] Czech translation by @R3gi
 
 - 2.1.1 (03/07/2016)
   - [FIX] sideview responsive css not working in prosilver
