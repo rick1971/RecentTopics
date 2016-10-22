@@ -107,21 +107,24 @@ class release_2_0_0 extends \phpbb\db\migration\migration
 
 			// Remove early beta modules
 			array('if', array(
-				array('module.exists', array('acp', 'RECENT_TOPICS_EXT', array(
+				array('module.exists', array('acp', 'ACP_CAT_DOT_MODS', array(
 					'module_basename'    => '\paybas\recenttopics\acp\recenttopics_module',
 					'modes'    => array('recenttopics_config'),
 				),
 				)),
-				array('module.remove', array('acp', 'RECENT_TOPICS_EXT', array(
+				array('module.remove', array('acp', 'ACP_CAT_DOT_MODS', array(
 					'module_basename'    => '\paybas\recenttopics\acp\recenttopics_module',
 					'modes'    => array('recenttopics_config'),
 				),
 				)),
 			)),
+
+
 			array('if', array(
 				array('module.exists', array('acp', 'ACP_CAT_DOT_MODS', 'RECENT_TOPICS_EXT')),
 				array('module.remove', array('acp', 'ACP_CAT_DOT_MODS', 'RECENT_TOPICS_EXT')),
 			)),
+
 
 			// Add new modules
 			array('module.add', array(
