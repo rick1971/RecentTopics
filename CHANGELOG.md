@@ -1,5 +1,12 @@
 
-### Changelog 
+### Changelog
+
+- 2.2.0 (23/10/2016)
+  - [UPD] Update for phpbb 3.2.0-RC1
+          conversion of template files to new phpbb css.
+          removal other styles they are not ready yet for 3.2
+          updated travis
+
 - 2.1.2 (22/10/2016)
   - [FIX] Permission u_rt_view changed to registered users
   - [FIX] Migration file Recent topics 2.0.0 fixed. as of 3.1.10, root path must exist in module.exists. see PHPBB3-14703 and commit https://github.com/phpbb/phpbb/commit/5eb493fa86
