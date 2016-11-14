@@ -2,6 +2,7 @@
 /**
  *
  * @package Recent Topics Extension
+ * Tradução Portuguesa by phpbbpt
  *
  * @copyright (c) 2015 PayBas
  * @license GNU General Public License, version 2 (GPL-2.0)
