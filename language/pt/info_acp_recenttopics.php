@@ -21,39 +21,39 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge(
 	$lang, array(
 	//PCA Fórum
-	'RECENT_TOPICS_LIST'            => 'Veja "Tópicos recentes"',
-	'RECENT_TOPICS_LIST_EXPLAIN'    => 'São os tópicos deste fórum que serão exibidos no índice de "Tópicos recentes"?',
+	'RECENT_TOPICS_LIST'            => 'Exibir tópicos recentes"',
+	'RECENT_TOPICS_LIST_EXPLAIN'    => 'Ativar para exibir tópicos neste fórum na extensão "tópicos recentes"',
 
 	//PCA título
-	'RECENT_TOPICS'                 => 'Fórum Topicos recentes',
-	'RECENT_TOPICS_EXPLAIN'         => 'Aqui você pode alterar as configurações de Topicos recentes. <br /> <br /> fórum individuais podem ser incluídos ou excluídos, alterando as respectivas definições no PCA. <br /> Além disso, através das definições nesta página, você pode permitir que os usuários editem os aspectos de auto certo ponto',
-	'RT_CONFIG'                     => 'configuración',
+	'RECENT_TOPICS'                 => 'Tópicos recentes',
+	'RT_CONFIG'                     => 'Configuração',
+	'RECENT_TOPICS_EXPLAIN'         => 'Nesta página você pode alterar as configurações específicas para a extensão Recent Topics. <br /> <br /> Fóruns específicos podem ser incluídos ou excluídos editando os respectivos fóruns em seu ACP. Certifique-se de verificar as permissões de usuário, que permitem aos usuários alterar algumas das configurações encontradas abaixo para si.',
 
 	//configuração geral para usuários anônimos
-	'RT_OVERRIDABLE'                => 'As instituições que os membros do painel têm prioridade',
+	'RT_OVERRIDABLE'                => 'UCP configurações substituíveis',
 	'RT_DISPLAY_INDEX'              => 'Mostrar na página de índice',
-	'RT_LOCATION'                   => 'local da tela',
-	'RT_LOCATION_EXP'               => 'Escolha um lugar para mostrar os tópicos mais recentes.',
+	'RT_LOCATION'                   => 'Mostrar local',
+	'RT_LOCATION_EXP'               => 'Selecionar local para exibir tópicos recentes.',
 	'RT_TOP'                        => 'Mostrar no topo',
 	'RT_BOTTOM'                     => 'Mostrar no fundo',
 	'RT_SIDE'                       => 'Mostrar no lado direito',
 	'RT_SORT_START_TIME'            => 'Ordenar tópicos por a hora de início',
-	'RT_SORT_START_TIME_EXP'        => 'Ativar para classificar os tópicos recentes sobre a hora de início do problema, em vez de o último respondeu.',
+	'RT_SORT_START_TIME_EXP'        => 'Habilite para classificar tópicos recentes pela hora de início do tópico, em vez da última hora de publicação.',
 	'RT_UNREAD_ONLY'                => 'Mostrar apenas tópicos não lidos',
-	'RT_UNREAD_ONLY_EXP'            => 'Esta opção só irá mostrar itens não lidos (se eles são "recente" ou não). Esta função utiliza as mesmas configurações (excluindo fóruns / tópicos etc.) do que o modo normal. Nota: isso só funciona para usuários registrados e identificados; os hóspedes podem obter a lista normal.',
+	'RT_UNREAD_ONLY_EXP'            => 'Ativar para exibir somente tópicos não lidos (se eles são "recentes" ou não). Esta função usa as mesmas configurações (excluindo fóruns / tópicos etc.) como modo normal. Nota: isso só funciona para usuários conectados; Os convidados receberão a lista normal.',
 
 	//configurações globais
 	'RT_GLOBAL_SETTINGS'            => 'Configurações globais',
 	'RT_NUMBER'                     => 'tópicos recentes',
-	'RT_NUMBER_EXP'                 => 'Número de itens mostrados no índice.',
-	'RT_PAGE_NUMBER'                => 'Tópicos recentes Páginas',
-	'RT_PAGE_NUMBER_EXP'            => 'Você pode exibir tópicos mais recentes usando um pequeno paginação. Simplesmente digite 1 para desativar esse recurso. Se você digitar 0, não haverá muitas páginas que forem necessárias para mostrar todas as disciplinas.',
-	'RT_MIN_TOPIC_LEVEL'            => 'Tema tipo nível mínimo',
-	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Determina o tipo de nível mínimo do sujeito ao show. temas definir o nível e acima será exibido.',
+	'RT_NUMBER_EXP'                 => 'Número de tópicos a apresentar.',
+	'RT_PAGE_NUMBER'                => 'Páginas de tópicos recentes',
+	'RT_PAGE_NUMBER_EXP'            => 'Digite 1 para desativar a paginação de tópicos recentes.',
+	'RT_MIN_TOPIC_LEVEL'            => 'Nível mínimo do tipo de tópico',
+	'RT_MIN_TOPIC_LEVEL_EXP'        => 'Determina o nível mínimo do tipo de tópico a ser exibido. Ele só exibirá tópicos do nível definido e mais alto.',
 	'RT_ANTI_TOPICS'                => 'Topicos excluídos',
-	'RT_ANTI_TOPICS_EXP'            => 'Separados por "," (Por exemplo: 7,9) </ b> Se você não quiser excluir um tópico, basta digitar 0.',
+	'RT_ANTI_TOPICS_EXP'            => 'Os IDs de tópicos a excluir, separados por "," (Exemplo: 7,9) </ b>',
 	'RT_PARENTS'                    => 'Mostrar Fórum Pai',
-	'RT_PARENTS_EXP'                => 'Mostrar fóruns pai na linha de assunto de questões recentes.',
+	'RT_PARENTS_EXP'                => 'Exibir fóruns pai dentro da linha tópico de tópicos recentes.',
 
 	//extensões
 	'RT_VIEW_ON'                    => 'Ver tópicos recentes:',
