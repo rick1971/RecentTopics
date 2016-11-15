@@ -2,6 +2,7 @@
 /**
  *
  * @package Recent Topics Extension
+ * Tradução Portuguesa by phpbbpt
  *
  * @copyright (c) 2015 PayBas
  * @license GNU General Public License, version 2 (GPL-2.0)
@@ -18,14 +19,30 @@ if (empty($lang) || !is_array($lang))
 	$lang = array();
 }
 
+// DEVELOPERS PLEASE NOTE
+//
+// All language files should use UTF-8 as their encoding and the files must not contain a BOM.
+//
+// Placeholders can now contain order information, e.g. instead of
+// 'Page %s of %s' you can (and should) write 'Page %1$s of %2$s', this allows
+// translators to re-order the output of data while ensuring it remains correct
+//
+// You do not need this where single placeholders are used, e.g. 'Message %d' is fine
+// equally where a string contains only two placeholders which are used to wrap text
+// in a url you again do not need to specify an order e.g., 'Click %sHERE%s' is fine
+//
+// Some characters you may want to copy&paste:
+// ’ « » “ ” …
+//
+
 $lang = array_merge(
 	$lang, array(
 	'RT_ENABLE'              => 'Exibir tópicos recentes',
-	'RT_LOCATION'            => 'local da tela',
-	'RT_LOCATION_EXP'        => 'escolher um lugar para mostrar os tópicos mais recentes.',
-	'RT_SORT_START_TIME'     => 'Organizar os tópicos mais recentes tempo inicial de emissão',
-	'RT_SORT_START_TIME_EXP' => 'Os tópicos são organizados de acordo com sua respectiva data di abertura e não de acordo com a última mensagem',
-	'RT_UNREAD_ONLY'         => 'Mostrar apenas itens não lidos em edições recentes',
+	'RT_LOCATION'            => 'Selecionar localização',
+	'RT_LOCATION_EXP'        => 'Selecionar local para exibir tópicos recentes.',
+	'RT_SORT_START_TIME'     => 'Ordenar tópicos recentes por tópico hora de início',
+	'RT_SORT_START_TIME_EXP' => 'Em vez de classificá-los por último tempo de postagem',
+	'RT_UNREAD_ONLY'         => 'Mostrar apenas tópicos não lidos nos tópicos recentes',
 	'RT_TOP'                 => 'Mostrar no topo',
 	'RT_BOTTOM'              => 'Mostrar no fundo',
 	'RT_SIDE'                => 'Mostrar no lado direito',
