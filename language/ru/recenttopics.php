@@ -2,7 +2,7 @@
 /**
  *
  * @package Recent Topics Extension
- * Tradução Portuguesa by phpbbpt
+ * Russian translation by HD321kbps
  *
  * @copyright (c) 2015 PayBas
  * @license GNU General Public License, version 2 (GPL-2.0)
@@ -21,6 +21,6 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge(
 	$lang, array(
-	'RECENT_TOPICS'    => 'Tópicos Recentes',
+	'RECENT_TOPICS'	=> 'Последние темы',
 	)
 );
