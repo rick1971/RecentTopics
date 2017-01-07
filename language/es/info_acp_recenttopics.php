@@ -27,13 +27,13 @@ $lang = array_merge(
 
 	//PCA título
 	'RECENT_TOPICS'                 => 'Temas Recientes',
-	'RECENT_TOPICS_EXPLAIN'         => 'Aquí puedes cambiar la configuración de temas recientes. <br /> <br /> Foro individual puede ser incluido o excluido cambiando su configuración en el PCA. <br /> Además, a través de la configuración de esta página, se puede permiten a los usuarios editar el propio cierta medida los aspectos',
+	'RECENT_TOPICS_EXPLAIN'         => 'Aquí puede cambiar la configuración de temas recientes. <br /> <br /> Foro individual puede ser incluido o excluido cambiando su configuración en el PCA. <br /> Además, a través de la configuración de esta página, se puede permiten a los usuarios editar el propio cierta medida los aspectos',
 	'RT_CONFIG'                     => 'configuración',
 
 	//configuración general para los usuarios anónimos
 	'RT_OVERRIDABLE'                => 'Instituciones a las que los miembros del panel tiene prioridad',
 	'RT_DISPLAY_INDEX'              => 'Mostrar en la página de índice',
-	'RT_LOCATION'                   => 'Ubicación de la pantalla',
+	'RT_LOCATION'                   => 'ubicación de la pantalla',
 	'RT_LOCATION_EXP'               => 'Elegir un lugar para mostrar los últimos temas.',
 	'RT_TOP'                        => 'Mostrar en la parte superior',
 	'RT_BOTTOM'                     => 'Mostrar en el fondo',
