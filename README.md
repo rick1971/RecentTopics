@@ -5,15 +5,14 @@ Extension for phpBB 3.1 to display recent topics.
 Based on NV Recent Topics for phpBB 3.0, by Joas Schilling ([nickvergessen](https://github.com/nickvergessen))
 
 #### Version
-v2.1.2 (22-10-2016)
+v2.1.3 (01-2017)
 [![Build Status](https://api.travis-ci.org/Sajaki/RecentTopics.svg)](https://travis-ci.org/Sajaki/RecentTopics)
 
 #### Support
 - [Support forum] (http://www.avathar.be/bbdkp/viewforum.php?f=65)
 
 #### Requirements
-- phpBB 3.1.0 or higher
-- PHP 5.3.3 or higher
+- phpBB 3.1.x
 
 #### Features
 - Adds a list of recent (or unread) topics to the index page.
