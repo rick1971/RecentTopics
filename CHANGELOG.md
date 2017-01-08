@@ -1,8 +1,10 @@
 
 ### Changelog
 
-- 2.2.0 (23/10/2016)
-  - [UPD] Update for phpbb 3.2.0-RC1
+- 2.2.0 (09/01/2017)
+  - [UPD] Update for phpbb 3.2.0
+  - [UPD] new language files ar/es/es-x-tu/pt/ru  
+  - [FIX] fixed placement post status-icons. parent li should be relative.
 
 - 2.1.2 (22/10/2016)
   - [FIX] Permission u_rt_view changed to registered users
