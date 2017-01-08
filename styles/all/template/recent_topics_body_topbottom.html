@@ -1,5 +1,6 @@
 <!-- IF S_LOCATION_BOTTOM || S_LOCATION_TOP -->
 
+<!--suppress ProblematicWhitespace -->
 <a id="recent-topics"></a>
 <!-- IF .pagination -->
 <div class="action-bar">
@@ -17,7 +18,7 @@
 <!-- ENDIF -->
 
 <!-- IF recent_topics.S_FIRST_ROW or not recent_topics.S_TOPIC_TYPE_SWITCH -->
-<div class="forabg recent-topics">
+<div id="recent-topics-box" class="forabg recent-topics">
 	<div class="inner">
 		<ul class="topiclist">
 			<li class="header">
@@ -42,9 +43,8 @@
 						</a> <!-- ENDIF --><a href="{recent_topics.U_VIEW_TOPIC}" class="topictitle">{recent_topics.TOPIC_TITLE}</a>
 						<!-- IF recent_topics.ATTACH_ICON_IMG --><i class="icon fa-paperclip fa-fw" aria-hidden="true"></i><!-- ENDIF -->
 						<!-- IF recent_topics.S_TOPIC_UNAPPROVED or recent_topics.S_POSTS_UNAPPROVED --><a href="{recent_topics.U_MCP_QUEUE}">
-						<i class="icon fa-question fa-fw icon-blue" aria-hidden="true"></i><span class="sr-only"></span>
-
-					</a> <!-- ENDIF -->
+						<i class="icon fa-question fa-fw icon-blue" aria-hidden="true"></i><span class="sr-only"></span></a>
+						<!-- ENDIF -->
 						<!-- IF recent_topics.S_TOPIC_DELETED --><a href="{recent_topics.U_MCP_QUEUE}"></a> this never shows up anyways<!-- ENDIF -->
 						<!-- IF recent_topics.S_TOPIC_REPORTED --><a href="{recent_topics.U_MCP_REPORT}"><i class="icon fa-exclamation fa-fw icon-red" aria-hidden="true"></i><span class="sr-only"></span></a><!-- ENDIF --><br />
 
