@@ -668,7 +668,7 @@ class recenttopics
 		{
 			// Get the allowed topics
 			$sql_array = array(
-				'SELECT'    => 't.forum_id, t.topic_id, t.topic_type, t.icon_id, tt.mark_time, ft.mark_time as f_mark_time, FROM_UNIXTIME(t.' . $sort_topics . ') as sortcr ',
+				'SELECT'    => 't.forum_id, t.topic_id, t.topic_type, t.icon_id, tt.mark_time, ft.mark_time as f_mark_time, t.' . $sort_topics . ' as sortcr ',
 				'FROM'      => array(TOPICS_TABLE => 't'),
 				'LEFT_JOIN' => array(
 					array(
