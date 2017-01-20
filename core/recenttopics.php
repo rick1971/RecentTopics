@@ -418,34 +418,46 @@ class recenttopics
 				}
 			}
 
-			if ($this->prefixed !== null)
-			{
-				// pre:fixed extension
-				$prefix_instances = $this->prefixed->get_prefix_instances();
-				foreach($prefix_instances as $key1)
-				{
-					if ($row['topic_id'] == $key1['topic'])
-					{
-						$prefixes = $this->prefixed->get_prefixes();
-						$prefix = '[' . $prefixes[$key1['prefix']]['title'] . '] ';
+			//check for listeners for modify_topictitle event
+			$listeners = $this->dispatcher->getListeners('paybas.recenttopics.modify_topictitle');
 
+			foreach ($listeners as $listener)
+			{
+				$instance = $listener[0];
+
+				if ($instance instanceof imkingdavid\prefixed\event\listener || is_a($instance, 'imkingdavid\prefixed\event\listener')  )
+				{
+					// The prefixed extension is listening
+					/**
+					 * Event to modify the topic title
+					 *
+					 * @event paybas.recenttopics.modify_topictitle
+					 * @var  row  forum_row
+					 * @var  string  topic_title topic title to modify
+					 * @since 2.1.3
+					 */
+					$vars = array('row', 'prefix');
+					extract($this->dispatcher->trigger_event('paybas.recenttopics.modify_topictitle', compact($vars)));
+
+				}
+				else
+				{
+					if ($this->prefixed !== null)
+					{
+						// pre:fixed extension
+						$prefix_instances = $this->prefixed->get_prefix_instances();
+						foreach($prefix_instances as $key1)
+						{
+							if ($row['topic_id'] == $key1['topic'])
+							{
+								$prefixes = $this->prefixed->get_prefixes();
+								$prefix = '[' . $prefixes[$key1['prefix']]['title'] . '] ';
+
+							}
+						}
 					}
 				}
 			}
-
-			/**
-			 * Event to modify the topic title
-			 *
-			 * @event paybas.recenttopics.modify_topictitle
-			 * @var  string  topic_title topic title to modify
-			 * @var  integer  topic_id id of the topic
-			 * @since 2.1.3
-			 */
-			$vars = array(
-					'prefix',
-					'topic_id'
-				);
-			extract($this->dispatcher->trigger_event('paybas.recenttopics.modify_topictitle', compact($vars)));
 
 			$topic_title = $prefix === '' ? $topic_title : $prefix . ' ' . $topic_title;
 
