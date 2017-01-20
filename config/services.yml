@@ -15,6 +15,7 @@ services:
             - '%core.root_path%'
             - '%core.php_ext%'
             - '@?part3.topicprefixes.functions'
+            - '@?prefixed.manager'
     paybas.recenttopics.listener:
         class: paybas\recenttopics\event\listener
         arguments:

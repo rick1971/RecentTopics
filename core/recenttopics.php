@@ -93,6 +93,11 @@ class recenttopics
 	private $topicprefixes;
 
 	/**
+	 * @var manager
+	 */
+	private $prefixed;
+
+	/**
 	* array of allowable forum id's
 	*
 	* @var array
@@ -105,7 +110,6 @@ class recenttopics
 	* @var array
 	*/
 	private $topic_list;
-
 
 	private $unread_only;
 
@@ -152,10 +156,10 @@ class recenttopics
 	                            \phpbb\user $user,
 	                            $root_path,
 	                            $phpEx,
-	                            topicprefixes $topicprefixes = null
+	                            topicprefixes $topicprefixes = null,
+	                            \imkingdavid\prefixed\core\manager $prefixed = null
 	)
 	{
-
 		$this->auth = $auth;
 		$this->cache = $cache;
 		$this->config = $config;
@@ -169,8 +173,8 @@ class recenttopics
 		$this->root_path = $root_path;
 		$this->phpEx = $phpEx;
 		$this->topicprefixes = $topicprefixes;
+		$this->prefixed = $prefixed;
 	}
-
 
 	/**
 	 * @param string $tpl_loopname
@@ -404,13 +408,46 @@ class recenttopics
 
 			$topic_title = censor_text($row['topic_title']);
 
+			$prefix = '';
 			if ($this->topicprefixes !== null)
 			{
+				// Topic Prefix extension Stathis
 				if (!empty($row['topic_prefix']))
 				{
-					$topic_title =  '[' . $row['topic_prefix'] . '] ' . $topic_title;
+					$prefix = '[' . $row['topic_prefix'] . '] ';
 				}
 			}
+
+			if ($this->prefixed !== null)
+			{
+				// pre:fixed extension
+				$prefix_instances = $this->prefixed->get_prefix_instances();
+				foreach($prefix_instances as $key1)
+				{
+					if ($row['topic_id'] == $key1['topic'])
+					{
+						$prefixes = $this->prefixed->get_prefixes();
+						$prefix = '[' . $prefixes[$key1['prefix']]['title'] . '] ';
+
+					}
+				}
+			}
+
+			/**
+			 * Event to modify the topic title
+			 *
+			 * @event paybas.recenttopics.modify_topictitle
+			 * @var  string  topic_title topic title to modify
+			 * @var  integer  topic_id id of the topic
+			 * @since 2.1.3
+			 */
+			$vars = array(
+					'prefix',
+					'topic_id'
+				);
+			extract($this->dispatcher->trigger_event('paybas.recenttopics.modify_topictitle', compact($vars)));
+
+			$topic_title = $prefix === '' ? $topic_title : $prefix . ' ' . $topic_title;
 
 			list($topic_author, $topic_author_color, $topic_author_full, $u_topic_author, $last_post_author, $last_post_author_colour, $last_post_author_full, $u_last_post_author) = $this->getusernamestrings($row);
 
