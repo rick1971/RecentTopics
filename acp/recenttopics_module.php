@@ -62,8 +62,8 @@ class recenttopics_module
 			$rt_number = $request->variable('rt_number', 5);
 			$config->set('rt_number', $rt_number);
 
-			$rt_page_number = $request->variable('rt_page_number', 0);
-			$config->set('rt_page_number', $rt_page_number);
+			$rt_page_number = $request->variable('rt_page_number', '');
+			$config->set('rt_page_number', $rt_page_number == 'on' ? 1 : 0 );
 
 			$rt_min_topic_level = $request->variable('rt_min_topic_level', 0);
 			$config->set('rt_min_topic_level', $rt_min_topic_level);
@@ -125,7 +125,7 @@ class recenttopics_module
 				'RT_ANTI_TOPICS'     => isset($config['rt_anti_topics']) ? $config['rt_anti_topics'] : '',
 				'RT_MIN_TOPIC_LEVEL' => isset($config['rt_min_topic_level']) ? $config['rt_min_topic_level'] : '',
 				'RT_NUMBER'          => isset($config['rt_number']) ? $config['rt_number'] : '',
-				'RT_PAGE_NUMBER'     => isset($config['rt_page_number']) ? $config['rt_page_number'] : '',
+				'RT_PAGE_NUMBER'     => ($config['rt_page_number'] == 1) ? 'checked="checked"' : '',
 				'RT_PARENTS'         => isset($config['rt_parents']) ? $config['rt_parents'] : false,
 				'RT_UNREAD_ONLY'     => isset($config['rt_unread_only']) ? $config['rt_unread_only'] : false,
 				'RT_SORT_START_TIME' => isset($config['rt_sort_start_time']) ? $config['rt_sort_start_time'] : false,
