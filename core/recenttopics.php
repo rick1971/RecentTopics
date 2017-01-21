@@ -418,45 +418,35 @@ class recenttopics
 				}
 			}
 
-			//check for listeners for modify_topictitle event
-			$listeners = $this->dispatcher->getListeners('paybas.recenttopics.modify_topictitle');
+			/**
+			 * Event to modify the topic title
+			 *
+			 * @event paybas.recenttopics.modify_topictitle
+			 * @var  row  forum_row
+			 * @var  string  topic_title topic title to modify
+			 * @since 2.1.3
+			 */
+			$vars = array('row', 'prefix');
+			extract($this->dispatcher->trigger_event('paybas.recenttopics.modify_topictitle', compact($vars)));
 
-			foreach ($listeners as $listener)
+			//fallback if there is no listener
+			if (!$this->is_listening('imkingdavid\prefixed\event\listener', 'paybas.recenttopics.modify_topictitle'))
 			{
-				$instance = $listener[0];
-
-				if ($instance instanceof imkingdavid\prefixed\event\listener || is_a($instance, 'imkingdavid\prefixed\event\listener')  )
+				if ($this->prefixed !== null)
 				{
-					// The prefixed extension is listening
-					/**
-					 * Event to modify the topic title
-					 *
-					 * @event paybas.recenttopics.modify_topictitle
-					 * @var  row  forum_row
-					 * @var  string  topic_title topic title to modify
-					 * @since 2.1.3
-					 */
-					$vars = array('row', 'prefix');
-					extract($this->dispatcher->trigger_event('paybas.recenttopics.modify_topictitle', compact($vars)));
-
-				}
-				else
-				{
-					if ($this->prefixed !== null)
+					// pre:fixed extension
+					$prefix_instances = $this->prefixed->get_prefix_instances();
+					foreach($prefix_instances as $key1)
 					{
-						// pre:fixed extension
-						$prefix_instances = $this->prefixed->get_prefix_instances();
-						foreach($prefix_instances as $key1)
+						if ($row['topic_id'] == $key1['topic'])
 						{
-							if ($row['topic_id'] == $key1['topic'])
-							{
-								$prefixes = $this->prefixed->get_prefixes();
-								$prefix = '[' . $prefixes[$key1['prefix']]['title'] . '] ';
+							$prefixes = $this->prefixed->get_prefixes();
+							$prefix = '[' . $prefixes[$key1['prefix']]['title'] . '] ';
 
-							}
 						}
 					}
 				}
+
 			}
 
 			$topic_title = $prefix === '' ? $topic_title : $prefix . ' ' . $topic_title;
@@ -749,6 +739,28 @@ class recenttopics
 		$last_post_author_full   = get_username_string('full', $row['topic_last_poster_id'], $row['topic_last_poster_name'], $row['topic_last_poster_colour']);
 		$u_last_post_author      = get_username_string('profile', $row['topic_last_poster_id'], $row['topic_last_poster_name'], $row['topic_last_poster_colour']);
 		return array($topic_author, $topic_author_color, $topic_author_full, $u_topic_author, $last_post_author, $last_post_author_colour, $last_post_author_full, $u_last_post_author);
+	}
+
+
+	/**
+	 * this helper function checks if anyone is listening to events
+	 * @param string $class
+	 * @param string $event
+	 * @return bool
+	 */
+	public function is_listening($class, $event)
+	{
+		$listeners = $this->dispatcher->getListeners($event);
+
+		foreach ($listeners as $listener)
+		{
+			if (is_a($listener[0], $class))
+			{
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 }
