@@ -21,8 +21,16 @@ class release_2_2_0 extends \phpbb\db\migration\migration
 	static public function depends_on()
 	{
 		return array(
-			'\paybas\recenttopics\migrations\release_2_1_2',
+			'\paybas\recenttopics\migrations\release_2_1_3',
 		);
+	}
+
+	public function update_data()
+	{
+		return array(
+			array('config.update', array('rt_version', '2.2.0')),
+		);
+
 	}
 
 }
