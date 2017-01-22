@@ -47,7 +47,7 @@ class recenttopics_module
 			$rt_number = $request->variable('rt_number', 5);
 			$config->set('rt_number', $rt_number);
 
-			$rt_page_number = $request->variable('rt_page_number', '');
+			$rt_page_number = $request->variable('rt_page_number', 0);
 			$config->set('rt_page_number', $rt_page_number == 'on' ? 1 : 0 );
 
 			$rt_min_topic_level = $request->variable('rt_min_topic_level', 0);
@@ -86,9 +86,9 @@ class recenttopics_module
 		//reset user preferences
 		if ($request->is_set_post('rt_reset_default'))
 		{
-			$rt_unread_only = $config['rt_unread_only'];
-			$rt_sort_start_time = $config['rt_sort_start_time'];
-			$rt_enable =  $config['rt_index'];
+			$rt_unread_only = isset($config['rt_unread_only']) ? ($config['rt_unread_only']=='' ? 0 :$config['rt_unread_only'])  : 0;
+			$rt_sort_start_time = isset($config['rt_sort_start_time']) ?  ($config['rt_sort_start_time']=='' ? 0 : $config['rt_sort_start_time'])  : 0;
+			$rt_enable =  isset($config['rt_index']) ? ($config['rt_index']== '' ? 0 : $config['rt_index']) : 0;
 			$rt_location = $config['rt_location'];
 
 			$sql = 'UPDATE ' . USERS_TABLE . " SET
