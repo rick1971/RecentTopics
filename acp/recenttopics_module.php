@@ -47,7 +47,7 @@ class recenttopics_module
 			$rt_number = $request->variable('rt_number', 5);
 			$config->set('rt_number', $rt_number);
 
-			$rt_page_number = $request->variable('rt_page_number', 0);
+			$rt_page_number = $request->variable('rt_page_number', '');
 			$config->set('rt_page_number', $rt_page_number == 'on' ? 1 : 0 );
 
 			$rt_min_topic_level = $request->variable('rt_min_topic_level', 0);
