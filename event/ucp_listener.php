@@ -139,9 +139,9 @@ class ucp_listener implements EventSubscriberInterface
 				);
 
 				$display_types = array (
-					'RT_TOP'    => $this->user->lang['RT_TOP'],
-					'RT_BOTTOM' => $this->user->lang['RT_BOTTOM'],
-					'RT_SIDE'   => $this->user->lang['RT_SIDE'],
+					'RT_TOP'    => $this->user->lang('RT_TOP'),
+					'RT_BOTTOM' => $this->user->lang('RT_BOTTOM'),
+					'RT_SIDE'   => $this->user->lang('RT_SIDE'),
 				);
 
 				foreach ($display_types as $key => $display_type)

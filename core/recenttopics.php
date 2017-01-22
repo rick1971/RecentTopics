@@ -291,7 +291,7 @@ class recenttopics
 			'LEFT_JOIN' => array(
 				array(
 					'FROM' => array(TOPICS_POSTED_TABLE => 'tp'),
-					'ON'   => 't.topic_id = tp.topic_id AND tp.user_id = ' . $this->user->data['user_id'],
+					'ON'   => 't.topic_id = tp.topic_id AND tp.user_id = ' . (int) $this->user->data['user_id'],
 				),
 				array(
 					'FROM' => array(FORUMS_TABLE => 'f'),
@@ -665,11 +665,11 @@ class recenttopics
 				'LEFT_JOIN' => array(
 					array(
 						'FROM' => array(TOPICS_TRACK_TABLE => 'tt'),
-						'ON'   => 'tt.topic_id = t.topic_id AND tt.user_id = ' . $this->user->data['user_id'],
+						'ON'   => 'tt.topic_id = t.topic_id AND tt.user_id = ' . (int) $this->user->data['user_id'],
 					),
 					array(
 						'FROM' => array(FORUMS_TRACK_TABLE => 'ft'),
-						'ON'   => 'ft.forum_id = t.forum_id AND ft.user_id = ' . $this->user->data['user_id'],
+						'ON'   => 'ft.forum_id = t.forum_id AND ft.user_id = ' . (int) $this->user->data['user_id'],
 					),
 				),
 				'WHERE'     => $this->db->sql_in_set('t.topic_id', $excluded_topics, true) . '
