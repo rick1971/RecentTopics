@@ -5,10 +5,10 @@
 	<fieldset>
 		<legend>{L_RT_GLOBAL_SETTINGS}</legend>
 		<dl>
-			<dt><label for="rt_index">{L_INDEX}</label><br /><span>{L_RT_DISPLAY_INDEX}</span></dt>
+			<dt><label for="rt_enable">{L_INDEX}</label><br /><span>{L_RT_DISPLAY_INDEX}</span></dt>
 			<dd>
-				<label><input type="radio" class="radio" name="rt_index" value="1" id="rt_index"<!-- IF RT_INDEX --> checked="checked"<!-- ENDIF -->/> {L_YES}</label>
-				<label><input type="radio" class="radio" name="rt_index" value="0" <!-- IF not RT_INDEX --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+				<label><input type="radio" class="radio" name="rt_enable" value="1" id="rt_enable"<!-- IF RT_INDEX --> checked="checked"<!-- ENDIF -->/> {L_YES}</label>
+				<label><input type="radio" class="radio" name="rt_enable" value="0" <!-- IF not RT_INDEX --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
 			</dd>
 		</dl>
 		<dl>
@@ -22,7 +22,6 @@
 			</dt>
 			<dd><input type="checkbox" class="checkbox" name="rt_page_number" id="rt_page_number" {RT_PAGE_NUMBER}  />
 			</dd>
-
 		</dl>
 
 		<dl>
@@ -61,6 +60,7 @@
 				</select>
 			</dd>
 		</dl>
+
 		<dl>
 			<dt><label for="rt_sort_start_time">{L_RT_SORT_START_TIME}{L_COLON}</label><br /><span>{L_RT_SORT_START_TIME_EXP}</span></dt>
 			<dd>
@@ -75,6 +75,14 @@
 				<label><input type="radio" class="radio" name="rt_unread_only" value="0"<!-- IF not RT_UNREAD_ONLY --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
 			</dd>
 		</dl>
+
+		<dl>
+			<dt style="width: 35%;"><label>{L_RT_RESET_DEFAULT}</label><br /><span>{L_RT_RESET_DEFAULT_EXP}</span></dt>
+			<dd>
+				<input class="button1" type="submit" id="rt_reset_default" name="rt_reset_default" value="{L_RT_RESET_DEFAULT}"  />
+			</dd>
+		</dl>
+
 	</fieldset>
 
 
