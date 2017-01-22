@@ -25,7 +25,7 @@ class recenttopics_module
 	 */
 	public function main($id, $mode)
 	{
-		global $config, $phpbb_extension_manager, $request, $template, $user;
+		global $config, $phpbb_extension_manager, $request, $template, $user, $db;
 
 		$user->add_lang(array('acp/common', 'ucp', 'viewforum'));
 		$this->tpl_name = 'acp_recenttopics';
@@ -40,21 +40,6 @@ class recenttopics_module
 			{
 				trigger_error($user->lang('FORM_INVALID') . adm_back_link($this->u_action), E_USER_WARNING);
 			}
-
-			/*
-			 *  acp options overridable by user
-			 */
-			$rt_index = $request->variable('rt_index', 0);
-			$config->set('rt_index', $rt_index);
-
-			$rt_location = $request->variable('rt_location', 'RT_TOP');
-			$config->set('rt_location', $rt_location);
-
-			$rt_sort_start_time = $request->variable('rt_sort_start_time', false);
-			$config->set('rt_sort_start_time', $rt_sort_start_time);
-
-			$rt_unread_only = $request->variable('rt_unread_only', false);
-			$config->set('rt_unread_only', $rt_unread_only);
 
 			/*
 			* acp options for everyone
@@ -79,7 +64,40 @@ class recenttopics_module
 			$rt_on_newspage = $request->variable('rt_on_newspage', 0);
 			$config->set('rt_on_newspage', $rt_on_newspage);
 
+			/*
+			 *  default positions, modifiable by ucp
+	         */
+			$rt_enable = $request->variable('rt_enable', 0);
+			$config->set('rt_index', $rt_enable);
+
+			$rt_location = $request->variable('rt_location', '');
+			$config->set('rt_location', $rt_location);
+
+			$rt_sort_start_time = $request->variable('rt_sort_start_time', false);
+			$config->set('rt_sort_start_time', $rt_sort_start_time);
+
+			$rt_unread_only = $request->variable('rt_unread_only', false);
+			$config->set('rt_unread_only', $rt_unread_only);
+
 			trigger_error($user->lang['CONFIG_UPDATED'] . adm_back_link($this->u_action));
+		}
+
+		$sql='';
+		//reset user preferences
+		if ($request->is_set_post('rt_reset_default'))
+		{
+			$rt_unread_only = $config['rt_unread_only'];
+			$rt_sort_start_time = $config['rt_sort_start_time'];
+			$rt_enable =  $config['rt_index'];
+			$rt_location = $config['rt_location'];
+
+			$sql = 'UPDATE ' . USERS_TABLE . " SET
+			user_rt_enable = '" . $rt_enable . "',
+			user_rt_sort_start_time = '" . $rt_sort_start_time . "',
+			user_rt_unread_only = '" . $rt_unread_only . "',
+			user_rt_location =  '" . $rt_location . "'" ;
+
+			$db->sql_query($sql);
 		}
 
 		$topic_types = array (
@@ -125,7 +143,7 @@ class recenttopics_module
 				'RT_ANTI_TOPICS'     => isset($config['rt_anti_topics']) ? $config['rt_anti_topics'] : '',
 				'RT_MIN_TOPIC_LEVEL' => isset($config['rt_min_topic_level']) ? $config['rt_min_topic_level'] : '',
 				'RT_NUMBER'          => isset($config['rt_number']) ? $config['rt_number'] : '',
-				'RT_PAGE_NUMBER'     => ($config['rt_page_number'] == 1) ? 'checked="checked"' : '',
+				'RT_PAGE_NUMBER'     => ((isset($config['rt_page_number']) ? $config['rt_page_number'] : '') == '1') ? 'checked="checked"' : '',
 				'RT_PARENTS'         => isset($config['rt_parents']) ? $config['rt_parents'] : false,
 				'RT_UNREAD_ONLY'     => isset($config['rt_unread_only']) ? $config['rt_unread_only'] : false,
 				'RT_SORT_START_TIME' => isset($config['rt_sort_start_time']) ? $config['rt_sort_start_time'] : false,

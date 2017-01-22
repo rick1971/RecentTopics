@@ -55,6 +55,8 @@ $lang = array_merge(
 	'RT_ANTI_TOPICS_EXP'            => 'The IDs of topics to exclude, seperated by "," (Example: 7,9)<br />',
 	'RT_PARENTS'                    => 'Display parent forums',
 	'RT_PARENTS_EXP'                => 'Display parent forums inside the topic row of recent topics.',
+	'RT_RESET_DEFAULT'              => 'Reset user settings.',
+	'RT_RESET_DEFAULT_EXP'          => 'Reset user settings to default.',
 
 	//Enable for extensions
 	'RT_VIEW_ON'                     => 'Display recent topics on:',
