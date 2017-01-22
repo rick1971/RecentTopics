@@ -58,13 +58,16 @@
 
 						<!-- IF .recent_topics.pagination -->
 						<div class="pagination">
+							<span>
+							<i class="icon fa-clone fa-fw" aria=hidden="true">	</i>
+							</span>
 							<ul>
 								<!-- BEGIN pagination -->
 								<!-- IF recent_topics.pagination.S_IS_PREV -->
 								<!-- ELSEIF recent_topics.pagination.S_IS_CURRENT --><li class="active"><span>{recent_topics.pagination.PAGE_NUMBER}</span></li>
 								<!-- ELSEIF recent_topics.pagination.S_IS_ELLIPSIS --><li class="ellipsis"><span>{L_ELLIPSIS}</span></li>
 								<!-- ELSEIF recent_topics.pagination.S_IS_NEXT -->
-								<!-- ELSE --><li><a href="{recent_topics.pagination.PAGE_URL}">{recent_topics.pagination.PAGE_NUMBER}</a></li>
+								<!-- ELSE --><li><a class="button" href="{recent_topics.pagination.PAGE_URL}">{recent_topics.pagination.PAGE_NUMBER}</a></li>
 								<!-- ENDIF -->
 								<!-- END pagination -->
 							</ul>
@@ -93,7 +96,6 @@
 					</dd>
 				</dl>
 			</li>
-
 			<!-- IF recent_topics.S_LAST_ROW -->
 		</ul>
 	</div>
