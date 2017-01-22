@@ -67,7 +67,7 @@ class recenttopics_module
 			/*
 			 *  default positions, modifiable by ucp
 	         */
-			$rt_enable = $request->variable('rt_index', 0);
+			$rt_enable = $request->variable('rt_enable', 0);
 			$config->set('rt_index', $rt_enable);
 
 			$rt_location = $request->variable('rt_location', '');
