@@ -77,6 +77,10 @@ div.phpbbsection. {
     text-align: right;
 }
 
+#recent-topics dl {
+    position: relative;
+}
+
 #recent-topics dd.status-icons {
     position: absolute;
     top: 3px;

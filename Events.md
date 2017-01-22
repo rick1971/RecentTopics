@@ -1,6 +1,5 @@
 ## List of events
 
-
  Event name :  paybas.recenttopics.sql_pull_topics_data
 
  Description : Allows for modification of SQL query before the topics data is retrieved
@@ -60,3 +59,17 @@
 
  - @var   array    sql_array        The SQL array
 
+-----------
+
+ Event name :  paybas.recenttopics.modify_topictitle
+
+ Description : Event to modify the topic title by adding a prefix
+
+ Placement : paybas\recenttopics\core\recenttopics\display_recent_topics
+
+ Since 2.1.3
+ 
+ Arguments :
+
+ - @row         array  'forum_row'
+ - topic_title  string 'topic title to modify'

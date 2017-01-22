@@ -1,5 +1,13 @@
-
 ### Changelog 
+
+- 2.1.3 (22/01/2017)
+  - [UPD] new language files ar/es/es-x-tu/pt/ru
+  - [FIX] fixed placement post status-icons. parent li should be relative.  
+  - [FIX] #17 #18 fixed permission issues
+  - [NEW] Added a user preference resetbutton in ACP.
+  - [CHG] 2.1.3 migration resets all positions to top.  
+  - [NEW] add support for pre:fixed extension from imkingdavid. using a new event paybas.recenttopics.modify_topictitle, and fallback if no listener was found
+  
 - 2.1.2 (22/10/2016)
   - [FIX] Permission u_rt_view changed to registered users
   - [FIX] Migration file Recent topics 2.0.0 fixed. as of 3.1.10, root path must exist in module.exists. see PHPBB3-14703 and commit https://github.com/phpbb/phpbb/commit/5eb493fa86
