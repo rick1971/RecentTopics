@@ -183,53 +183,55 @@ class recenttopics
 	 */
 	public function display_recent_topics($tpl_loopname = 'recent_topics', $spec_forum_id = 0, $include_subforums = true)
 	{
+		// can view rt ?
+		if ($this->auth->acl_get('u_rt_view') == '0')
+		{
+			return;
+		}
+
+		// if user can enable recent topics and it is not enabled then return
+		if ($this->auth->acl_get('u_rt_enable') && isset($this->user->data['user_rt_enable']) && !$this->user->data['user_rt_enable'])
+		{
+			return;
+		}
+
+		$location = $this->config['rt_location'];
+		// if user can set location and it is set then use the preference
+		if ($this->auth->acl_get('u_rt_location') && isset($this->user->data['user_rt_location']))
+		{
+			$location = $this->user->data['user_rt_location'];
+		}
+
+		$sort_topics = $this->config['rt_sort_start_time'] ? 'topic_time' : 'topic_last_post_time';
+		// if user can set recent topic sorting order and it is set then use the preference
+		if ($this->auth->acl_get('u_rt_sort_start_time') && isset($this->user->data['user_rt_sort_start_time']))
+		{
+			$sort_topics = $this->user->data['user_rt_sort_start_time'] ? 'topic_time' : 'topic_last_post_time';
+		}
+
+		//load language
 		$this->user->add_lang_ext('paybas/recenttopics', 'recenttopics');
 
-		// Set some internal needed variables
-		$location = $this->config['rt_location'];
+		$topics_per_page = $this->config['rt_number'];
+		$enable_pagination = $this->config['rt_page_number'];
+		$total_topics_limit = $topics_per_page * $enable_pagination;
+
 		$display_parent_forums = $this->config['rt_parents'];
-		$sort_topics = $this->config['rt_sort_start_time'] ? 'topic_time' : 'topic_last_post_time';
+
 		$this->unread_only = $this->config['rt_unread_only'];
+		if ($this->auth->acl_get('u_rt_unread_only') && isset($this->user->data['user_rt_unread_only']))
+		{
+			$this->unread_only = $this->user->data['user_rt_unread_only'];
+		}
 
 		$start = $this->request->variable($tpl_loopname . '_start', 0);
-
-		$topics_per_page = $this->config['rt_number'];
-		$num_pages = $this->config['rt_page_number'];
-		$total_topics_limit = $topics_per_page * $num_pages;
 
 		if (!function_exists('display_forums'))
 		{
 			include $this->root_path . 'includes/functions_display.' . $this->phpEx;
 		}
 
-		/**
-		 * Get the user's display preferences
-		 */
-		if ($this->auth->acl_get('u_rt_view'))
-		{
-			if ($this->auth->acl_get('u_rt_enable') && isset($this->user->data['user_rt_enable']) && !$this->user->data['user_rt_enable'])
-			{
-				return;
-			}
-
-			if ($this->auth->acl_get('u_rt_location') && isset($this->user->data['user_rt_location']))
-			{
-				$location = $this->user->data['user_rt_location'];
-			}
-
-			if ($this->auth->acl_get('u_rt_sort_start_time') && isset($this->user->data['user_rt_sort_start_time']))
-			{
-				$sort_topics = $this->user->data['user_rt_sort_start_time'] ? 'topic_time' : 'topic_last_post_time';
-			}
-
-			if ($this->auth->acl_get('u_rt_unread_only') && isset($this->user->data['user_rt_unread_only']))
-			{
-				$this->unread_only = $this->user->data['user_rt_unread_only'];
-			}
-		}
-
 		$this->getforumlist();
-
 		// No forums to display
 		if (sizeof($this->forum_ids) == 0)
 		{
