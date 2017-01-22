@@ -29,9 +29,17 @@ class release_2_1_3 extends \phpbb\db\migration\migration
 	{
 		return array(
 			array('config.update', array('rt_version', '2.1.3')),
+			array('custom', array(array($this, 'update_default_loc'))),
 		);
 
 	}
 
+	public function update_default_loc()
+	{
+		$rt_location = 'RT_TOP';
+		$this->config->set('rt_location', $rt_location);
+		$sql = 'UPDATE ' . USERS_TABLE . " SET user_rt_location = '" . $rt_location . "' ";
+		$this->db->sql_query($sql);
+	}
 
 }
