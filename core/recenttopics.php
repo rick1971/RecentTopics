@@ -424,8 +424,8 @@ class recenttopics
 			 * Event to modify the topic title
 			 *
 			 * @event paybas.recenttopics.modify_topictitle
-			 * @var  row  forum_row
-			 * @var  string  topic_title topic title to modify
+			 * @var   array    row      the forum row
+			 * @var   string    prefix  the topic title prefix
 			 * @since 2.1.3
 			 */
 			$vars = array('row', 'prefix');
