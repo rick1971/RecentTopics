@@ -5,14 +5,14 @@ Extension for phpBB 3.2 to display recent topics.
 Based on NV Recent Topics for phpBB 3.0, by Joas Schilling ([nickvergessen](https://github.com/nickvergessen))
 
 #### Version
-v2.2.0 (22-01-2017)
+v2.2.0-RC3 (22-01-2017)
 [![Build Status](https://api.travis-ci.org/Sajaki/RecentTopics.svg)](https://travis-ci.org/Sajaki/RecentTopics)
 
 #### Support
 - [Support forum] (http://www.avathar.be/bbdkp/viewforum.php?f=65)
 
 #### Requirements
-- phpBB 3.2.x
+- phpBB 3.2.0
 
 #### Features
 - Adds a list of recent (or unread) topics to the index page.
@@ -29,7 +29,7 @@ v2.2.0 (22-01-2017)
   - exclusion of topics (by ID)
   - display parent forum name in the row
 - Inherits all styling from regular "viewforum" templates
-- compatible with Topic Prefix Extension from Stathis
+- compatible with "Pre:fixed" Extension from imkingdavid and “Topic Prefix“ Extension from Stathis. 
 - Tested on:
   - prosilver
 
