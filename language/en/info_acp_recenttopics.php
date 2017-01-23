@@ -59,7 +59,8 @@ $lang = array_merge(
 	'RT_RESET_DEFAULT_EXP'          => 'Reset user settings to default.',
 
 	//Enable for extensions
-	'RT_VIEW_ON'                     => 'Display recent topics on:',
+	'RT_NICKVERGESSEN_NEWSPAGE'     => 'Support for NewsPage Extension',
+	'RT_VIEW_ON'                    => 'Display recent topics on:',
 
 	)
 );

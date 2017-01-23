@@ -91,4 +91,3 @@ class release_2_0_6 extends \phpbb\db\migration\migration
 		);
 	}
 }
-

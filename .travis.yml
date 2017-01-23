@@ -36,7 +36,7 @@ env:
 
 branches:
   only:
-    - feature/32
+    - develop32
     - /^\d+(\.\d+)?\.x$/
 
 install:
