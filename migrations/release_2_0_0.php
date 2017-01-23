@@ -119,12 +119,10 @@ class release_2_0_0 extends \phpbb\db\migration\migration
 				)),
 			)),
 
-
 			array('if', array(
 				array('module.exists', array('acp', 'ACP_CAT_DOT_MODS', 'RECENT_TOPICS_EXT')),
 				array('module.remove', array('acp', 'ACP_CAT_DOT_MODS', 'RECENT_TOPICS_EXT')),
 			)),
-
 
 			// Add new modules
 			array('module.add', array(

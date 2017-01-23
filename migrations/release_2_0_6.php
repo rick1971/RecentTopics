@@ -72,8 +72,6 @@ class release_2_0_6 extends \phpbb\db\migration\migration
 			array('permission.permission_set', array('ROLE_USER_FULL', 'u_rt_alt_location')),
 			array('permission.permission_set', array('ROLE_USER_FULL', 'u_rt_sort_start_time')),
 			array('permission.permission_set', array('ROLE_USER_FULL', 'u_rt_unread_only')),
-			
-
 			array('permission.permission_set', array('GUESTS', 'u_rt_view', 'group')),
 		);
 	}
