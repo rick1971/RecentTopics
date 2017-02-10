@@ -1,4 +1,4 @@
-Recent Topics for phpBB 3.2
+Recent Topics for phpBB 3.2 phpbbseo/USU
 ============
 
 Extension for phpBB 3.2 to display recent topics.
